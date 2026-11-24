@@ -1,0 +1,2 @@
+Pillow>=10,<13 # 宣告 PC QR 工具的 Pillow>=10,<13 套件相依
+qrcode[pil]>=7.4,<9 # 宣告 PC QR 工具的 qrcode[pil]>=7.4,<9 套件相依

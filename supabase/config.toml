@@ -1,0 +1,14 @@
+project_id = "gym-checkin-webapp" # 設定本機 Supabase 專案識別碼
+
+[functions.send-issue-email] # 選取 functions.send-issue-email 設定區段
+verify_jwt = true # 設定 Function 的 JWT 驗證開關；false 時由裝置密碼驗證
+
+[functions.get-calendar-events] # 選取 functions.get-calendar-events 設定區段
+verify_jwt = true # 設定 Function 的 JWT 驗證開關；false 時由裝置密碼驗證
+
+[functions.issue-presence-token] # 選取 functions.issue-presence-token 設定區段
+verify_jwt = false # 設定 Function 的 JWT 驗證開關；false 時由裝置密碼驗證
+
+# Custom device-secret authentication, like issue-presence-token.
+[functions.ingest-environment] # 選取 functions.ingest-environment 設定區段
+verify_jwt = false # 設定 Function 的 JWT 驗證開關；false 時由裝置密碼驗證
