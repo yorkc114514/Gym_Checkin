@@ -1,0 +1,6 @@
+{
+  "function_url": "https://rihibyswtlqsyljarerr.supabase.co/functions/v1/issue-presence-token",
+  "device_id": "lab-entrance-01",
+  "device_secret": "由 setup_device.py 自動產生，請勿自行填入範例值",
+  "display_size": 240
+}
