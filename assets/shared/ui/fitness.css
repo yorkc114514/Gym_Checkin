@@ -1,0 +1,126 @@
+/* v19 local progress, weight journal and monthly collection */
+.fitness-page { /* 選取 .fitness-page，套用下方樣式 */
+  max-width: 820px; /* 限制最大寬度：820px; */
+} /* 結束 .fitness-page 的樣式規則 */
+.fitness-page .card { /* 選取 .fitness-page .card，套用下方樣式 */
+  margin-bottom: 20px; /* 設定 margin-bottom 樣式屬性：20px; */
+} /* 結束 .fitness-page .card 的樣式規則 */
+.fitness-page label { /* 選取 .fitness-page label，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  flex: 1; /* 設定 flex 樣式屬性：1; */
+  min-width: 0; /* 限制最小寬度：0; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+} /* 結束 .fitness-page label 的樣式規則 */
+.fitness-page input, /* 選取 .fitness-page input,，套用下方樣式 */
+.fitness-page select { /* 選取 .fitness-page select，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  min-width: 0; /* 限制最小寬度：0; */
+  margin-top: 8px; /* 設定 margin-top 樣式屬性：8px; */
+  font-size: 16px; /* 設定文字大小：16px; */
+} /* 結束 .fitness-page input, .fitness-page select 的樣式規則 */
+.fitness-page fieldset { /* 選取 .fitness-page fieldset，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 0; /* 設定元素內距：0; */
+  border: 0; /* 設定邊框：0; */
+  min-width: 0; /* 限制最小寬度：0; */
+} /* 結束 .fitness-page fieldset 的樣式規則 */
+.fitness-controls { /* 選取 .fitness-controls，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+  align-items: end; /* 設定交叉軸對齊：end; */
+  gap: 14px; /* 設定排列元素間距：14px; */
+  margin: 16px 0; /* 設定元素外距：16px 0; */
+} /* 結束 .fitness-controls 的樣式規則 */
+.fitness-controls label { /* 選取 .fitness-controls label，套用下方樣式 */
+  min-width: 120px; /* 限制最小寬度：120px; */
+} /* 結束 .fitness-controls label 的樣式規則 */
+.fitness-page .hint { /* 選取 .fitness-page .hint，套用下方樣式 */
+  line-height: 1.7; /* 設定行高：1.7; */
+} /* 結束 .fitness-page .hint 的樣式規則 */
+.chart-scroll { /* 選取 .chart-scroll，套用下方樣式 */
+  overflow-x: auto; /* 設定 overflow-x 樣式屬性：auto; */
+  -webkit-overflow-scrolling: touch; /* 設定 -webkit-overflow-scrolling 樣式屬性：touch; */
+  margin: 0 -8px; /* 設定元素外距：0 -8px; */
+} /* 結束 .chart-scroll 的樣式規則 */
+.fitness-chart { /* 選取 .fitness-chart，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  width: 100%; /* 設定寬度：100%; */
+} /* 結束 .fitness-chart 的樣式規則 */
+.fitness-chart g:focus circle { /* 選取 .fitness-chart g:focus circle，套用下方樣式 */
+  stroke: #fff; /* 設定 SVG 線條顏色：#fff; */
+  stroke-width: 4; /* 設定 stroke-width 樣式屬性：4; */
+} /* 結束 .fitness-chart g:focus circle 的樣式規則 */
+.chart-empty { /* 選取 .chart-empty，套用下方樣式 */
+  padding: 48px 12px; /* 設定元素內距：48px 12px; */
+  text-align: center; /* 設定文字對齊：center; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  line-height: 1.8; /* 設定行高：1.8; */
+} /* 結束 .chart-empty 的樣式規則 */
+.fitness-table { /* 選取 .fitness-table，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  border-collapse: collapse; /* 設定 border-collapse 樣式屬性：collapse; */
+  margin-top: 16px; /* 設定 margin-top 樣式屬性：16px; */
+} /* 結束 .fitness-table 的樣式規則 */
+.fitness-table th, /* 選取 .fitness-table th,，套用下方樣式 */
+.fitness-table td { /* 選取 .fitness-table td，套用下方樣式 */
+  padding: 10px; /* 設定元素內距：10px; */
+  border-bottom: 1px solid #334155; /* 設定 border-bottom 樣式屬性：1px solid #334155; */
+  text-align: left; /* 設定文字對齊：left; */
+} /* 結束 .fitness-table th, .fitness-table td 的樣式規則 */
+.weight-row { /* 選取 .weight-row，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  padding: 18px 0; /* 設定元素內距：18px 0; */
+  border-bottom: 1px solid #334155; /* 設定 border-bottom 樣式屬性：1px solid #334155; */
+} /* 結束 .weight-row 的樣式規則 */
+.weight-row p { /* 選取 .weight-row p，套用下方樣式 */
+  margin: 6px 0 0; /* 設定元素外距：6px 0 0; */
+  color: #c4b5fd; /* 設定文字顏色：#c4b5fd; */
+  font-size: 1.3rem; /* 設定文字大小：1.3rem; */
+  font-weight: 700; /* 設定字重：700; */
+} /* 結束 .weight-row p 的樣式規則 */
+.weight-row .training-actions { /* 選取 .weight-row .training-actions，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+} /* 結束 .weight-row .training-actions 的樣式規則 */
+.monthly-grid { /* 選取 .monthly-grid，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 28px; /* 設定排列元素間距：28px; */
+} /* 結束 .monthly-grid 的樣式規則 */
+.monthly-art { /* 選取 .monthly-art，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  width: 100%; /* 設定寬度：100%; */
+  height: auto; /* 設定高度：auto; */
+  border-radius: 24px; /* 設定圓角：24px; */
+  border: 1px solid #45605f; /* 設定邊框：1px solid #45605f; */
+} /* 結束 .monthly-art 的樣式規則 */
+.monthly-entry { /* 選取 .monthly-entry，套用下方樣式 */
+  padding: 0; /* 設定元素內距：0; */
+} /* 結束 .monthly-entry 的樣式規則 */
+.monthly-notice { /* 選取 .monthly-notice，套用下方樣式 */
+  margin: 20px auto; /* 設定元素外距：20px auto; */
+  padding: 20px; /* 設定元素內距：20px; */
+  max-width: 600px; /* 限制最大寬度：600px; */
+  border: 1px solid #d4b66b; /* 設定邊框：1px solid #d4b66b; */
+  border-radius: 16px; /* 設定圓角：16px; */
+  background: #24322c; /* 設定背景底色、漸層或圖片：#24322c; */
+  color: #f3e5bd; /* 設定文字顏色：#f3e5bd; */
+} /* 結束 .monthly-notice 的樣式規則 */
+.monthly-notice p { /* 選取 .monthly-notice p，套用下方樣式 */
+  line-height: 1.6; /* 設定行高：1.6; */
+} /* 結束 .monthly-notice p 的樣式規則 */
+.monthly-description { /* 選取 .monthly-description，套用下方樣式 */
+  line-height: 1.8; /* 設定行高：1.8; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+} /* 結束 .monthly-description 的樣式規則 */
+@media (max-width: 420px) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  .weight-row { /* 選取 .weight-row，套用下方樣式 */
+    align-items: flex-start; /* 設定交叉軸對齊：flex-start; */
+    flex-direction: column; /* 設定 Flex 排列方向：column; */
+  } /* 結束 .weight-row 的樣式規則 */
+  .fitness-controls { /* 選取 .fitness-controls，套用下方樣式 */
+    gap: 10px; /* 設定排列元素間距：10px; */
+  } /* 結束 .fitness-controls 的樣式規則 */
+} /* 結束 共用日期、表單與介面 的樣式規則 */

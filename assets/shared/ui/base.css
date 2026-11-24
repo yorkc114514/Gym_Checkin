@@ -1,0 +1,2171 @@
+:root { /* 選取 :root，套用下方樣式 */
+  color-scheme: dark; /* 告知瀏覽器使用深色或淺色控制項：dark; */
+  font-family: /* 設定字型與替代字型： */
+    system-ui, /* 選取 system-ui,，套用下方樣式 */
+    -apple-system, /* 選取 -apple-system,，套用下方樣式 */
+    BlinkMacSystemFont, /* 選取 BlinkMacSystemFont,，套用下方樣式 */
+    'Segoe UI', /* 選取 'Segoe UI',，套用下方樣式 */
+    sans-serif; /* 選取 sans-serif;，套用下方樣式 */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+} /* 結束 :root 的樣式規則 */
+
+* { /* 既有樣式說明註解 */
+  box-sizing: border-box; /* 指定尺寸是否包含內距與邊框：border-box; */
+} /* 結束 * 的樣式規則 */
+
+html { /* 選取 html，套用下方樣式 */
+  min-height: 100%; /* 限制最小高度：100%; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+} /* 結束 html 的樣式規則 */
+
+body { /* 選取 body，套用下方樣式 */
+  min-height: 100vh; /* 限制最小高度：100vh; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 88px 16px 32px; /* 設定元素內距：88px 16px 32px; */
+  background: radial-gradient(circle at top, rgba(6, 182, 212, 0.15), transparent 34rem), #030712; /* 設定背景底色、漸層或圖片：radial-gradient(circle at top, rgba(6, 182, 212, 0.15), transparent 34rem), #030… */
+} /* 結束 body 的樣式規則 */
+
+body.drawer-open { /* 選取 body.drawer-open，套用下方樣式 */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+} /* 結束 body.drawer-open 的樣式規則 */
+
+body.name-onboarding-open { /* 選取 body.name-onboarding-open，套用下方樣式 */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+} /* 結束 body.name-onboarding-open 的樣式規則 */
+
+button, /* 選取 button,，套用下方樣式 */
+input, /* 選取 input,，套用下方樣式 */
+select, /* 選取 select,，套用下方樣式 */
+textarea { /* 選取 textarea，套用下方樣式 */
+  font: inherit; /* 設定 font 樣式屬性：inherit; */
+} /* 結束 button, input, select, textarea 的樣式規則 */
+
+button, /* 選取 button,，套用下方樣式 */
+a { /* 選取 a，套用下方樣式 */
+  -webkit-tap-highlight-color: transparent; /* 設定 -webkit-tap-highlight-color 樣式屬性：transparent; */
+} /* 結束 button, a 的樣式規則 */
+
+.hidden { /* 選取 .hidden，套用下方樣式 */
+  display: none !important; /* 設定排版模式或隱藏元素：none !important; */
+} /* 結束 .hidden 的樣式規則 */
+
+.topbar { /* 選取 .topbar，套用下方樣式 */
+  position: fixed; /* 設定定位方式：fixed; */
+  z-index: 30; /* 設定堆疊層級：30; */
+  top: 0; /* 設定 top 樣式屬性：0; */
+  right: 0; /* 設定 right 樣式屬性：0; */
+  left: 0; /* 設定 left 樣式屬性：0; */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 48px minmax(0, 1fr) auto; /* 設定網格欄寬與欄數：48px minmax(0, 1fr) auto; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  min-height: 64px; /* 限制最小高度：64px; */
+  padding: 8px 16px; /* 設定元素內距：8px 16px; */
+  background: rgba(3, 7, 18, 0.9); /* 設定背景底色、漸層或圖片：rgba(3, 7, 18, 0.9); */
+  border-bottom: 1px solid rgba(71, 85, 105, 0.7); /* 設定 border-bottom 樣式屬性：1px solid rgba(71, 85, 105, 0.7); */
+  backdrop-filter: blur(16px); /* 設定 backdrop-filter 樣式屬性：blur(16px); */
+} /* 結束 .topbar 的樣式規則 */
+
+.menu-button, /* 選取 .menu-button,，套用下方樣式 */
+.drawer-close-button { /* 選取 .drawer-close-button，套用下方樣式 */
+  display: inline-grid; /* 設定排版模式或隱藏元素：inline-grid; */
+  width: 44px; /* 設定寬度：44px; */
+  height: 44px; /* 設定高度：44px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 0; /* 設定元素內距：0; */
+  place-items: center; /* 設定 place-items 樣式屬性：center; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: #172033; /* 設定背景底色、漸層或圖片：#172033; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  font-size: 1.45rem; /* 設定文字大小：1.45rem; */
+  line-height: 1; /* 設定行高：1; */
+} /* 結束 .menu-button, .drawer-close-button 的樣式規則 */
+
+.topbar-title { /* 選取 .topbar-title，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+  font-size: 1rem; /* 設定文字大小：1rem; */
+  font-weight: 800; /* 設定字重：800; */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+  text-overflow: ellipsis; /* 設定 text-overflow 樣式屬性：ellipsis; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .topbar-title 的樣式規則 */
+
+.topbar-title span { /* 選取 .topbar-title span，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+} /* 結束 .topbar-title span 的樣式規則 */
+
+.topbar-user { /* 選取 .topbar-user，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+  min-width: 0; /* 限制最小寬度：0; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+} /* 結束 .topbar-user 的樣式規則 */
+
+.topbar-user img { /* 選取 .topbar-user img，套用下方樣式 */
+  width: 34px; /* 設定寬度：34px; */
+  height: 34px; /* 設定高度：34px; */
+  object-fit: cover; /* 設定 object-fit 樣式屬性：cover; */
+  background: #1f2937; /* 設定背景底色、漸層或圖片：#1f2937; */
+  border: 1px solid #155e75; /* 設定邊框：1px solid #155e75; */
+  border-radius: 50%; /* 設定圓角：50%; */
+} /* 結束 .topbar-user img 的樣式規則 */
+
+.topbar-user span { /* 選取 .topbar-user span，套用下方樣式 */
+  max-width: 150px; /* 限制最大寬度：150px; */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+  text-overflow: ellipsis; /* 設定 text-overflow 樣式屬性：ellipsis; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .topbar-user span 的樣式規則 */
+
+.drawer-overlay { /* 選取 .drawer-overlay，套用下方樣式 */
+  position: fixed; /* 設定定位方式：fixed; */
+  z-index: 39; /* 設定堆疊層級：39; */
+  inset: 0; /* 設定 inset 樣式屬性：0; */
+  visibility: hidden; /* 設定 visibility 樣式屬性：hidden; */
+  background: rgba(0, 0, 0, 0.62); /* 設定背景底色、漸層或圖片：rgba(0, 0, 0, 0.62); */
+  opacity: 0; /* 設定透明度：0; */
+  transition: /* 設定狀態變化時的過渡動畫： */
+    opacity 0.22s ease, /* 選取 opacity 0.22s ease,，套用下方樣式 */
+    visibility 0.22s ease; /* 選取 visibility 0.22s ease;，套用下方樣式 */
+} /* 結束 .drawer-overlay 的樣式規則 */
+
+.drawer-overlay.open { /* 選取 .drawer-overlay.open，套用下方樣式 */
+  visibility: visible; /* 設定 visibility 樣式屬性：visible; */
+  opacity: 1; /* 設定透明度：1; */
+} /* 結束 .drawer-overlay.open 的樣式規則 */
+
+.side-drawer { /* 選取 .side-drawer，套用下方樣式 */
+  position: fixed; /* 設定定位方式：fixed; */
+  z-index: 40; /* 設定堆疊層級：40; */
+  top: 0; /* 設定 top 樣式屬性：0; */
+  bottom: 0; /* 設定 bottom 樣式屬性：0; */
+  left: 0; /* 設定 left 樣式屬性：0; */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  width: min(86vw, 320px); /* 設定寬度：min(86vw, 320px); */
+  padding: 18px; /* 設定元素內距：18px; */
+  flex-direction: column; /* 設定 Flex 排列方向：column; */
+  background: #0b1220; /* 設定背景底色、漸層或圖片：#0b1220; */
+  border-right: 1px solid #334155; /* 設定 border-right 樣式屬性：1px solid #334155; */
+  box-shadow: 18px 0 50px rgba(0, 0, 0, 0.4); /* 設定 box-shadow 樣式屬性：18px 0 50px rgba(0, 0, 0, 0.4); */
+  transform: translateX(-105%); /* 設定移動、旋轉或縮放：translateX(-105%); */
+  transition: transform 0.22s ease; /* 設定狀態變化時的過渡動畫：transform 0.22s ease; */
+} /* 結束 .side-drawer 的樣式規則 */
+
+.side-drawer.open { /* 選取 .side-drawer.open，套用下方樣式 */
+  transform: translateX(0); /* 設定移動、旋轉或縮放：translateX(0); */
+} /* 結束 .side-drawer.open 的樣式規則 */
+
+.drawer-header { /* 選取 .drawer-header，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  margin-bottom: 16px; /* 設定 margin-bottom 樣式屬性：16px; */
+} /* 結束 .drawer-header 的樣式規則 */
+
+.drawer-brand { /* 選取 .drawer-brand，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+} /* 結束 .drawer-brand 的樣式規則 */
+
+.drawer-brand strong, /* 選取 .drawer-brand strong,，套用下方樣式 */
+.drawer-brand span { /* 選取 .drawer-brand span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+} /* 結束 .drawer-brand strong, .drawer-brand span 的樣式規則 */
+
+.drawer-brand strong { /* 選取 .drawer-brand strong，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-size: 1.05rem; /* 設定文字大小：1.05rem; */
+} /* 結束 .drawer-brand strong 的樣式規則 */
+
+.drawer-brand span { /* 選取 .drawer-brand span，套用下方樣式 */
+  margin-top: 3px; /* 設定 margin-top 樣式屬性：3px; */
+  color: #64748b; /* 設定文字顏色：#64748b; */
+  font-size: 0.72rem; /* 設定文字大小：0.72rem; */
+} /* 結束 .drawer-brand span 的樣式規則 */
+
+.drawer-nav { /* 選取 .drawer-nav，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 7px; /* 設定排列元素間距：7px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 0; /* 設定元素內距：0; */
+  list-style: none; /* 設定 list-style 樣式屬性：none; */
+  overflow-y: auto; /* 設定 overflow-y 樣式屬性：auto; */
+} /* 結束 .drawer-nav 的樣式規則 */
+
+.drawer-nav a { /* 選取 .drawer-nav a，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  padding: 12px 13px; /* 設定元素內距：12px 13px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  text-decoration: none; /* 設定 text-decoration 樣式屬性：none; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border: 1px solid transparent; /* 設定邊框：1px solid transparent; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  transition: /* 設定狀態變化時的過渡動畫： */
+    background 0.15s ease, /* 選取 background 0.15s ease,，套用下方樣式 */
+    border-color 0.15s ease; /* 選取 border-color 0.15s ease;，套用下方樣式 */
+} /* 結束 .drawer-nav a 的樣式規則 */
+
+.drawer-nav a:hover { /* 選取 .drawer-nav a:hover，套用下方樣式 */
+  background: #111c30; /* 設定背景底色、漸層或圖片：#111c30; */
+  border-color: #334155; /* 設定 border-color 樣式屬性：#334155; */
+} /* 結束 .drawer-nav a:hover 的樣式規則 */
+
+.drawer-nav a[aria-current='page'] { /* 選取 .drawer-nav a[aria-current='page']，套用下方樣式 */
+  color: #cffafe; /* 設定文字顏色：#cffafe; */
+  background: #164e63; /* 設定背景底色、漸層或圖片：#164e63; */
+  border-color: #0e7490; /* 設定 border-color 樣式屬性：#0e7490; */
+  font-weight: 750; /* 設定字重：750; */
+} /* 結束 .drawer-nav a[aria-current='page'] 的樣式規則 */
+
+.topbar-title .page-context { /* 選取 .topbar-title .page-context，套用下方樣式 */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+} /* 結束 .topbar-title .page-context 的樣式規則 */
+
+.nav-icon { /* 選取 .nav-icon，套用下方樣式 */
+  width: 24px; /* 設定寬度：24px; */
+  flex: none; /* 設定 flex 樣式屬性：none; */
+  text-align: center; /* 設定文字對齊：center; */
+  font-size: 1.05rem; /* 設定文字大小：1.05rem; */
+} /* 結束 .nav-icon 的樣式規則 */
+
+.drawer-footer { /* 選取 .drawer-footer，套用下方樣式 */
+  margin-top: auto; /* 設定 margin-top 樣式屬性：auto; */
+  padding-top: 16px; /* 設定 padding-top 樣式屬性：16px; */
+} /* 結束 .drawer-footer 的樣式規則 */
+
+.drawer-legal-links, /* 選取 .drawer-legal-links,，套用下方樣式 */
+.legal-links { /* 選取 .legal-links，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+  gap: 8px 14px; /* 設定排列元素間距：8px 14px; */
+} /* 結束 .drawer-legal-links, .legal-links 的樣式規則 */
+
+.drawer-legal-links { /* 選取 .drawer-legal-links，套用下方樣式 */
+  margin-bottom: 12px; /* 設定 margin-bottom 樣式屬性：12px; */
+  padding-top: 12px; /* 設定 padding-top 樣式屬性：12px; */
+  border-top: 1px solid #1e293b; /* 設定 border-top 樣式屬性：1px solid #1e293b; */
+} /* 結束 .drawer-legal-links 的樣式規則 */
+
+.drawer-legal-links a, /* 選取 .drawer-legal-links a,，套用下方樣式 */
+.legal-links a { /* 選取 .legal-links a，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-size: 0.8rem; /* 設定文字大小：0.8rem; */
+  text-underline-offset: 3px; /* 設定 text-underline-offset 樣式屬性：3px; */
+} /* 結束 .drawer-legal-links a, .legal-links a 的樣式規則 */
+
+.drawer-footer button { /* 選取 .drawer-footer button，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .drawer-footer button 的樣式規則 */
+
+.name-onboarding-overlay { /* 選取 .name-onboarding-overlay，套用下方樣式 */
+  position: fixed; /* 設定定位方式：fixed; */
+  z-index: 100; /* 設定堆疊層級：100; */
+  inset: 0; /* 設定 inset 樣式屬性：0; */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  padding: 20px; /* 設定元素內距：20px; */
+  place-items: center; /* 設定 place-items 樣式屬性：center; */
+  overflow-y: auto; /* 設定 overflow-y 樣式屬性：auto; */
+  background: rgba(3, 7, 18, 0.88); /* 設定背景底色、漸層或圖片：rgba(3, 7, 18, 0.88); */
+  backdrop-filter: blur(12px); /* 設定 backdrop-filter 樣式屬性：blur(12px); */
+} /* 結束 .name-onboarding-overlay 的樣式規則 */
+
+.name-onboarding-card { /* 選取 .name-onboarding-card，套用下方樣式 */
+  width: min(100%, 440px); /* 設定寬度：min(100%, 440px); */
+  padding: 26px; /* 設定元素內距：26px; */
+  background: #111827; /* 設定背景底色、漸層或圖片：#111827; */
+  border: 1px solid #0e7490; /* 設定邊框：1px solid #0e7490; */
+  border-radius: 20px; /* 設定圓角：20px; */
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.62); /* 設定 box-shadow 樣式屬性：0 24px 80px rgba(0, 0, 0, 0.62); */
+} /* 結束 .name-onboarding-card 的樣式規則 */
+
+.name-onboarding-icon { /* 選取 .name-onboarding-icon，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  width: 58px; /* 設定寬度：58px; */
+  height: 58px; /* 設定高度：58px; */
+  margin: 0 auto 13px; /* 設定元素外距：0 auto 13px; */
+  place-items: center; /* 設定 place-items 樣式屬性：center; */
+  background: #164e63; /* 設定背景底色、漸層或圖片：#164e63; */
+  border: 1px solid #0891b2; /* 設定邊框：1px solid #0891b2; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  font-size: 1.8rem; /* 設定文字大小：1.8rem; */
+} /* 結束 .name-onboarding-icon 的樣式規則 */
+
+.name-onboarding-card h2 { /* 選取 .name-onboarding-card h2，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  text-align: center; /* 設定文字對齊：center; */
+} /* 結束 .name-onboarding-card h2 的樣式規則 */
+
+.name-onboarding-card > p { /* 選取 .name-onboarding-card > p，套用下方樣式 */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  line-height: 1.65; /* 設定行高：1.65; */
+} /* 結束 .name-onboarding-card > p 的樣式規則 */
+
+.name-onboarding-card label { /* 選取 .name-onboarding-card label，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  margin-top: 18px; /* 設定 margin-top 樣式屬性：18px; */
+  color: #e2e8f0; /* 設定文字顏色：#e2e8f0; */
+  font-weight: 750; /* 設定字重：750; */
+} /* 結束 .name-onboarding-card label 的樣式規則 */
+
+.name-onboarding-card input { /* 選取 .name-onboarding-card input，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  margin-top: 7px; /* 設定 margin-top 樣式屬性：7px; */
+  padding: 12px; /* 設定元素內距：12px; */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 10px; /* 設定圓角：10px; */
+} /* 結束 .name-onboarding-card input 的樣式規則 */
+
+.name-onboarding-status { /* 選取 .name-onboarding-status，套用下方樣式 */
+  min-height: 22px; /* 限制最小高度：22px; */
+  margin: 10px 0 0; /* 設定元素外距：10px 0 0; */
+  color: #94a3b8 !important; /* 設定文字顏色：#94a3b8 !important; */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+} /* 結束 .name-onboarding-status 的樣式規則 */
+
+.name-onboarding-status.error { /* 選取 .name-onboarding-status.error，套用下方樣式 */
+  color: #fca5a5 !important; /* 設定文字顏色：#fca5a5 !important; */
+} /* 結束 .name-onboarding-status.error 的樣式規則 */
+
+.name-onboarding-actions { /* 選取 .name-onboarding-actions，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 9px; /* 設定排列元素間距：9px; */
+  margin-top: 17px; /* 設定 margin-top 樣式屬性：17px; */
+} /* 結束 .name-onboarding-actions 的樣式規則 */
+
+.page-container { /* 選取 .page-container，套用下方樣式 */
+  width: min(100%, 860px); /* 設定寬度：min(100%, 860px); */
+  margin: 0 auto; /* 設定元素外距：0 auto; */
+} /* 結束 .page-container 的樣式規則 */
+
+.page-heading { /* 選取 .page-heading，套用下方樣式 */
+  margin-bottom: 18px; /* 設定 margin-bottom 樣式屬性：18px; */
+} /* 結束 .page-heading 的樣式規則 */
+
+.page-heading h1 { /* 選取 .page-heading h1，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-size: clamp(1.55rem, 4vw, 2.1rem); /* 設定文字大小：clamp(1.55rem, 4vw, 2.1rem); */
+} /* 結束 .page-heading h1 的樣式規則 */
+
+.page-heading p { /* 選取 .page-heading p，套用下方樣式 */
+  margin: 7px 0 0; /* 設定元素外距：7px 0 0; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  line-height: 1.55; /* 設定行高：1.55; */
+} /* 結束 .page-heading p 的樣式規則 */
+
+.message { /* 選取 .message，套用下方樣式 */
+  margin-bottom: 16px; /* 設定 margin-bottom 樣式屬性：16px; */
+  padding: 12px 14px; /* 設定元素內距：12px 14px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  background: #111827; /* 設定背景底色、漸層或圖片：#111827; */
+  border: 1px solid #374151; /* 設定邊框：1px solid #374151; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .message 的樣式規則 */
+
+.message.success { /* 選取 .message.success，套用下方樣式 */
+  color: #a7f3d0; /* 設定文字顏色：#a7f3d0; */
+  background: rgba(6, 78, 59, 0.35); /* 設定背景底色、漸層或圖片：rgba(6, 78, 59, 0.35); */
+  border-color: #047857; /* 設定 border-color 樣式屬性：#047857; */
+} /* 結束 .message.success 的樣式規則 */
+
+.message.error { /* 選取 .message.error，套用下方樣式 */
+  color: #fecaca; /* 設定文字顏色：#fecaca; */
+  background: rgba(127, 29, 29, 0.35); /* 設定背景底色、漸層或圖片：rgba(127, 29, 29, 0.35); */
+  border-color: #b91c1c; /* 設定 border-color 樣式屬性：#b91c1c; */
+} /* 結束 .message.error 的樣式規則 */
+
+.card { /* 選取 .card，套用下方樣式 */
+  margin-bottom: 16px; /* 設定 margin-bottom 樣式屬性：16px; */
+  padding: 22px; /* 設定元素內距：22px; */
+  background: rgba(17, 24, 39, 0.94); /* 設定背景底色、漸層或圖片：rgba(17, 24, 39, 0.94); */
+  border: 1px solid #374151; /* 設定邊框：1px solid #374151; */
+  border-radius: 20px; /* 設定圓角：20px; */
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24); /* 設定 box-shadow 樣式屬性：0 18px 50px rgba(0, 0, 0, 0.24); */
+} /* 結束 .card 的樣式規則 */
+
+.card h2 { /* 選取 .card h2，套用下方樣式 */
+  margin: 0 0 16px; /* 設定元素外距：0 0 16px; */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+  font-size: 1.15rem; /* 設定文字大小：1.15rem; */
+} /* 結束 .card h2 的樣式規則 */
+
+.public-summary p { /* 選取 .public-summary p，套用下方樣式 */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  line-height: 1.65; /* 設定行高：1.65; */
+} /* 結束 .public-summary p 的樣式規則 */
+
+.public-summary .legal-links { /* 選取 .public-summary .legal-links，套用下方樣式 */
+  margin-top: 14px; /* 設定 margin-top 樣式屬性：14px; */
+} /* 結束 .public-summary .legal-links 的樣式規則 */
+
+.legal-topbar { /* 選取 .legal-topbar，套用下方樣式 */
+  grid-template-columns: auto minmax(0, 1fr); /* 設定網格欄寬與欄數：auto minmax(0, 1fr); */
+} /* 結束 .legal-topbar 的樣式規則 */
+
+.legal-back-link { /* 選取 .legal-back-link，套用下方樣式 */
+  display: inline-flex; /* 設定排版模式或隱藏元素：inline-flex; */
+  min-height: 40px; /* 限制最小高度：40px; */
+  padding: 8px 12px; /* 設定元素內距：8px 12px; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  color: #cffafe; /* 設定文字顏色：#cffafe; */
+  text-decoration: none; /* 設定 text-decoration 樣式屬性：none; */
+  background: #164e63; /* 設定背景底色、漸層或圖片：#164e63; */
+  border: 1px solid #0e7490; /* 設定邊框：1px solid #0e7490; */
+  border-radius: 10px; /* 設定圓角：10px; */
+} /* 結束 .legal-back-link 的樣式規則 */
+
+.legal-content { /* 選取 .legal-content，套用下方樣式 */
+  width: min(100%, 900px); /* 設定寬度：min(100%, 900px); */
+} /* 結束 .legal-content 的樣式規則 */
+
+.legal-section h2 { /* 選取 .legal-section h2，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+} /* 結束 .legal-section h2 的樣式規則 */
+
+.legal-section h3 { /* 選取 .legal-section h3，套用下方樣式 */
+  margin: 22px 0 8px; /* 設定元素外距：22px 0 8px; */
+  color: #e2e8f0; /* 設定文字顏色：#e2e8f0; */
+  font-size: 1rem; /* 設定文字大小：1rem; */
+} /* 結束 .legal-section h3 的樣式規則 */
+
+.legal-section p, /* 選取 .legal-section p,，套用下方樣式 */
+.legal-section li { /* 選取 .legal-section li，套用下方樣式 */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  line-height: 1.75; /* 設定行高：1.75; */
+} /* 結束 .legal-section p, .legal-section li 的樣式規則 */
+
+.legal-section ul { /* 選取 .legal-section ul，套用下方樣式 */
+  padding-left: 1.4rem; /* 設定 padding-left 樣式屬性：1.4rem; */
+} /* 結束 .legal-section ul 的樣式規則 */
+
+.legal-section a { /* 選取 .legal-section a，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .legal-section a 的樣式規則 */
+
+.legal-updated { /* 選取 .legal-updated，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.86rem; /* 設定文字大小：0.86rem; */
+} /* 結束 .legal-updated 的樣式規則 */
+
+.identity { /* 選取 .identity，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 14px; /* 設定排列元素間距：14px; */
+  margin-bottom: 16px; /* 設定 margin-bottom 樣式屬性：16px; */
+} /* 結束 .identity 的樣式規則 */
+
+.avatar { /* 選取 .avatar，套用下方樣式 */
+  width: 54px; /* 設定寬度：54px; */
+  height: 54px; /* 設定高度：54px; */
+  object-fit: cover; /* 設定 object-fit 樣式屬性：cover; */
+  background: #1f2937; /* 設定背景底色、漸層或圖片：#1f2937; */
+  border: 2px solid #155e75; /* 設定邊框：2px solid #155e75; */
+  border-radius: 50%; /* 設定圓角：50%; */
+} /* 結束 .avatar 的樣式規則 */
+
+.identity strong, /* 選取 .identity strong,，套用下方樣式 */
+.identity span { /* 選取 .identity span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+} /* 結束 .identity strong, .identity span 的樣式規則 */
+
+.identity span { /* 選取 .identity span，套用下方樣式 */
+  margin-top: 3px; /* 設定 margin-top 樣式屬性：3px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .identity span 的樣式規則 */
+
+.state-box { /* 選取 .state-box，套用下方樣式 */
+  margin: 14px 0; /* 設定元素外距：14px 0; */
+  padding: 14px; /* 設定元素內距：14px; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  border: 1px solid #374151; /* 設定邊框：1px solid #374151; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .state-box 的樣式規則 */
+
+.state-box strong { /* 選取 .state-box strong，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+} /* 結束 .state-box strong 的樣式規則 */
+
+.hint, /* 選取 .hint,，套用下方樣式 */
+.empty-text { /* 選取 .empty-text，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+  line-height: 1.55; /* 設定行高：1.55; */
+} /* 結束 .hint, .empty-text 的樣式規則 */
+
+.hint { /* 選取 .hint，套用下方樣式 */
+  margin: 8px 0; /* 設定元素外距：8px 0; */
+} /* 結束 .hint 的樣式規則 */
+
+.role-options { /* 選取 .role-options，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(2, minmax(0, 1fr)); */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  margin: 14px 0; /* 設定元素外距：14px 0; */
+} /* 結束 .role-options 的樣式規則 */
+
+.role-option, /* 選取 .role-option,，套用下方樣式 */
+.check-option { /* 選取 .check-option，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 9px; /* 設定排列元素間距：9px; */
+  padding: 12px; /* 設定元素內距：12px; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  cursor: pointer; /* 設定游標形狀：pointer; */
+} /* 結束 .role-option, .check-option 的樣式規則 */
+
+.checks { /* 選取 .checks，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+  margin: 12px 0; /* 設定元素外距：12px 0; */
+} /* 結束 .checks 的樣式規則 */
+
+input[type='radio'], /* 選取 input[type='radio'],，套用下方樣式 */
+input[type='checkbox'] { /* 選取 input[type='checkbox']，套用下方樣式 */
+  width: 18px; /* 設定寬度：18px; */
+  height: 18px; /* 設定高度：18px; */
+  accent-color: #06b6d4; /* 設定 accent-color 樣式屬性：#06b6d4; */
+} /* 結束 input[type='radio'], input[type='checkbox'] 的樣式規則 */
+
+input[type='date'], /* 選取 input[type='date'],，套用下方樣式 */
+#calendar-date, /* 選取 #calendar-date,，套用下方樣式 */
+#history-date, /* 選取 #history-date,，套用下方樣式 */
+#overview-date, /* 選取 #overview-date,，套用下方樣式 */
+#issue-date-filter, /* 選取 #issue-date-filter,，套用下方樣式 */
+select, /* 選取 select,，套用下方樣式 */
+textarea { /* 選取 textarea，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  padding: 12px; /* 設定元素內距：12px; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  color-scheme: dark; /* 告知瀏覽器使用深色或淺色控制項：dark; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 10px; /* 設定圓角：10px; */
+} /* 結束 input[type='date'], #calendar-date, #history-date, #overview-date, #issue-date-filter, select, textarea 的樣式規則 */
+
+select, /* 選取 select,，套用下方樣式 */
+input[type='date'], /* 選取 input[type='date'],，套用下方樣式 */
+#calendar-date, /* 選取 #calendar-date,，套用下方樣式 */
+#history-date, /* 選取 #history-date,，套用下方樣式 */
+#overview-date, /* 選取 #overview-date,，套用下方樣式 */
+#issue-date-filter { /* 選取 #issue-date-filter，套用下方樣式 */
+  margin: 7px 0 5px; /* 設定元素外距：7px 0 5px; */
+} /* 結束 select, input[type='date'], #calendar-date, #history-date, #overview-date, #issue-date-filter 的樣式規則 */
+
+textarea { /* 選取 textarea，套用下方樣式 */
+  min-height: 150px; /* 限制最小高度：150px; */
+  line-height: 1.55; /* 設定行高：1.55; */
+  resize: vertical; /* 設定 resize 樣式屬性：vertical; */
+} /* 結束 textarea 的樣式規則 */
+
+input:focus, /* 設定 input 樣式屬性：focus, */
+select:focus, /* 設定 select 樣式屬性：focus, */
+textarea:focus { /* 設定 textarea 樣式屬性：focus { */
+  outline: 2px solid #0891b2; /* 設定 outline 樣式屬性：2px solid #0891b2; */
+  outline-offset: 1px; /* 設定 outline-offset 樣式屬性：1px; */
+} /* 結束 input:focus, select:focus, textarea:focus 的樣式規則 */
+
+.textarea-footer { /* 選取 .textarea-footer，套用下方樣式 */
+  margin-top: 5px; /* 設定 margin-top 樣式屬性：5px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  text-align: right; /* 設定文字對齊：right; */
+} /* 結束 .textarea-footer 的樣式規則 */
+
+button, /* 選取 button,，套用下方樣式 */
+.button-link { /* 選取 .button-link，套用下方樣式 */
+  display: inline-flex; /* 設定排版模式或隱藏元素：inline-flex; */
+  width: 100%; /* 設定寬度：100%; */
+  min-height: 46px; /* 限制最小高度：46px; */
+  padding: 12px 18px; /* 設定元素內距：12px 18px; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: center; /* 設定主軸對齊：center; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  font-weight: 750; /* 設定字重：750; */
+  text-align: center; /* 設定文字對齊：center; */
+  text-decoration: none; /* 設定 text-decoration 樣式屬性：none; */
+  cursor: pointer; /* 設定游標形狀：pointer; */
+  background: #334155; /* 設定背景底色、漸層或圖片：#334155; */
+  border: 0; /* 設定邊框：0; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  transition: /* 設定狀態變化時的過渡動畫： */
+    transform 0.15s ease, /* 選取 transform 0.15s ease,，套用下方樣式 */
+    opacity 0.15s ease; /* 選取 opacity 0.15s ease;，套用下方樣式 */
+} /* 結束 button, .button-link 的樣式規則 */
+
+button:hover:not(:disabled), /* 設定 button 樣式屬性：hover:not(:disabled), */
+.button-link:hover { /* 選取 .button-link:hover，套用下方樣式 */
+  transform: translateY(-1px); /* 設定移動、旋轉或縮放：translateY(-1px); */
+} /* 結束 button:hover:not(:disabled), .button-link:hover 的樣式規則 */
+
+button:disabled { /* 設定 button 樣式屬性：disabled { */
+  cursor: wait; /* 設定游標形狀：wait; */
+  opacity: 0.55; /* 設定透明度：0.55; */
+} /* 結束 button:disabled 的樣式規則 */
+
+.primary-button { /* 選取 .primary-button，套用下方樣式 */
+  color: #06202a; /* 設定文字顏色：#06202a; */
+  background: #22d3ee; /* 設定背景底色、漸層或圖片：#22d3ee; */
+} /* 結束 .primary-button 的樣式規則 */
+
+.danger-button { /* 選取 .danger-button，套用下方樣式 */
+  color: #fff; /* 設定文字顏色：#fff; */
+  background: #dc2626; /* 設定背景底色、漸層或圖片：#dc2626; */
+} /* 結束 .danger-button 的樣式規則 */
+
+.secondary-button { /* 選取 .secondary-button，套用下方樣式 */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: #334155; /* 設定背景底色、漸層或圖片：#334155; */
+} /* 結束 .secondary-button 的樣式規則 */
+
+.google-button { /* 選取 .google-button，套用下方樣式 */
+  color: #111827; /* 設定文字顏色：#111827; */
+  background: #fff; /* 設定背景底色、漸層或圖片：#fff; */
+} /* 結束 .google-button 的樣式規則 */
+
+.button-stack { /* 選取 .button-stack，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 9px; /* 設定排列元素間距：9px; */
+  margin-top: 14px; /* 設定 margin-top 樣式屬性：14px; */
+} /* 結束 .button-stack 的樣式規則 */
+
+.people-list, /* 選取 .people-list,，套用下方樣式 */
+.calendar-list, /* 選取 .calendar-list,，套用下方樣式 */
+.history-list, /* 選取 .history-list,，套用下方樣式 */
+.admin-issue-list { /* 選取 .admin-issue-list，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 0; /* 設定元素內距：0; */
+  list-style: none; /* 設定 list-style 樣式屬性：none; */
+} /* 結束 .people-list, .calendar-list, .history-list, .admin-issue-list 的樣式規則 */
+
+.person-row { /* 選取 .person-row，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  padding: 12px 14px; /* 設定元素內距：12px 14px; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .person-row 的樣式規則 */
+
+.person-row span { /* 選取 .person-row span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  margin-top: 3px; /* 設定 margin-top 樣式屬性：3px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+} /* 結束 .person-row span 的樣式規則 */
+
+.role-badge, /* 選取 .role-badge,，套用下方樣式 */
+.status-badge { /* 選取 .status-badge，套用下方樣式 */
+  flex: none; /* 設定 flex 樣式屬性：none; */
+  padding: 5px 9px; /* 設定元素內距：5px 9px; */
+  color: #cffafe; /* 設定文字顏色：#cffafe; */
+  background: #164e63; /* 設定背景底色、漸層或圖片：#164e63; */
+  border-radius: 999px; /* 設定圓角：999px; */
+  font-size: 0.76rem; /* 設定文字大小：0.76rem; */
+  font-weight: 700; /* 設定字重：700; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .role-badge, .status-badge 的樣式規則 */
+
+.status-badge.warning { /* 選取 .status-badge.warning，套用下方樣式 */
+  color: #fef3c7; /* 設定文字顏色：#fef3c7; */
+  background: #78350f; /* 設定背景底色、漸層或圖片：#78350f; */
+} /* 結束 .status-badge.warning 的樣式規則 */
+
+.row-actions { /* 選取 .row-actions，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  flex: none; /* 設定 flex 樣式屬性：none; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: flex-end; /* 設定主軸對齊：flex-end; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+} /* 結束 .row-actions 的樣式規則 */
+
+.assist-button { /* 選取 .assist-button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-height: 36px; /* 限制最小高度：36px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 8px 10px; /* 設定元素內距：8px 10px; */
+  color: #111827; /* 設定文字顏色：#111827; */
+  background: #fbbf24; /* 設定背景底色、漸層或圖片：#fbbf24; */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+} /* 結束 .assist-button 的樣式規則 */
+
+.locked-label { /* 選取 .locked-label，套用下方樣式 */
+  padding: 5px 9px; /* 設定元素內距：5px 9px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  background: #334155; /* 設定背景底色、漸層或圖片：#334155; */
+  border-radius: 999px; /* 設定圓角：999px; */
+  font-size: 0.76rem; /* 設定文字大小：0.76rem; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .locked-label 的樣式規則 */
+
+.date-controls { /* 選取 .date-controls，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: minmax(0, 1fr) auto; /* 設定網格欄寬與欄數：minmax(0, 1fr) auto; */
+  align-items: end; /* 設定交叉軸對齊：end; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  margin: 14px 0; /* 設定元素外距：14px 0; */
+} /* 結束 .date-controls 的樣式規則 */
+
+.date-controls button { /* 選取 .date-controls button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-width: 120px; /* 限制最小寬度：120px; */
+} /* 結束 .date-controls button 的樣式規則 */
+
+.section-status { /* 選取 .section-status，套用下方樣式 */
+  margin: 10px 0; /* 設定元素外距：10px 0; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+} /* 結束 .section-status 的樣式規則 */
+
+.section-status.success { /* 選取 .section-status.success，套用下方樣式 */
+  color: #a7f3d0; /* 設定文字顏色：#a7f3d0; */
+} /* 結束 .section-status.success 的樣式規則 */
+
+.section-status.error { /* 選取 .section-status.error，套用下方樣式 */
+  color: #fecaca; /* 設定文字顏色：#fecaca; */
+} /* 結束 .section-status.error 的樣式規則 */
+
+.date-marker-hint { /* 選取 .date-marker-hint，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  margin: 6px 0 0; /* 設定元素外距：6px 0 0; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 7px; /* 設定排列元素間距：7px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+} /* 結束 .date-marker-hint 的樣式規則 */
+
+.date-marker-dot { /* 選取 .date-marker-dot，套用下方樣式 */
+  width: 8px; /* 設定寬度：8px; */
+  height: 8px; /* 設定高度：8px; */
+  flex: none; /* 設定 flex 樣式屬性：none; */
+  background: #22d3ee; /* 設定背景底色、漸層或圖片：#22d3ee; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  box-shadow: 0 0 6px rgba(34, 211, 238, 0.72); /* 設定 box-shadow 樣式屬性：0 0 6px rgba(34, 211, 238, 0.72); */
+} /* 結束 .date-marker-dot 的樣式規則 */
+
+.flatpickr-input[readonly] { /* 選取 .flatpickr-input[readonly]，套用下方樣式 */
+  cursor: pointer; /* 設定游標形狀：pointer; */
+} /* 結束 .flatpickr-input[readonly] 的樣式規則 */
+
+.flatpickr-calendar { /* 選取 .flatpickr-calendar，套用下方樣式 */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: #111827; /* 設定背景底色、漸層或圖片：#111827; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.58); /* 設定 box-shadow 樣式屬性：0 18px 55px rgba(0, 0, 0, 0.58); */
+} /* 結束 .flatpickr-calendar 的樣式規則 */
+
+.flatpickr-calendar.arrowTop::before { /* 選取 .flatpickr-calendar.arrowTop::before，套用下方樣式 */
+  border-bottom-color: #475569; /* 設定 border-bottom-color 樣式屬性：#475569; */
+} /* 結束 .flatpickr-calendar.arrowTop::before 的樣式規則 */
+
+.flatpickr-calendar.arrowTop::after { /* 選取 .flatpickr-calendar.arrowTop::after，套用下方樣式 */
+  border-bottom-color: #111827; /* 設定 border-bottom-color 樣式屬性：#111827; */
+} /* 結束 .flatpickr-calendar.arrowTop::after 的樣式規則 */
+
+.flatpickr-months .flatpickr-month, /* 選取 .flatpickr-months .flatpickr-month,，套用下方樣式 */
+.flatpickr-current-month .flatpickr-monthDropdown-months, /* 選取 .flatpickr-current-month .flatpickr-monthDropdown-months,，套用下方樣式 */
+.flatpickr-current-month input.cur-year { /* 選取 .flatpickr-current-month input.cur-year，套用下方樣式 */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: #111827; /* 設定背景底色、漸層或圖片：#111827; */
+} /* 結束 .flatpickr-months .flatpickr-month, .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year 的樣式規則 */
+
+.flatpickr-current-month .flatpickr-monthDropdown-months:hover, /* 選取 .flatpickr-current-month .flatpickr-monthDropdown-months:hover,，套用下方樣式 */
+.flatpickr-current-month input.cur-year:hover { /* 選取 .flatpickr-current-month input.cur-year:hover，套用下方樣式 */
+  background: #1e293b; /* 設定背景底色、漸層或圖片：#1e293b; */
+} /* 結束 .flatpickr-current-month .flatpickr-monthDropdown-months:hover, .flatpickr-current-month input.cur-year:hover 的樣式規則 */
+
+.flatpickr-months .flatpickr-prev-month, /* 選取 .flatpickr-months .flatpickr-prev-month,，套用下方樣式 */
+.flatpickr-months .flatpickr-next-month { /* 選取 .flatpickr-months .flatpickr-next-month，套用下方樣式 */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  fill: #cbd5e1; /* 設定 SVG 填色：#cbd5e1; */
+} /* 結束 .flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month 的樣式規則 */
+
+.flatpickr-months .flatpickr-prev-month:hover svg, /* 選取 .flatpickr-months .flatpickr-prev-month:hover svg,，套用下方樣式 */
+.flatpickr-months .flatpickr-next-month:hover svg { /* 選取 .flatpickr-months .flatpickr-next-month:hover svg，套用下方樣式 */
+  fill: #22d3ee; /* 設定 SVG 填色：#22d3ee; */
+} /* 結束 .flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-months .flatpickr-next-month:hover svg 的樣式規則 */
+
+span.flatpickr-weekday { /* 選取 span.flatpickr-weekday，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+} /* 結束 span.flatpickr-weekday 的樣式規則 */
+
+.flatpickr-day { /* 選取 .flatpickr-day，套用下方樣式 */
+  position: relative; /* 設定定位方式：relative; */
+  color: #e2e8f0; /* 設定文字顏色：#e2e8f0; */
+  border-color: transparent; /* 設定 border-color 樣式屬性：transparent; */
+} /* 結束 .flatpickr-day 的樣式規則 */
+
+.flatpickr-day.prevMonthDay, /* 選取 .flatpickr-day.prevMonthDay,，套用下方樣式 */
+.flatpickr-day.nextMonthDay { /* 選取 .flatpickr-day.nextMonthDay，套用下方樣式 */
+  color: #475569; /* 設定文字顏色：#475569; */
+} /* 結束 .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay 的樣式規則 */
+
+.flatpickr-day:hover, /* 選取 .flatpickr-day:hover,，套用下方樣式 */
+.flatpickr-day:focus { /* 選取 .flatpickr-day:focus，套用下方樣式 */
+  color: #ecfeff; /* 設定文字顏色：#ecfeff; */
+  background: #164e63; /* 設定背景底色、漸層或圖片：#164e63; */
+  border-color: #0e7490; /* 設定 border-color 樣式屬性：#0e7490; */
+} /* 結束 .flatpickr-day:hover, .flatpickr-day:focus 的樣式規則 */
+
+.flatpickr-day.today { /* 選取 .flatpickr-day.today，套用下方樣式 */
+  border-color: #22d3ee; /* 設定 border-color 樣式屬性：#22d3ee; */
+} /* 結束 .flatpickr-day.today 的樣式規則 */
+
+.flatpickr-day.selected, /* 選取 .flatpickr-day.selected,，套用下方樣式 */
+.flatpickr-day.selected:hover, /* 選取 .flatpickr-day.selected:hover,，套用下方樣式 */
+.flatpickr-day.selected:focus { /* 選取 .flatpickr-day.selected:focus，套用下方樣式 */
+  color: #06202a; /* 設定文字顏色：#06202a; */
+  background: #22d3ee; /* 設定背景底色、漸層或圖片：#22d3ee; */
+  border-color: #22d3ee; /* 設定 border-color 樣式屬性：#22d3ee; */
+  font-weight: 800; /* 設定字重：800; */
+} /* 結束 .flatpickr-day.selected, .flatpickr-day.selected:hover, .flatpickr-day.selected:focus 的樣式規則 */
+
+.flatpickr-day.has-records::after { /* 選取 .flatpickr-day.has-records::after，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  bottom: 3px; /* 設定 bottom 樣式屬性：3px; */
+  left: 50%; /* 設定 left 樣式屬性：50%; */
+  width: 6px; /* 設定寬度：6px; */
+  height: 6px; /* 設定高度：6px; */
+  content: ''; /* 設定偽元素內容：''; */
+  background: #22d3ee; /* 設定背景底色、漸層或圖片：#22d3ee; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  box-shadow: 0 0 5px rgba(34, 211, 238, 0.82); /* 設定 box-shadow 樣式屬性：0 0 5px rgba(34, 211, 238, 0.82); */
+  transform: translateX(-50%); /* 設定移動、旋轉或縮放：translateX(-50%); */
+} /* 結束 .flatpickr-day.has-records::after 的樣式規則 */
+
+.flatpickr-day.selected.has-records::after { /* 選取 .flatpickr-day.selected.has-records::after，套用下方樣式 */
+  background: #083344; /* 設定背景底色、漸層或圖片：#083344; */
+  box-shadow: none; /* 設定 box-shadow 樣式屬性：none; */
+} /* 結束 .flatpickr-day.selected.has-records::after 的樣式規則 */
+
+.calendar-event { /* 選取 .calendar-event，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: minmax(92px, auto) minmax(0, 1fr); /* 設定網格欄寬與欄數：minmax(92px, auto) minmax(0, 1fr); */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 14px; /* 設定排列元素間距：14px; */
+  padding: 13px 14px; /* 設定元素內距：13px 14px; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-left: 4px solid #06b6d4; /* 設定 border-left 樣式屬性：4px solid #06b6d4; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .calendar-event 的樣式規則 */
+
+.calendar-event-time { /* 選取 .calendar-event-time，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+  font-weight: 750; /* 設定字重：750; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .calendar-event-time 的樣式規則 */
+
+.calendar-event-title { /* 選取 .calendar-event-title，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .calendar-event-title 的樣式規則 */
+
+.calendar-event-title span { /* 選取 .calendar-event-title span，套用下方樣式 */
+  display: inline-block; /* 設定排版模式或隱藏元素：inline-block; */
+  margin-top: 4px; /* 設定 margin-top 樣式屬性：4px; */
+  padding: 3px 7px; /* 設定元素內距：3px 7px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  background: #334155; /* 設定背景底色、漸層或圖片：#334155; */
+  border-radius: 999px; /* 設定圓角：999px; */
+  font-size: 0.72rem; /* 設定文字大小：0.72rem; */
+} /* 結束 .calendar-event-title span 的樣式規則 */
+
+.history-row { /* 選取 .history-row，套用下方樣式 */
+  padding: 13px 14px; /* 設定元素內距：13px 14px; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .history-row 的樣式規則 */
+
+.history-name-row { /* 選取 .history-name-row，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+} /* 結束 .history-name-row 的樣式規則 */
+
+.history-time { /* 選取 .history-time，套用下方樣式 */
+  margin-top: 7px; /* 設定 margin-top 樣式屬性：7px; */
+  color: #e2e8f0; /* 設定文字顏色：#e2e8f0; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+} /* 結束 .history-time 的樣式規則 */
+
+.history-detail { /* 選取 .history-detail，套用下方樣式 */
+  margin-top: 5px; /* 設定 margin-top 樣式屬性：5px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+  line-height: 1.5; /* 設定行高：1.5; */
+} /* 結束 .history-detail 的樣式規則 */
+
+.admin-toolbar { /* 選取 .admin-toolbar，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: minmax(0, 1fr) auto; /* 設定網格欄寬與欄數：minmax(0, 1fr) auto; */
+  align-items: end; /* 設定交叉軸對齊：end; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  margin-bottom: 14px; /* 設定 margin-bottom 樣式屬性：14px; */
+} /* 結束 .admin-toolbar 的樣式規則 */
+
+.admin-toolbar button { /* 選取 .admin-toolbar button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-width: 120px; /* 限制最小寬度：120px; */
+  margin-bottom: 5px; /* 設定 margin-bottom 樣式屬性：5px; */
+} /* 結束 .admin-toolbar button 的樣式規則 */
+
+.permission-note { /* 選取 .permission-note，套用下方樣式 */
+  margin: 0 0 16px; /* 設定元素外距：0 0 16px; */
+  padding: 11px 13px; /* 設定元素內距：11px 13px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 10px; /* 設定圓角：10px; */
+  font-size: 0.85rem; /* 設定文字大小：0.85rem; */
+  line-height: 1.55; /* 設定行高：1.55; */
+} /* 結束 .permission-note 的樣式規則 */
+
+.permission-note.admin-mode { /* 選取 .permission-note.admin-mode，套用下方樣式 */
+  color: #a7f3d0; /* 設定文字顏色：#a7f3d0; */
+  border-color: #047857; /* 設定 border-color 樣式屬性：#047857; */
+} /* 結束 .permission-note.admin-mode 的樣式規則 */
+
+.permission-note.viewer-mode { /* 選取 .permission-note.viewer-mode，套用下方樣式 */
+  color: #fde68a; /* 設定文字顏色：#fde68a; */
+  border-color: #92400e; /* 設定 border-color 樣式屬性：#92400e; */
+} /* 結束 .permission-note.viewer-mode 的樣式規則 */
+
+.issue-filter-fields { /* 選取 .issue-filter-fields，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(2, minmax(0, 1fr)); */
+  gap: 12px; /* 設定排列元素間距：12px; */
+} /* 結束 .issue-filter-fields 的樣式規則 */
+
+.issue-filter-actions { /* 選取 .issue-filter-actions，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+  gap: 9px; /* 設定排列元素間距：9px; */
+  margin-top: 8px; /* 設定 margin-top 樣式屬性：8px; */
+} /* 結束 .issue-filter-actions 的樣式規則 */
+
+.issue-filter-actions button { /* 選取 .issue-filter-actions button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-width: 120px; /* 限制最小寬度：120px; */
+} /* 結束 .issue-filter-actions button 的樣式規則 */
+
+.admin-issue-row { /* 選取 .admin-issue-row，套用下方樣式 */
+  padding: 15px; /* 設定元素內距：15px; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-left: 4px solid #f59e0b; /* 設定 border-left 樣式屬性：4px solid #f59e0b; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .admin-issue-row 的樣式規則 */
+
+.admin-issue-row.resolved { /* 選取 .admin-issue-row.resolved，套用下方樣式 */
+  border-left-color: #10b981; /* 設定 border-left-color 樣式屬性：#10b981; */
+} /* 結束 .admin-issue-row.resolved 的樣式規則 */
+
+.admin-issue-header { /* 選取 .admin-issue-header，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: flex-start; /* 設定交叉軸對齊：flex-start; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+} /* 結束 .admin-issue-header 的樣式規則 */
+
+.admin-issue-reporter strong, /* 選取 .admin-issue-reporter strong,，套用下方樣式 */
+.admin-issue-reporter span, /* 選取 .admin-issue-reporter span,，套用下方樣式 */
+.admin-issue-meta span { /* 選取 .admin-issue-meta span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+} /* 結束 .admin-issue-reporter strong, .admin-issue-reporter span, .admin-issue-meta span 的樣式規則 */
+
+.admin-issue-time { /* 選取 .admin-issue-time，套用下方樣式 */
+  margin-top: 4px; /* 設定 margin-top 樣式屬性：4px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.8rem; /* 設定文字大小：0.8rem; */
+} /* 結束 .admin-issue-time 的樣式規則 */
+
+.status-badge.success { /* 選取 .status-badge.success，套用下方樣式 */
+  color: #d1fae5; /* 設定文字顏色：#d1fae5; */
+  background: #065f46; /* 設定背景底色、漸層或圖片：#065f46; */
+} /* 結束 .status-badge.success 的樣式規則 */
+
+.admin-issue-description { /* 選取 .admin-issue-description，套用下方樣式 */
+  margin: 13px 0; /* 設定元素外距：13px 0; */
+  padding: 12px; /* 設定元素內距：12px; */
+  color: #f1f5f9; /* 設定文字顏色：#f1f5f9; */
+  line-height: 1.6; /* 設定行高：1.6; */
+  white-space: pre-wrap; /* 控制換行與空白顯示：pre-wrap; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+  background: #111827; /* 設定背景底色、漸層或圖片：#111827; */
+  border-radius: 10px; /* 設定圓角：10px; */
+} /* 結束 .admin-issue-description 的樣式規則 */
+
+.admin-issue-meta { /* 選取 .admin-issue-meta，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 5px; /* 設定排列元素間距：5px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.8rem; /* 設定文字大小：0.8rem; */
+  line-height: 1.5; /* 設定行高：1.5; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .admin-issue-meta 的樣式規則 */
+
+.notification-state.error { /* 選取 .notification-state.error，套用下方樣式 */
+  color: #fca5a5; /* 設定文字顏色：#fca5a5; */
+} /* 結束 .notification-state.error 的樣式規則 */
+
+.admin-issue-actions { /* 選取 .admin-issue-actions，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  justify-content: flex-end; /* 設定主軸對齊：flex-end; */
+  margin-top: 13px; /* 設定 margin-top 樣式屬性：13px; */
+} /* 結束 .admin-issue-actions 的樣式規則 */
+
+.issue-status-button { /* 選取 .issue-status-button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-width: 150px; /* 限制最小寬度：150px; */
+} /* 結束 .issue-status-button 的樣式規則 */
+
+.shortcut-grid { /* 選取 .shortcut-grid，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(2, minmax(0, 1fr)); */
+  gap: 12px; /* 設定排列元素間距：12px; */
+} /* 結束 .shortcut-grid 的樣式規則 */
+
+.shortcut-card { /* 選取 .shortcut-card，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  min-height: 118px; /* 限制最小高度：118px; */
+  padding: 16px; /* 設定元素內距：16px; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  text-decoration: none; /* 設定 text-decoration 樣式屬性：none; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 14px; /* 設定圓角：14px; */
+  transition: /* 設定狀態變化時的過渡動畫： */
+    transform 0.15s ease, /* 選取 transform 0.15s ease,，套用下方樣式 */
+    border-color 0.15s ease; /* 選取 border-color 0.15s ease;，套用下方樣式 */
+} /* 結束 .shortcut-card 的樣式規則 */
+
+.shortcut-card:hover { /* 選取 .shortcut-card:hover，套用下方樣式 */
+  border-color: #0891b2; /* 設定 border-color 樣式屬性：#0891b2; */
+  transform: translateY(-2px); /* 設定移動、旋轉或縮放：translateY(-2px); */
+} /* 結束 .shortcut-card:hover 的樣式規則 */
+
+.shortcut-card strong, /* 選取 .shortcut-card strong,，套用下方樣式 */
+.shortcut-card span { /* 選取 .shortcut-card span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+} /* 結束 .shortcut-card strong, .shortcut-card span 的樣式規則 */
+
+.food-wheel-page { /* 選取 .food-wheel-page，套用下方樣式 */
+  width: min(100%, 900px); /* 設定寬度：min(100%, 900px); */
+} /* 結束 .food-wheel-page 的樣式規則 */
+
+.food-category-fieldset { /* 選取 .food-category-fieldset，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 0; /* 設定元素內距：0; */
+  border: 0; /* 設定邊框：0; */
+} /* 結束 .food-category-fieldset 的樣式規則 */
+
+.food-category-fieldset legend { /* 選取 .food-category-fieldset legend，套用下方樣式 */
+  margin-bottom: 6px; /* 設定 margin-bottom 樣式屬性：6px; */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+  font-size: 1.08rem; /* 設定文字大小：1.08rem; */
+  font-weight: 800; /* 設定字重：800; */
+} /* 結束 .food-category-fieldset legend 的樣式規則 */
+
+.food-category-grid { /* 選取 .food-category-grid，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(2, minmax(0, 1fr)); */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  margin-top: 13px; /* 設定 margin-top 樣式屬性：13px; */
+} /* 結束 .food-category-grid 的樣式規則 */
+
+.food-category-option { /* 選取 .food-category-option，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  min-width: 0; /* 限制最小寬度：0; */
+  padding: 13px; /* 設定元素內距：13px; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  cursor: pointer; /* 設定游標形狀：pointer; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  transition: /* 設定狀態變化時的過渡動畫： */
+    border-color 0.15s ease, /* 選取 border-color 0.15s ease,，套用下方樣式 */
+    transform 0.15s ease; /* 選取 transform 0.15s ease;，套用下方樣式 */
+} /* 結束 .food-category-option 的樣式規則 */
+
+.food-category-option:hover { /* 選取 .food-category-option:hover，套用下方樣式 */
+  border-color: #a855f7; /* 設定 border-color 樣式屬性：#a855f7; */
+  transform: translateY(-1px); /* 設定移動、旋轉或縮放：translateY(-1px); */
+} /* 結束 .food-category-option:hover 的樣式規則 */
+
+.food-category-option strong { /* 選取 .food-category-option strong，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .food-category-option strong 的樣式規則 */
+
+.food-category-option > span { /* 選取 .food-category-option > span，套用下方樣式 */
+  font-size: 1.2rem; /* 設定文字大小：1.2rem; */
+} /* 結束 .food-category-option > span 的樣式規則 */
+
+.food-category-option.expensive { /* 選取 .food-category-option.expensive，套用下方樣式 */
+  border-left: 4px solid #f43f5e; /* 設定 border-left 樣式屬性：4px solid #f43f5e; */
+} /* 結束 .food-category-option.expensive 的樣式規則 */
+
+.food-category-option.casual { /* 選取 .food-category-option.casual，套用下方樣式 */
+  border-left: 4px solid #f59e0b; /* 設定 border-left 樣式屬性：4px solid #f59e0b; */
+} /* 結束 .food-category-option.casual 的樣式規則 */
+
+.food-category-option.clean { /* 選取 .food-category-option.clean，套用下方樣式 */
+  border-left: 4px solid #10b981; /* 設定 border-left 樣式屬性：4px solid #10b981; */
+} /* 結束 .food-category-option.clean 的樣式規則 */
+
+.food-category-option.budget { /* 選取 .food-category-option.budget，套用下方樣式 */
+  border-left: 4px solid #06b6d4; /* 設定 border-left 樣式屬性：4px solid #06b6d4; */
+} /* 結束 .food-category-option.budget 的樣式規則 */
+
+.food-category-summary { /* 選取 .food-category-summary，套用下方樣式 */
+  margin: 12px 0 0; /* 設定元素外距：12px 0 0; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+  text-align: right; /* 設定文字對齊：right; */
+} /* 結束 .food-category-summary 的樣式規則 */
+
+.food-selection-actions, /* 選取 .food-selection-actions,，套用下方樣式 */
+.food-custom-actions { /* 選取 .food-custom-actions，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(2, minmax(0, 1fr)); */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  margin-top: 14px; /* 設定 margin-top 樣式屬性：14px; */
+} /* 結束 .food-selection-actions, .food-custom-actions 的樣式規則 */
+
+.food-accent-button { /* 選取 .food-accent-button，套用下方樣式 */
+  color: #fff; /* 設定文字顏色：#fff; */
+  background: linear-gradient(135deg, #c026d3, #7c3aed); /* 設定背景底色、漸層或圖片：linear-gradient(135deg, #c026d3, #7c3aed); */
+} /* 結束 .food-accent-button 的樣式規則 */
+
+.food-custom-panel { /* 選取 .food-custom-panel，套用下方樣式 */
+  margin-top: 16px; /* 設定 margin-top 樣式屬性：16px; */
+  padding: 16px; /* 設定元素內距：16px; */
+  background: rgba(8, 145, 178, 0.09); /* 設定背景底色、漸層或圖片：rgba(8, 145, 178, 0.09); */
+  border: 1px solid rgba(8, 145, 178, 0.45); /* 設定邊框：1px solid rgba(8, 145, 178, 0.45); */
+  border-radius: 14px; /* 設定圓角：14px; */
+} /* 結束 .food-custom-panel 的樣式規則 */
+
+.food-custom-header { /* 選取 .food-custom-header，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+} /* 結束 .food-custom-header 的樣式規則 */
+
+.food-custom-header label { /* 選取 .food-custom-header label，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-weight: 800; /* 設定字重：800; */
+} /* 結束 .food-custom-header label 的樣式規則 */
+
+.food-icon-button { /* 選取 .food-icon-button，套用下方樣式 */
+  width: 38px; /* 設定寬度：38px; */
+  min-height: 38px; /* 限制最小高度：38px; */
+  padding: 0; /* 設定元素內距：0; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+} /* 結束 .food-icon-button 的樣式規則 */
+
+.food-custom-actions { /* 選取 .food-custom-actions，套用下方樣式 */
+  grid-template-columns: auto minmax(0, 1fr); /* 設定網格欄寬與欄數：auto minmax(0, 1fr); */
+} /* 結束 .food-custom-actions 的樣式規則 */
+
+.food-custom-actions button:first-child { /* 選取 .food-custom-actions button:first-child，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-width: 90px; /* 限制最小寬度：90px; */
+} /* 結束 .food-custom-actions button:first-child 的樣式規則 */
+
+.food-wheel-toolbar { /* 選取 .food-wheel-toolbar，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  margin-bottom: 16px; /* 設定 margin-bottom 樣式屬性：16px; */
+} /* 結束 .food-wheel-toolbar 的樣式規則 */
+
+.food-wheel-toolbar strong, /* 選取 .food-wheel-toolbar strong,，套用下方樣式 */
+.food-wheel-toolbar span { /* 選取 .food-wheel-toolbar span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+} /* 結束 .food-wheel-toolbar strong, .food-wheel-toolbar span 的樣式規則 */
+
+.food-wheel-toolbar strong { /* 選取 .food-wheel-toolbar strong，套用下方樣式 */
+  color: #e879f9; /* 設定文字顏色：#e879f9; */
+} /* 結束 .food-wheel-toolbar strong 的樣式規則 */
+
+.food-wheel-toolbar span { /* 選取 .food-wheel-toolbar span，套用下方樣式 */
+  margin-top: 4px; /* 設定 margin-top 樣式屬性：4px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.8rem; /* 設定文字大小：0.8rem; */
+} /* 結束 .food-wheel-toolbar span 的樣式規則 */
+
+.food-wheel-toolbar button { /* 選取 .food-wheel-toolbar button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-width: 110px; /* 限制最小寬度：110px; */
+} /* 結束 .food-wheel-toolbar button 的樣式規則 */
+
+.food-wheel-wrap { /* 選取 .food-wheel-wrap，套用下方樣式 */
+  position: relative; /* 設定定位方式：relative; */
+  width: min(100%, 420px); /* 設定寬度：min(100%, 420px); */
+  margin: 0 auto; /* 設定元素外距：0 auto; */
+  aspect-ratio: 1; /* 設定 aspect-ratio 樣式屬性：1; */
+  user-select: none; /* 設定 user-select 樣式屬性：none; */
+} /* 結束 .food-wheel-wrap 的樣式規則 */
+
+.food-wheel-pointer { /* 選取 .food-wheel-pointer，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  z-index: 4; /* 設定堆疊層級：4; */
+  top: -5px; /* 設定 top 樣式屬性：-5px; */
+  left: 50%; /* 設定 left 樣式屬性：50%; */
+  width: 0; /* 設定寬度：0; */
+  height: 0; /* 設定高度：0; */
+  border-top: 34px solid #facc15; /* 設定 border-top 樣式屬性：34px solid #facc15; */
+  border-right: 18px solid transparent; /* 設定 border-right 樣式屬性：18px solid transparent; */
+  border-left: 18px solid transparent; /* 設定 border-left 樣式屬性：18px solid transparent; */
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7)); /* 設定 filter 樣式屬性：drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7)); */
+  transform: translateX(-50%); /* 設定移動、旋轉或縮放：translateX(-50%); */
+} /* 結束 .food-wheel-pointer 的樣式規則 */
+
+.food-wheel-canvas { /* 選取 .food-wheel-canvas，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  width: 100%; /* 設定寬度：100%; */
+  height: 100%; /* 設定高度：100%; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  filter: drop-shadow(0 0 25px rgba(217, 70, 239, 0.22)); /* 設定 filter 樣式屬性：drop-shadow(0 0 25px rgba(217, 70, 239, 0.22)); */
+} /* 結束 .food-wheel-canvas 的樣式規則 */
+
+.food-wheel-center-button { /* 選取 .food-wheel-center-button，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  z-index: 3; /* 設定堆疊層級：3; */
+  top: 50%; /* 設定 top 樣式屬性：50%; */
+  left: 50%; /* 設定 left 樣式屬性：50%; */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  width: 96px; /* 設定寬度：96px; */
+  min-height: 96px; /* 限制最小高度：96px; */
+  padding: 8px; /* 設定元素內距：8px; */
+  flex-direction: column; /* 設定 Flex 排列方向：column; */
+  color: #fde047; /* 設定文字顏色：#fde047; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  border: 5px solid #facc15; /* 設定邊框：5px solid #facc15; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  box-shadow: 0 0 24px rgba(250, 204, 21, 0.35); /* 設定 box-shadow 樣式屬性：0 0 24px rgba(250, 204, 21, 0.35); */
+  transform: translate(-50%, -50%); /* 設定移動、旋轉或縮放：translate(-50%, -50%); */
+} /* 結束 .food-wheel-center-button 的樣式規則 */
+
+.food-wheel-center-button:hover:not(:disabled) { /* 選取 .food-wheel-center-button:hover:not(:disabled)，套用下方樣式 */
+  transform: translate(-50%, -50%) scale(1.04); /* 設定移動、旋轉或縮放：translate(-50%, -50%) scale(1.04); */
+} /* 結束 .food-wheel-center-button:hover:not(:disabled) 的樣式規則 */
+
+.food-wheel-result { /* 選取 .food-wheel-result，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  min-height: 96px; /* 限制最小高度：96px; */
+  margin-top: 20px; /* 設定 margin-top 樣式屬性：20px; */
+  padding: 15px; /* 設定元素內距：15px; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: center; /* 設定主軸對齊：center; */
+  flex-direction: column; /* 設定 Flex 排列方向：column; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  text-align: center; /* 設定文字對齊：center; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 14px; /* 設定圓角：14px; */
+} /* 結束 .food-wheel-result 的樣式規則 */
+
+.food-result-icon { /* 選取 .food-result-icon，套用下方樣式 */
+  margin-bottom: 5px; /* 設定 margin-bottom 樣式屬性：5px; */
+  font-size: 1.8rem; /* 設定文字大小：1.8rem; */
+} /* 結束 .food-result-icon 的樣式規則 */
+
+.food-result-eyebrow { /* 選取 .food-result-eyebrow，套用下方樣式 */
+  color: #facc15; /* 設定文字顏色：#facc15; */
+  font-size: 0.75rem; /* 設定文字大小：0.75rem; */
+  font-weight: 800; /* 設定字重：800; */
+  letter-spacing: 0.18em; /* 設定 letter-spacing 樣式屬性：0.18em; */
+} /* 結束 .food-result-eyebrow 的樣式規則 */
+
+.food-result-name { /* 選取 .food-result-name，套用下方樣式 */
+  margin-top: 4px; /* 設定 margin-top 樣式屬性：4px; */
+  color: #fff; /* 設定文字顏色：#fff; */
+  font-size: clamp(1.45rem, 5vw, 2rem); /* 設定文字大小：clamp(1.45rem, 5vw, 2rem); */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .food-result-name 的樣式規則 */
+
+.food-result-note { /* 選取 .food-result-note，套用下方樣式 */
+  margin-top: 7px; /* 設定 margin-top 樣式屬性：7px; */
+  color: #64748b; /* 設定文字顏色：#64748b; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+} /* 結束 .food-result-note 的樣式規則 */
+
+.food-spinner { /* 選取 .food-spinner，套用下方樣式 */
+  width: 28px; /* 設定寬度：28px; */
+  height: 28px; /* 設定高度：28px; */
+  margin-bottom: 8px; /* 設定 margin-bottom 樣式屬性：8px; */
+  border: 3px solid #475569; /* 設定邊框：3px solid #475569; */
+  border-top-color: #e879f9; /* 設定 border-top-color 樣式屬性：#e879f9; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  animation: food-spin 0.8s linear infinite; /* 套用動畫：food-spin 0.8s linear infinite; */
+} /* 結束 .food-spinner 的樣式規則 */
+
+.food-celebration-layer { /* 選取 .food-celebration-layer，套用下方樣式 */
+  position: fixed; /* 設定定位方式：fixed; */
+  z-index: 60; /* 設定堆疊層級：60; */
+  inset: 0; /* 設定 inset 樣式屬性：0; */
+  pointer-events: none; /* 設定 pointer-events 樣式屬性：none; */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+} /* 結束 .food-celebration-layer 的樣式規則 */
+
+.food-confetti { /* 選取 .food-confetti，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  top: -18px; /* 設定 top 樣式屬性：-18px; */
+  width: 9px; /* 設定寬度：9px; */
+  height: 15px; /* 設定高度：15px; */
+  opacity: 0; /* 設定透明度：0; */
+  animation: food-confetti-fall var(--duration) ease-in var(--delay) forwards; /* 套用動畫：food-confetti-fall var(--duration) ease-in var(--delay) forwards; */
+} /* 結束 .food-confetti 的樣式規則 */
+
+.drawer-nav-group { /* 選取 .drawer-nav-group，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 5px; /* 設定排列元素間距：5px; */
+} /* 結束 .drawer-nav-group 的樣式規則 */
+
+.drawer-submenu-toggle { /* 選取 .drawer-submenu-toggle，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  width: 100%; /* 設定寬度：100%; */
+  min-height: 46px; /* 限制最小高度：46px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 12px 13px; /* 設定元素內距：12px 13px; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: flex-start; /* 設定主軸對齊：flex-start; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  text-align: left; /* 設定文字對齊：left; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border: 1px solid transparent; /* 設定邊框：1px solid transparent; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .drawer-submenu-toggle 的樣式規則 */
+
+.drawer-submenu-toggle:hover:not(:disabled) { /* 選取 .drawer-submenu-toggle:hover:not(:disabled)，套用下方樣式 */
+  background: #111c30; /* 設定背景底色、漸層或圖片：#111c30; */
+  border-color: #334155; /* 設定 border-color 樣式屬性：#334155; */
+  transform: none; /* 設定移動、旋轉或縮放：none; */
+} /* 結束 .drawer-submenu-toggle:hover:not(:disabled) 的樣式規則 */
+
+.drawer-nav-group.active > .drawer-submenu-toggle { /* 選取 .drawer-nav-group.active > .drawer-submenu-toggle，套用下方樣式 */
+  color: #cffafe; /* 設定文字顏色：#cffafe; */
+  background: rgba(22, 78, 99, 0.48); /* 設定背景底色、漸層或圖片：rgba(22, 78, 99, 0.48); */
+  border-color: #155e75; /* 設定 border-color 樣式屬性：#155e75; */
+} /* 結束 .drawer-nav-group.active > .drawer-submenu-toggle 的樣式規則 */
+
+.nav-chevron { /* 選取 .nav-chevron，套用下方樣式 */
+  margin-left: auto; /* 設定 margin-left 樣式屬性：auto; */
+  color: #64748b; /* 設定文字顏色：#64748b; */
+  font-size: 1.3rem; /* 設定文字大小：1.3rem; */
+  transform: rotate(0deg); /* 設定移動、旋轉或縮放：rotate(0deg); */
+  transition: transform 0.16s ease; /* 設定狀態變化時的過渡動畫：transform 0.16s ease; */
+} /* 結束 .nav-chevron 的樣式規則 */
+
+.drawer-submenu-toggle[aria-expanded='true'] .nav-chevron { /* 選取 .drawer-submenu-toggle[aria-expanded='true'] .nav-chevron，套用下方樣式 */
+  transform: rotate(90deg); /* 設定移動、旋轉或縮放：rotate(90deg); */
+} /* 結束 .drawer-submenu-toggle[aria-expanded='true'] .nav-chevron 的樣式規則 */
+
+.drawer-subnav { /* 選取 .drawer-subnav，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 4px; /* 設定排列元素間距：4px; */
+  margin: 0 0 2px 25px; /* 設定元素外距：0 0 2px 25px; */
+  padding: 3px 0 3px 10px; /* 設定元素內距：3px 0 3px 10px; */
+  list-style: none; /* 設定 list-style 樣式屬性：none; */
+  border-left: 1px solid #334155; /* 設定 border-left 樣式屬性：1px solid #334155; */
+} /* 結束 .drawer-subnav 的樣式規則 */
+
+.drawer-subnav a { /* 選取 .drawer-subnav a，套用下方樣式 */
+  padding: 10px 11px; /* 設定元素內距：10px 11px; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+} /* 結束 .drawer-subnav a 的樣式規則 */
+
+.drawer-subnav .nav-icon { /* 選取 .drawer-subnav .nav-icon，套用下方樣式 */
+  width: 20px; /* 設定寬度：20px; */
+  font-size: 0.88rem; /* 設定文字大小：0.88rem; */
+} /* 結束 .drawer-subnav .nav-icon 的樣式規則 */
+
+.home-system-heading { /* 選取 .home-system-heading，套用下方樣式 */
+  padding: 6px 0 2px; /* 設定元素內距：6px 0 2px; */
+} /* 結束 .home-system-heading 的樣式規則 */
+
+.home-identity-card { /* 選取 .home-identity-card，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: minmax(0, 1fr) auto; /* 設定網格欄寬與欄數：minmax(0, 1fr) auto; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 16px; /* 設定排列元素間距：16px; */
+} /* 結束 .home-identity-card 的樣式規則 */
+
+.home-identity-card .identity { /* 選取 .home-identity-card .identity，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .home-identity-card .identity 的樣式規則 */
+
+.home-identity-card > button { /* 選取 .home-identity-card > button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-width: 180px; /* 限制最小寬度：180px; */
+} /* 結束 .home-identity-card > button 的樣式規則 */
+
+.home-guide-link { /* 選取 .home-guide-link，套用下方樣式 */
+  margin: 14px 0 0; /* 設定元素外距：14px 0 0; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.86rem; /* 設定文字大小：0.86rem; */
+  text-align: center; /* 設定文字對齊：center; */
+} /* 結束 .home-guide-link 的樣式規則 */
+
+.home-guide-link a { /* 選取 .home-guide-link a，套用下方樣式 */
+  margin-left: 5px; /* 設定 margin-left 樣式屬性：5px; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  text-underline-offset: 3px; /* 設定 text-underline-offset 樣式屬性：3px; */
+} /* 結束 .home-guide-link a 的樣式規則 */
+
+.overview-page { /* 選取 .overview-page，套用下方樣式 */
+  width: min(100%, 1100px); /* 設定寬度：min(100%, 1100px); */
+} /* 結束 .overview-page 的樣式規則 */
+
+.overview-chart-date-panel { /* 選取 .overview-chart-date-panel，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  margin: 14px 0 4px; /* 設定元素外距：14px 0 4px; */
+  place-items: center; /* 設定 place-items 樣式屬性：center; */
+} /* 結束 .overview-chart-date-panel 的樣式規則 */
+
+.overview-date-controls { /* 選取 .overview-date-controls，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 46px minmax(145px, 220px) 38px 46px; /* 設定網格欄寬與欄數：46px minmax(145px, 220px) 38px 46px; */
+  gap: 0; /* 設定排列元素間距：0; */
+  width: min(100%, 330px); /* 設定寬度：min(100%, 330px); */
+  padding: 4px; /* 設定元素內距：4px; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 14px; /* 設定圓角：14px; */
+  box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.32); /* 設定 box-shadow 樣式屬性：inset 0 1px 8px rgba(0, 0, 0, 0.32); */
+} /* 結束 .overview-date-controls 的樣式規則 */
+
+.overview-date-controls #overview-date, /* 選取 .overview-date-controls #overview-date,，套用下方樣式 */
+.overview-date-controls button { /* 選取 .overview-date-controls button，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .overview-date-controls #overview-date, .overview-date-controls button 的樣式規則 */
+
+.overview-date-controls button { /* 選取 .overview-date-controls button，套用下方樣式 */
+  min-height: 42px; /* 限制最小高度：42px; */
+  padding: 0; /* 設定元素內距：0; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border-radius: 10px; /* 設定圓角：10px; */
+  font-size: 1.25rem; /* 設定文字大小：1.25rem; */
+  line-height: 1; /* 設定行高：1; */
+} /* 結束 .overview-date-controls button 的樣式規則 */
+
+.overview-date-controls button:hover:not(:disabled) { /* 選取 .overview-date-controls button:hover:not(:disabled)，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  background: #172033; /* 設定背景底色、漸層或圖片：#172033; */
+  transform: none; /* 設定移動、旋轉或縮放：none; */
+} /* 結束 .overview-date-controls button:hover:not(:disabled) 的樣式規則 */
+
+.overview-date-controls #overview-date { /* 選取 .overview-date-controls #overview-date，套用下方樣式 */
+  padding: 8px 4px; /* 設定元素內距：8px 4px; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  pointer-events: none; /* 設定 pointer-events 樣式屬性：none; */
+  text-align: center; /* 設定文字對齊：center; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border: 0; /* 設定邊框：0; */
+  border-radius: 0; /* 設定圓角：0; */
+  font-weight: 800; /* 設定字重：800; */
+  letter-spacing: 0.06em; /* 設定 letter-spacing 樣式屬性：0.06em; */
+} /* 結束 .overview-date-controls #overview-date 的樣式規則 */
+
+.overview-date-controls #overview-date::-webkit-calendar-picker-indicator { /* 選取 .overview-date-controls #overview-date::-webkit-calendar-picker-indicator，套用下方樣式 */
+  display: none; /* 設定排版模式或隱藏元素：none; */
+} /* 結束 .overview-date-controls #overview-date::-webkit-calendar-picker-indicator 的樣式規則 */
+
+.overview-date-controls #overview-date:focus { /* 選取 .overview-date-controls #overview-date:focus，套用下方樣式 */
+  outline: 0; /* 設定 outline 樣式屬性：0; */
+} /* 結束 .overview-date-controls #overview-date:focus 的樣式規則 */
+
+.overview-calendar-button svg { /* 選取 .overview-calendar-button svg，套用下方樣式 */
+  width: 18px; /* 設定寬度：18px; */
+  height: 18px; /* 設定高度：18px; */
+  fill: none; /* 設定 SVG 填色：none; */
+  stroke: currentColor; /* 設定 SVG 線條顏色：currentColor; */
+  stroke-linecap: round; /* 設定 stroke-linecap 樣式屬性：round; */
+  stroke-linejoin: round; /* 設定 stroke-linejoin 樣式屬性：round; */
+  stroke-width: 1.8; /* 設定 stroke-width 樣式屬性：1.8; */
+} /* 結束 .overview-calendar-button svg 的樣式規則 */
+
+.overview-chart-date-panel > .message { /* 選取 .overview-chart-date-panel > .message，套用下方樣式 */
+  min-height: 1.25em; /* 限制最小高度：1.25em; */
+  margin: 9px 0 0; /* 設定元素外距：9px 0 0; */
+  padding: 0; /* 設定元素內距：0; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  text-align: center; /* 設定文字對齊：center; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border: 0; /* 設定邊框：0; */
+  border-radius: 0; /* 設定圓角：0; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  line-height: 1.4; /* 設定行高：1.4; */
+} /* 結束 .overview-chart-date-panel > .message 的樣式規則 */
+
+.overview-chart-date-panel > .message.success { /* 選取 .overview-chart-date-panel > .message.success，套用下方樣式 */
+  color: #34d399; /* 設定文字顏色：#34d399; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border: 0; /* 設定邊框：0; */
+} /* 結束 .overview-chart-date-panel > .message.success 的樣式規則 */
+
+.overview-chart-date-panel > .message.error { /* 選取 .overview-chart-date-panel > .message.error，套用下方樣式 */
+  color: #fca5a5; /* 設定文字顏色：#fca5a5; */
+  background: transparent; /* 設定背景底色、漸層或圖片：transparent; */
+  border: 0; /* 設定邊框：0; */
+} /* 結束 .overview-chart-date-panel > .message.error 的樣式規則 */
+
+.overview-chart-card { /* 選取 .overview-chart-card，套用下方樣式 */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+} /* 結束 .overview-chart-card 的樣式規則 */
+
+.overview-chart-heading { /* 選取 .overview-chart-heading，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: flex-start; /* 設定交叉軸對齊：flex-start; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 16px; /* 設定排列元素間距：16px; */
+} /* 結束 .overview-chart-heading 的樣式規則 */
+
+.overview-chart-heading h2 { /* 選取 .overview-chart-heading h2，套用下方樣式 */
+  margin-bottom: 4px; /* 設定 margin-bottom 樣式屬性：4px; */
+} /* 結束 .overview-chart-heading h2 的樣式規則 */
+
+.timeline-legend, /* 選取 .timeline-legend,，套用下方樣式 */
+.guide-color-list { /* 選取 .guide-color-list，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+  gap: 8px 14px; /* 設定排列元素間距：8px 14px; */
+  margin: 12px 0 15px; /* 設定元素外距：12px 0 15px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+} /* 結束 .timeline-legend, .guide-color-list 的樣式規則 */
+
+.timeline-legend span, /* 選取 .timeline-legend span,，套用下方樣式 */
+.guide-color-list span { /* 選取 .guide-color-list span，套用下方樣式 */
+  display: inline-flex; /* 設定排版模式或隱藏元素：inline-flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 6px; /* 設定排列元素間距：6px; */
+} /* 結束 .timeline-legend span, .guide-color-list span 的樣式規則 */
+
+.timeline-legend i, /* 選取 .timeline-legend i,，套用下方樣式 */
+.guide-color-list i { /* 選取 .guide-color-list i，套用下方樣式 */
+  display: inline-block; /* 設定排版模式或隱藏元素：inline-block; */
+  width: 13px; /* 設定寬度：13px; */
+  height: 13px; /* 設定高度：13px; */
+  flex: none; /* 設定 flex 樣式屬性：none; */
+  border: 1px solid rgba(255, 255, 255, 0.55); /* 設定邊框：1px solid rgba(255, 255, 255, 0.55); */
+  border-radius: 4px; /* 設定圓角：4px; */
+} /* 結束 .timeline-legend i, .guide-color-list i 的樣式規則 */
+
+.timeline-legend i.status-completed, /* 選取 .timeline-legend i.status-completed,，套用下方樣式 */
+.guide-color-list i.status-completed, /* 選取 .guide-color-list i.status-completed,，套用下方樣式 */
+.timeline-dialog-status.status-completed { /* 選取 .timeline-dialog-status.status-completed，套用下方樣式 */
+  background: #0891b2; /* 設定背景底色、漸層或圖片：#0891b2; */
+} /* 結束 .timeline-legend i.status-completed, .guide-color-list i.status-completed, .timeline-dialog-status.status-completed 的樣式規則 */
+
+.timeline-legend i.status-ongoing, /* 選取 .timeline-legend i.status-ongoing,，套用下方樣式 */
+.guide-color-list i.status-ongoing, /* 選取 .guide-color-list i.status-ongoing,，套用下方樣式 */
+.timeline-dialog-status.status-ongoing { /* 選取 .timeline-dialog-status.status-ongoing，套用下方樣式 */
+  background: #059669; /* 設定背景底色、漸層或圖片：#059669; */
+} /* 結束 .timeline-legend i.status-ongoing, .guide-color-list i.status-ongoing, .timeline-dialog-status.status-ongoing 的樣式規則 */
+
+.timeline-legend i.status-overtime, /* 選取 .timeline-legend i.status-overtime,，套用下方樣式 */
+.guide-color-list i.status-overtime, /* 選取 .guide-color-list i.status-overtime,，套用下方樣式 */
+.timeline-dialog-status.status-overtime { /* 選取 .timeline-dialog-status.status-overtime，套用下方樣式 */
+  background: #dc2626; /* 設定背景底色、漸層或圖片：#dc2626; */
+} /* 結束 .timeline-legend i.status-overtime, .guide-color-list i.status-overtime, .timeline-dialog-status.status-overtime 的樣式規則 */
+
+.timeline-legend i.status-forgotten, /* 選取 .timeline-legend i.status-forgotten,，套用下方樣式 */
+.guide-color-list i.status-forgotten, /* 選取 .guide-color-list i.status-forgotten,，套用下方樣式 */
+.timeline-dialog-status.status-forgotten { /* 選取 .timeline-dialog-status.status-forgotten，套用下方樣式 */
+  background: #ca8a04; /* 設定背景底色、漸層或圖片：#ca8a04; */
+} /* 結束 .timeline-legend i.status-forgotten, .guide-color-list i.status-forgotten, .timeline-dialog-status.status-forgotten 的樣式規則 */
+
+.timeline-legend i.status-reservation, /* 選取 .timeline-legend i.status-reservation,，套用下方樣式 */
+.guide-color-list i.status-reservation, /* 選取 .guide-color-list i.status-reservation,，套用下方樣式 */
+.timeline-dialog-status.status-reservation { /* 選取 .timeline-dialog-status.status-reservation，套用下方樣式 */
+  background: #7c3aed; /* 設定背景底色、漸層或圖片：#7c3aed; */
+} /* 結束 .timeline-legend i.status-reservation, .guide-color-list i.status-reservation, .timeline-dialog-status.status-reservation 的樣式規則 */
+
+.overview-empty { /* 選取 .overview-empty，套用下方樣式 */
+  margin-bottom: 14px; /* 設定 margin-bottom 樣式屬性：14px; */
+  padding: 18px; /* 設定元素內距：18px; */
+  text-align: center; /* 設定文字對齊：center; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px dashed #475569; /* 設定邊框：1px dashed #475569; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .overview-empty 的樣式規則 */
+
+.timeline-scroll { /* 選取 .timeline-scroll，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 14px; /* 設定圓角：14px; */
+} /* 結束 .timeline-scroll 的樣式規則 */
+
+.timeline-scroll:focus-visible { /* 選取 .timeline-scroll:focus-visible，套用下方樣式 */
+  outline: 2px solid #0891b2; /* 設定 outline 樣式屬性：2px solid #0891b2; */
+  outline-offset: 2px; /* 設定 outline-offset 樣式屬性：2px; */
+} /* 結束 .timeline-scroll:focus-visible 的樣式規則 */
+
+.timeline-board { /* 選取 .timeline-board，套用下方樣式 */
+  --timeline-label-width: 120px; /* 定義可重用的 CSS 變數：120px; */
+  width: 100%; /* 設定寬度：100%; */
+  min-width: 0; /* 限制最小寬度：0; */
+  padding: 12px; /* 設定元素內距：12px; */
+} /* 結束 .timeline-board 的樣式規則 */
+
+.timeline-axis-row, /* 選取 .timeline-axis-row,，套用下方樣式 */
+.timeline-row { /* 選取 .timeline-row，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: var(--timeline-label-width) minmax(0, 1fr); /* 設定網格欄寬與欄數：var(--timeline-label-width) minmax(0, 1fr); */
+  align-items: stretch; /* 設定交叉軸對齊：stretch; */
+} /* 結束 .timeline-axis-row, .timeline-row 的樣式規則 */
+
+.timeline-sticky-label { /* 選取 .timeline-sticky-label，套用下方樣式 */
+  position: relative; /* 設定定位方式：relative; */
+  z-index: 5; /* 設定堆疊層級：5; */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  padding: 0 12px 0 4px; /* 設定元素內距：0 12px 0 4px; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  color: #e2e8f0; /* 設定文字顏色：#e2e8f0; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+  text-overflow: ellipsis; /* 設定 text-overflow 樣式屬性：ellipsis; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .timeline-sticky-label 的樣式規則 */
+
+.timeline-axis-label { /* 選取 .timeline-axis-label，套用下方樣式 */
+  justify-content: flex-start; /* 設定主軸對齊：flex-start; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.76rem; /* 設定文字大小：0.76rem; */
+  font-weight: 750; /* 設定字重：750; */
+} /* 結束 .timeline-axis-label 的樣式規則 */
+
+.timeline-axis-track, /* 選取 .timeline-axis-track,，套用下方樣式 */
+.timeline-track { /* 選取 .timeline-track，套用下方樣式 */
+  position: relative; /* 設定定位方式：relative; */
+} /* 結束 .timeline-axis-track, .timeline-track 的樣式規則 */
+
+.timeline-axis-track { /* 選取 .timeline-axis-track，套用下方樣式 */
+  height: 36px; /* 設定高度：36px; */
+} /* 結束 .timeline-axis-track 的樣式規則 */
+
+.timeline-axis-track > span:not(.timeline-now-marker) { /* 選取 .timeline-axis-track > span:not(.timeline-now-marker)，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  top: 10px; /* 設定 top 樣式屬性：10px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace; /* 設定字型與替代字型：ui-monospace, 'SFMono-Regular', Consolas, monospace; */
+  font-size: 0.66rem; /* 設定文字大小：0.66rem; */
+  font-weight: 700; /* 設定字重：700; */
+  line-height: 1; /* 設定行高：1; */
+  transform: translateX(-50%); /* 設定移動、旋轉或縮放：translateX(-50%); */
+} /* 結束 .timeline-axis-track > span:not(.timeline-now-marker) 的樣式規則 */
+
+.timeline-axis-track > span.first { /* 選取 .timeline-axis-track > span.first，套用下方樣式 */
+  transform: none; /* 設定移動、旋轉或縮放：none; */
+} /* 結束 .timeline-axis-track > span.first 的樣式規則 */
+
+.timeline-axis-track > span.last { /* 選取 .timeline-axis-track > span.last，套用下方樣式 */
+  transform: translateX(-100%); /* 設定移動、旋轉或縮放：translateX(-100%); */
+} /* 結束 .timeline-axis-track > span.last 的樣式規則 */
+
+.timeline-row { /* 選取 .timeline-row，套用下方樣式 */
+  border-bottom: 1px solid rgba(51, 65, 85, 0.62); /* 設定 border-bottom 樣式屬性：1px solid rgba(51, 65, 85, 0.62); */
+} /* 結束 .timeline-row 的樣式規則 */
+
+.timeline-reservation-group { /* 選取 .timeline-reservation-group，套用下方樣式 */
+  border-top: 1px solid #334155; /* 設定 border-top 樣式屬性：1px solid #334155; */
+} /* 結束 .timeline-reservation-group 的樣式規則 */
+
+.timeline-reservation-group .timeline-row:last-child { /* 選取 .timeline-reservation-group .timeline-row:last-child，套用下方樣式 */
+  border-bottom: 0; /* 設定 border-bottom 樣式屬性：0; */
+} /* 結束 .timeline-reservation-group .timeline-row:last-child 的樣式規則 */
+
+.timeline-person-label { /* 選取 .timeline-person-label，套用下方樣式 */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+  font-weight: 750; /* 設定字重：750; */
+} /* 結束 .timeline-person-label 的樣式規則 */
+
+.timeline-track { /* 選取 .timeline-track，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+  min-height: 48px; /* 限制最小高度：48px; */
+} /* 結束 .timeline-track 的樣式規則 */
+
+.timeline-bar { /* 選取 .timeline-bar，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  z-index: 2; /* 設定堆疊層級：2; */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  min-width: 5px; /* 限制最小寬度：5px; */
+  min-height: 24px; /* 限制最小高度：24px; */
+  height: 24px; /* 設定高度：24px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 0; /* 設定元素內距：0; */
+  border: 1px solid rgba(255, 255, 255, 0.35); /* 設定邊框：1px solid rgba(255, 255, 255, 0.35); */
+  border-radius: 6px; /* 設定圓角：6px; */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* 設定 box-shadow 樣式屬性：0 3px 10px rgba(0, 0, 0, 0.3); */
+  overflow: visible; /* 設定內容超出容器時的處理：visible; */
+} /* 結束 .timeline-bar 的樣式規則 */
+
+.timeline-bar::before { /* 選取 .timeline-bar::before，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  top: -8px; /* 設定 top 樣式屬性：-8px; */
+  bottom: -8px; /* 設定 bottom 樣式屬性：-8px; */
+  left: 50%; /* 設定 left 樣式屬性：50%; */
+  width: max(100%, 18px); /* 設定寬度：max(100%, 18px); */
+  content: ''; /* 設定偽元素內容：''; */
+  transform: translateX(-50%); /* 設定移動、旋轉或縮放：translateX(-50%); */
+} /* 結束 .timeline-bar::before 的樣式規則 */
+
+.timeline-bar:hover:not(:disabled) { /* 選取 .timeline-bar:hover:not(:disabled)，套用下方樣式 */
+  z-index: 4; /* 設定堆疊層級：4; */
+  filter: brightness(1.18); /* 設定 filter 樣式屬性：brightness(1.18); */
+  outline: 2px solid rgba(255, 255, 255, 0.48); /* 設定 outline 樣式屬性：2px solid rgba(255, 255, 255, 0.48); */
+  transform: none; /* 設定移動、旋轉或縮放：none; */
+} /* 結束 .timeline-bar:hover:not(:disabled) 的樣式規則 */
+
+.timeline-bar:focus-visible { /* 選取 .timeline-bar:focus-visible，套用下方樣式 */
+  z-index: 4; /* 設定堆疊層級：4; */
+  outline: 3px solid #f8fafc; /* 設定 outline 樣式屬性：3px solid #f8fafc; */
+  outline-offset: 2px; /* 設定 outline-offset 樣式屬性：2px; */
+} /* 結束 .timeline-bar:focus-visible 的樣式規則 */
+
+.timeline-bar.status-completed { /* 選取 .timeline-bar.status-completed，套用下方樣式 */
+  background: #0891b2; /* 設定背景底色、漸層或圖片：#0891b2; */
+} /* 結束 .timeline-bar.status-completed 的樣式規則 */
+
+.timeline-bar.status-ongoing { /* 選取 .timeline-bar.status-ongoing，套用下方樣式 */
+  background: #059669; /* 設定背景底色、漸層或圖片：#059669; */
+} /* 結束 .timeline-bar.status-ongoing 的樣式規則 */
+
+.timeline-bar.status-overtime { /* 選取 .timeline-bar.status-overtime，套用下方樣式 */
+  background: #dc2626; /* 設定背景底色、漸層或圖片：#dc2626; */
+} /* 結束 .timeline-bar.status-overtime 的樣式規則 */
+
+.timeline-bar.status-forgotten { /* 選取 .timeline-bar.status-forgotten，套用下方樣式 */
+  background: #ca8a04; /* 設定背景底色、漸層或圖片：#ca8a04; */
+} /* 結束 .timeline-bar.status-forgotten 的樣式規則 */
+
+.timeline-bar.status-reservation { /* 選取 .timeline-bar.status-reservation，套用下方樣式 */
+  background: #7c3aed; /* 設定背景底色、漸層或圖片：#7c3aed; */
+  border-color: #c4b5fd; /* 設定 border-color 樣式屬性：#c4b5fd; */
+} /* 結束 .timeline-bar.status-reservation 的樣式規則 */
+
+.timeline-now-marker { /* 選取 .timeline-now-marker，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  z-index: 3; /* 設定堆疊層級：3; */
+  top: 0; /* 設定 top 樣式屬性：0; */
+  bottom: 0; /* 設定 bottom 樣式屬性：0; */
+  width: 2px; /* 設定寬度：2px; */
+  background: #f8fafc; /* 設定背景底色、漸層或圖片：#f8fafc; */
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.7); /* 設定 box-shadow 樣式屬性：0 0 7px rgba(255, 255, 255, 0.7); */
+  pointer-events: none; /* 設定 pointer-events 樣式屬性：none; */
+} /* 結束 .timeline-now-marker 的樣式規則 */
+
+.timeline-axis-track .timeline-now-marker::before { /* 選取 .timeline-axis-track .timeline-now-marker::before，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  top: 0; /* 設定 top 樣式屬性：0; */
+  left: 50%; /* 設定 left 樣式屬性：50%; */
+  width: 7px; /* 設定寬度：7px; */
+  height: 7px; /* 設定高度：7px; */
+  content: ''; /* 設定偽元素內容：''; */
+  background: #f8fafc; /* 設定背景底色、漸層或圖片：#f8fafc; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  transform: translate(-50%, -50%); /* 設定移動、旋轉或縮放：translate(-50%, -50%); */
+} /* 結束 .timeline-axis-track .timeline-now-marker::before 的樣式規則 */
+
+.timeline-section-empty { /* 選取 .timeline-section-empty，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 14px; /* 設定元素內距：14px; */
+  color: #64748b; /* 設定文字顏色：#64748b; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  border-bottom: 1px solid rgba(51, 65, 85, 0.62); /* 設定 border-bottom 樣式屬性：1px solid rgba(51, 65, 85, 0.62); */
+} /* 結束 .timeline-section-empty 的樣式規則 */
+
+.timeline-dialog { /* 選取 .timeline-dialog，套用下方樣式 */
+  width: min(calc(100% - 28px), 520px); /* 設定寬度：min(calc(100% - 28px), 520px); */
+  max-height: min(82vh, 680px); /* 設定 max-height 樣式屬性：min(82vh, 680px); */
+  padding: 20px; /* 設定元素內距：20px; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: #111827; /* 設定背景底色、漸層或圖片：#111827; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 18px; /* 設定圓角：18px; */
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65); /* 設定 box-shadow 樣式屬性：0 25px 80px rgba(0, 0, 0, 0.65); */
+  overflow-y: auto; /* 設定 overflow-y 樣式屬性：auto; */
+} /* 結束 .timeline-dialog 的樣式規則 */
+
+.timeline-dialog::backdrop { /* 選取 .timeline-dialog::backdrop，套用下方樣式 */
+  background: rgba(0, 0, 0, 0.72); /* 設定背景底色、漸層或圖片：rgba(0, 0, 0, 0.72); */
+  backdrop-filter: blur(4px); /* 設定 backdrop-filter 樣式屬性：blur(4px); */
+} /* 結束 .timeline-dialog::backdrop 的樣式規則 */
+
+.timeline-dialog-header { /* 選取 .timeline-dialog-header，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 14px; /* 設定排列元素間距：14px; */
+  margin-bottom: 14px; /* 設定 margin-bottom 樣式屬性：14px; */
+} /* 結束 .timeline-dialog-header 的樣式規則 */
+
+.timeline-dialog-header h2 { /* 選取 .timeline-dialog-header h2，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+  font-size: 1.15rem; /* 設定文字大小：1.15rem; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .timeline-dialog-header h2 的樣式規則 */
+
+.timeline-dialog-header button { /* 選取 .timeline-dialog-header button，套用下方樣式 */
+  flex: none; /* 設定 flex 樣式屬性：none; */
+} /* 結束 .timeline-dialog-header button 的樣式規則 */
+
+.timeline-dialog-status { /* 選取 .timeline-dialog-status，套用下方樣式 */
+  display: inline-flex; /* 設定排版模式或隱藏元素：inline-flex; */
+  margin-bottom: 14px; /* 設定 margin-bottom 樣式屬性：14px; */
+  padding: 6px 10px; /* 設定元素內距：6px 10px; */
+  color: #fff; /* 設定文字顏色：#fff; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  font-weight: 800; /* 設定字重：800; */
+  border: 1px solid rgba(255, 255, 255, 0.35); /* 設定邊框：1px solid rgba(255, 255, 255, 0.35); */
+  border-radius: 999px; /* 設定圓角：999px; */
+} /* 結束 .timeline-dialog-status 的樣式規則 */
+
+.timeline-detail-list { /* 選取 .timeline-detail-list，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 0; /* 設定排列元素間距：0; */
+  margin: 0 0 18px; /* 設定元素外距：0 0 18px; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+} /* 結束 .timeline-detail-list 的樣式規則 */
+
+.timeline-detail-list > div { /* 選取 .timeline-detail-list > div，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 105px minmax(0, 1fr); /* 設定網格欄寬與欄數：105px minmax(0, 1fr); */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  padding: 10px 12px; /* 設定元素內距：10px 12px; */
+  border-bottom: 1px solid #1e293b; /* 設定 border-bottom 樣式屬性：1px solid #1e293b; */
+} /* 結束 .timeline-detail-list > div 的樣式規則 */
+
+.timeline-detail-list > div:last-child { /* 選取 .timeline-detail-list > div:last-child，套用下方樣式 */
+  border-bottom: 0; /* 設定 border-bottom 樣式屬性：0; */
+} /* 結束 .timeline-detail-list > div:last-child 的樣式規則 */
+
+.timeline-detail-list dt { /* 選取 .timeline-detail-list dt，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  font-weight: 750; /* 設定字重：750; */
+} /* 結束 .timeline-detail-list dt 的樣式規則 */
+
+.timeline-detail-list dd { /* 選取 .timeline-detail-list dd，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  color: #e2e8f0; /* 設定文字顏色：#e2e8f0; */
+  font-size: 0.84rem; /* 設定文字大小：0.84rem; */
+  line-height: 1.45; /* 設定行高：1.45; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .timeline-detail-list dd 的樣式規則 */
+
+.guide-page { /* 選取 .guide-page，套用下方樣式 */
+  width: min(100%, 900px); /* 設定寬度：min(100%, 900px); */
+} /* 結束 .guide-page 的樣式規則 */
+
+.guide-section p, /* 選取 .guide-section p,，套用下方樣式 */
+.guide-section li { /* 選取 .guide-section li，套用下方樣式 */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  line-height: 1.7; /* 設定行高：1.7; */
+} /* 結束 .guide-section p, .guide-section li 的樣式規則 */
+
+.guide-section p { /* 選取 .guide-section p，套用下方樣式 */
+  margin: 8px 0; /* 設定元素外距：8px 0; */
+} /* 結束 .guide-section p 的樣式規則 */
+
+.guide-steps, /* 選取 .guide-steps,，套用下方樣式 */
+.guide-feature-list { /* 選取 .guide-feature-list，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  gap: 9px; /* 設定排列元素間距：9px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding-left: 1.4rem; /* 設定 padding-left 樣式屬性：1.4rem; */
+} /* 結束 .guide-steps, .guide-feature-list 的樣式規則 */
+
+.guide-feature-list strong { /* 選取 .guide-feature-list strong，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+} /* 結束 .guide-feature-list strong 的樣式規則 */
+
+.guide-color-list { /* 選取 .guide-color-list，套用下方樣式 */
+  margin-top: 18px; /* 設定 margin-top 樣式屬性：18px; */
+  padding: 14px; /* 設定元素內距：14px; */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 12px; /* 設定圓角：12px; */
+} /* 結束 .guide-color-list 的樣式規則 */
+
+@keyframes food-spin { /* 定義 CSS 動畫在不同進度的樣式 */
+  to { /* 選取 to，套用下方樣式 */
+    transform: rotate(360deg); /* 設定移動、旋轉或縮放：rotate(360deg); */
+  } /* 結束 to 的樣式規則 */
+} /* 結束 共用日期、表單與介面 的樣式規則 */
+
+@keyframes food-confetti-fall { /* 定義 CSS 動畫在不同進度的樣式 */
+  0% { /* 選取 0%，套用下方樣式 */
+    opacity: 1; /* 設定透明度：1; */
+    transform: translate3d(0, -10px, 0) rotate(0deg); /* 設定移動、旋轉或縮放：translate3d(0, -10px, 0) rotate(0deg); */
+  } /* 結束 0% 的樣式規則 */
+  100% { /* 選取 100%，套用下方樣式 */
+    opacity: 0.8; /* 設定透明度：0.8; */
+    transform: translate3d(var(--drift), 105vh, 0) rotate(var(--rotation)); /* 設定移動、旋轉或縮放：translate3d(var(--drift), 105vh, 0) rotate(var(--rotation)); */
+  } /* 結束 100% 的樣式規則 */
+} /* 結束 共用日期、表單與介面 的樣式規則 */
+
+.shortcut-card strong { /* 選取 .shortcut-card strong，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+} /* 結束 .shortcut-card strong 的樣式規則 */
+
+.shortcut-card span { /* 選取 .shortcut-card span，套用下方樣式 */
+  margin-top: 7px; /* 設定 margin-top 樣式屬性：7px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.84rem; /* 設定文字大小：0.84rem; */
+  line-height: 1.45; /* 設定行高：1.45; */
+} /* 結束 .shortcut-card span 的樣式規則 */
+
+.presence-card { /* 選取 .presence-card，套用下方樣式 */
+  border-color: #475569; /* 設定 border-color 樣式屬性：#475569; */
+  transition: /* 設定狀態變化時的過渡動畫： */
+    border-color 160ms ease, /* 選取 border-color 160ms ease,，套用下方樣式 */
+    background-color 160ms ease; /* 選取 background-color 160ms ease;，套用下方樣式 */
+} /* 結束 .presence-card 的樣式規則 */
+
+.presence-card-heading { /* 選取 .presence-card-heading，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 44px minmax(0, 1fr); /* 設定網格欄寬與欄數：44px minmax(0, 1fr); */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 14px; /* 設定排列元素間距：14px; */
+} /* 結束 .presence-card-heading 的樣式規則 */
+
+.presence-card-heading h2, /* 選取 .presence-card-heading h2,，套用下方樣式 */
+.presence-card-heading p { /* 選取 .presence-card-heading p，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .presence-card-heading h2, .presence-card-heading p 的樣式規則 */
+
+.presence-card-heading p { /* 選取 .presence-card-heading p，套用下方樣式 */
+  margin-top: 5px; /* 設定 margin-top 樣式屬性：5px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  line-height: 1.55; /* 設定行高：1.55; */
+} /* 結束 .presence-card-heading p 的樣式規則 */
+
+.presence-icon { /* 選取 .presence-icon，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  width: 44px; /* 設定寬度：44px; */
+  height: 44px; /* 設定高度：44px; */
+  place-items: center; /* 設定 place-items 樣式屬性：center; */
+  color: #e2e8f0; /* 設定文字顏色：#e2e8f0; */
+  background: #1e293b; /* 設定背景底色、漸層或圖片：#1e293b; */
+  border: 1px solid #64748b; /* 設定邊框：1px solid #64748b; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  font-size: 1.45rem; /* 設定文字大小：1.45rem; */
+  font-weight: 900; /* 設定字重：900; */
+} /* 結束 .presence-icon 的樣式規則 */
+
+.presence-card[data-state='valid'] { /* 選取 .presence-card[data-state='valid']，套用下方樣式 */
+  background: rgba(6, 78, 59, 0.28); /* 設定背景底色、漸層或圖片：rgba(6, 78, 59, 0.28); */
+  border-color: #34d399; /* 設定 border-color 樣式屬性：#34d399; */
+} /* 結束 .presence-card[data-state='valid'] 的樣式規則 */
+
+.presence-card[data-state='valid'] .presence-icon { /* 選取 .presence-card[data-state='valid'] .presence-icon，套用下方樣式 */
+  color: #052e16; /* 設定文字顏色：#052e16; */
+  background: #6ee7b7; /* 設定背景底色、漸層或圖片：#6ee7b7; */
+  border-color: #a7f3d0; /* 設定 border-color 樣式屬性：#a7f3d0; */
+} /* 結束 .presence-card[data-state='valid'] .presence-icon 的樣式規則 */
+
+.presence-card[data-state='expired'], /* 選取 .presence-card[data-state='expired'],，套用下方樣式 */
+.presence-card[data-state='invalid'] { /* 選取 .presence-card[data-state='invalid']，套用下方樣式 */
+  background: rgba(127, 29, 29, 0.2); /* 設定背景底色、漸層或圖片：rgba(127, 29, 29, 0.2); */
+  border-color: #f87171; /* 設定 border-color 樣式屬性：#f87171; */
+} /* 結束 .presence-card[data-state='expired'], .presence-card[data-state='invalid'] 的樣式規則 */
+
+.presence-card[data-state='expired'] .presence-icon, /* 選取 .presence-card[data-state='expired'] .presence-icon,，套用下方樣式 */
+.presence-card[data-state='invalid'] .presence-icon { /* 選取 .presence-card[data-state='invalid'] .presence-icon，套用下方樣式 */
+  color: #450a0a; /* 設定文字顏色：#450a0a; */
+  background: #fca5a5; /* 設定背景底色、漸層或圖片：#fca5a5; */
+  border-color: #fecaca; /* 設定 border-color 樣式屬性：#fecaca; */
+} /* 結束 .presence-card[data-state='expired'] .presence-icon, .presence-card[data-state='invalid'] .presence-icon 的樣式規則 */
+
+.presence-card[data-state='checking'] { /* 選取 .presence-card[data-state='checking']，套用下方樣式 */
+  border-color: #38bdf8; /* 設定 border-color 樣式屬性：#38bdf8; */
+} /* 結束 .presence-card[data-state='checking'] 的樣式規則 */
+
+.presence-card[data-state='checkout'] { /* 選取 .presence-card[data-state='checkout']，套用下方樣式 */
+  background: rgba(30, 64, 175, 0.16); /* 設定背景底色、漸層或圖片：rgba(30, 64, 175, 0.16); */
+  border-color: #60a5fa; /* 設定 border-color 樣式屬性：#60a5fa; */
+} /* 結束 .presence-card[data-state='checkout'] 的樣式規則 */
+
+@media (max-width: 620px) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  body { /* 選取 body，套用下方樣式 */
+    padding: 80px 10px 24px; /* 設定元素內距：80px 10px 24px; */
+  } /* 結束 body 的樣式規則 */
+
+  .topbar { /* 選取 .topbar，套用下方樣式 */
+    grid-template-columns: 44px minmax(0, 1fr) auto; /* 設定網格欄寬與欄數：44px minmax(0, 1fr) auto; */
+    padding: 8px 10px; /* 設定元素內距：8px 10px; */
+  } /* 結束 .topbar 的樣式規則 */
+
+  .legal-topbar { /* 選取 .legal-topbar，套用下方樣式 */
+    grid-template-columns: auto minmax(0, 1fr); /* 設定網格欄寬與欄數：auto minmax(0, 1fr); */
+  } /* 結束 .legal-topbar 的樣式規則 */
+
+  .topbar-title .page-context, /* 選取 .topbar-title .page-context,，套用下方樣式 */
+  .topbar-user span { /* 選取 .topbar-user span，套用下方樣式 */
+    display: none; /* 設定排版模式或隱藏元素：none; */
+  } /* 結束 .topbar-title .page-context,   .topbar-user span 的樣式規則 */
+
+  .card { /* 選取 .card，套用下方樣式 */
+    padding: 18px; /* 設定元素內距：18px; */
+  } /* 結束 .card 的樣式規則 */
+
+  .role-options, /* 選取 .role-options,，套用下方樣式 */
+  .date-controls, /* 選取 .date-controls,，套用下方樣式 */
+  .admin-toolbar, /* 選取 .admin-toolbar,，套用下方樣式 */
+  .issue-filter-fields, /* 選取 .issue-filter-fields,，套用下方樣式 */
+  .food-category-grid, /* 選取 .food-category-grid,，套用下方樣式 */
+  .food-selection-actions, /* 選取 .food-selection-actions,，套用下方樣式 */
+  .shortcut-grid { /* 選取 .shortcut-grid，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+  } /* 結束 .role-options,   .date-controls,   .admin-toolbar,   .issue-filter-fields,   .food-category-grid,   .food-selection-actions,   .shortcut-grid 的樣式規則 */
+
+  .date-controls button { /* 選取 .date-controls button，套用下方樣式 */
+    width: 100%; /* 設定寬度：100%; */
+  } /* 結束 .date-controls button 的樣式規則 */
+
+  .admin-toolbar button, /* 選取 .admin-toolbar button,，套用下方樣式 */
+  .issue-filter-actions button, /* 選取 .issue-filter-actions button,，套用下方樣式 */
+  .issue-status-button { /* 選取 .issue-status-button，套用下方樣式 */
+    width: 100%; /* 設定寬度：100%; */
+  } /* 結束 .admin-toolbar button,   .issue-filter-actions button,   .issue-status-button 的樣式規則 */
+
+  .issue-filter-actions { /* 選取 .issue-filter-actions，套用下方樣式 */
+    display: grid; /* 設定排版模式或隱藏元素：grid; */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+  } /* 結束 .issue-filter-actions 的樣式規則 */
+
+  .food-custom-actions { /* 選取 .food-custom-actions，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+  } /* 結束 .food-custom-actions 的樣式規則 */
+
+  .food-custom-actions button:first-child, /* 選取 .food-custom-actions button:first-child,，套用下方樣式 */
+  .food-wheel-toolbar button { /* 選取 .food-wheel-toolbar button，套用下方樣式 */
+    width: 100%; /* 設定寬度：100%; */
+  } /* 結束 .food-custom-actions button:first-child,   .food-wheel-toolbar button 的樣式規則 */
+
+  .food-wheel-toolbar { /* 選取 .food-wheel-toolbar，套用下方樣式 */
+    align-items: stretch; /* 設定交叉軸對齊：stretch; */
+    flex-direction: column; /* 設定 Flex 排列方向：column; */
+  } /* 結束 .food-wheel-toolbar 的樣式規則 */
+
+  .home-identity-card { /* 選取 .home-identity-card，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+  } /* 結束 .home-identity-card 的樣式規則 */
+
+  .home-identity-card > button { /* 選取 .home-identity-card > button，套用下方樣式 */
+    width: 100%; /* 設定寬度：100%; */
+  } /* 結束 .home-identity-card > button 的樣式規則 */
+
+  .overview-date-controls { /* 選取 .overview-date-controls，套用下方樣式 */
+    grid-template-columns: 42px minmax(0, 1fr) 38px 42px; /* 設定網格欄寬與欄數：42px minmax(0, 1fr) 38px 42px; */
+    width: min(100%, 330px); /* 設定寬度：min(100%, 330px); */
+  } /* 結束 .overview-date-controls 的樣式規則 */
+
+  .overview-chart-card { /* 選取 .overview-chart-card，套用下方樣式 */
+    padding: 16px 12px; /* 設定元素內距：16px 12px; */
+  } /* 結束 .overview-chart-card 的樣式規則 */
+
+  .timeline-legend { /* 選取 .timeline-legend，套用下方樣式 */
+    gap: 8px 12px; /* 設定排列元素間距：8px 12px; */
+  } /* 結束 .timeline-legend 的樣式規則 */
+
+  .timeline-board { /* 選取 .timeline-board，套用下方樣式 */
+    --timeline-label-width: clamp(76px, 25vw, 94px); /* 定義可重用的 CSS 變數：clamp(76px, 25vw, 94px); */
+    min-width: 0; /* 限制最小寬度：0; */
+    padding: 10px 8px 8px; /* 設定元素內距：10px 8px 8px; */
+  } /* 結束 .timeline-board 的樣式規則 */
+
+  .timeline-sticky-label { /* 選取 .timeline-sticky-label，套用下方樣式 */
+    padding-right: 8px; /* 設定 padding-right 樣式屬性：8px; */
+    font-size: 0.76rem; /* 設定文字大小：0.76rem; */
+  } /* 結束 .timeline-sticky-label 的樣式規則 */
+
+  .timeline-axis-track { /* 選取 .timeline-axis-track，套用下方樣式 */
+    height: 46px; /* 設定高度：46px; */
+  } /* 結束 .timeline-axis-track 的樣式規則 */
+
+  .timeline-axis-track > span:not(.timeline-now-marker) { /* 選取 .timeline-axis-track > span:not(.timeline-now-marker)，套用下方樣式 */
+    top: 8px; /* 設定 top 樣式屬性：8px; */
+    font-size: 0.58rem; /* 設定文字大小：0.58rem; */
+  } /* 結束 .timeline-axis-track > span:not(.timeline-now-marker) 的樣式規則 */
+
+  .timeline-axis-track > .timeline-axis-odd { /* 選取 .timeline-axis-track > .timeline-axis-odd，套用下方樣式 */
+    top: 25px; /* 設定 top 樣式屬性：25px; */
+  } /* 結束 .timeline-axis-track > .timeline-axis-odd 的樣式規則 */
+
+  .timeline-bar { /* 選取 .timeline-bar，套用下方樣式 */
+    min-width: 4px; /* 限制最小寬度：4px; */
+  } /* 結束 .timeline-bar 的樣式規則 */
+
+  .timeline-detail-list > div { /* 選取 .timeline-detail-list > div，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+    gap: 3px; /* 設定排列元素間距：3px; */
+  } /* 結束 .timeline-detail-list > div 的樣式規則 */
+
+  .calendar-event { /* 選取 .calendar-event，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+    gap: 5px; /* 設定排列元素間距：5px; */
+  } /* 結束 .calendar-event 的樣式規則 */
+
+  .person-row { /* 選取 .person-row，套用下方樣式 */
+    align-items: flex-start; /* 設定交叉軸對齊：flex-start; */
+  } /* 結束 .person-row 的樣式規則 */
+
+  .row-actions { /* 選取 .row-actions，套用下方樣式 */
+    flex-direction: column; /* 設定 Flex 排列方向：column; */
+    align-items: flex-end; /* 設定交叉軸對齊：flex-end; */
+  } /* 結束 .row-actions 的樣式規則 */
+} /* 結束 共用日期、表單與介面 的樣式規則 */
+
+@media (prefers-reduced-motion: reduce) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  *, /* 既有樣式說明註解 */
+  *::before, /* 既有樣式說明註解 */
+  *::after { /* 既有樣式說明註解 */
+    scroll-behavior: auto !important; /* 設定 scroll-behavior 樣式屬性：auto !important; */
+    transition-duration: 0.01ms !important; /* 設定 transition-duration 樣式屬性：0.01ms !important; */
+  } /* 結束 *,   *::before,   *::after 的樣式規則 */
+} /* 結束 共用日期、表單與介面 的樣式規則 */
