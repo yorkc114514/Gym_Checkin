@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><!-- 開始 HTML 文件並指定語系 -->
+  <head><!-- 開始文件標題、樣式與模組設定 -->
+    <meta charset="UTF-8" /><!-- 指定文件字元編碼，正確顯示中文 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- 設定裝置寬度與初始縮放，讓手機使用響應式版面 -->
+    <title>簽到／簽退｜運動科學實驗室簽到系統</title><!-- 設定瀏覽器分頁標題 -->
+    <link rel="stylesheet" href="./assets/styles.css" /><!-- 載入 ./assets/styles.css 樣式或外部資源 -->
+    <script type="module" src="./assets/pages/index.js"></script><!-- 載入 ./assets/pages/index.js 頁面程式；module 會使用 ES 模組相依關係 -->
+  </head><!-- 結束 head 容器或文字區塊 -->
+  <body data-page="home" data-title="簽到／簽退"><!-- 開始可見頁面並提供頁面識別資訊 -->
+    <main class="page-container home-checkin-page"><!-- 開始頁面主要內容 -->
+      <div class="page-heading home-system-heading"><!-- 建立版面容器 -->
+        <h1>運動科學實驗室簽到系統</h1><!-- 顯示頁面主標題 -->
+        <p>進入實驗室後請先使用 Google 帳號登入並完成簽到；離開前請記得簽退。</p><!-- 顯示操作說明或提示 -->
+      </div><!-- 結束 div 容器或文字區塊 -->
+
+      <div id="message" class="message">正在初始化……</div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+
+      <section id="presence-card" class="card presence-card" data-state="missing"><!-- 建立或續接 #presence-card 介面控制項，供樣式與 JavaScript 定位 -->
+        <div class="presence-card-heading"><!-- 建立版面容器 -->
+          <span class="presence-icon" aria-hidden="true">⌁</span><!-- 包覆一段行內文字或狀態 -->
+          <div><!-- 建立版面容器 -->
+            <h2 id="presence-status">尚未取得現場認證</h2><!-- 建立或續接 #presence-status 介面控制項，供樣式與 JavaScript 定位 -->
+            <p id="presence-detail" aria-live="polite"> 簽到前請在現場感應裝置並掃描 QR Code。 </p><!-- 建立或續接 #presence-detail 介面控制項，供樣式與 JavaScript 定位 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+
+      <section id="signed-out-card" class="card hidden"><!-- 建立或續接 #signed-out-card 介面控制項，供樣式與 JavaScript 定位 -->
+        <h2>Google 帳號登入</h2><!-- 顯示功能區標題 -->
+        <p class="hint"><!-- 顯示操作說明或提示 -->
+          每位使用者都必須先登入，系統才能確認簽到身分。 首次登入會請你確認姓名。
+        </p><!-- 結束 p 容器或文字區塊 -->
+        <button id="login-button" class="google-button" type="button"><!-- 建立或續接 #login-button 介面控制項，供樣式與 JavaScript 定位 -->
+          使用 Google 帳號登入
+        </button><!-- 結束 button 容器或文字區塊 -->
+        <p class="home-guide-link"> 第一次使用？<a aria-disabled="true" title="此模組尚未合併">查看系統使用說明</a> </p><!-- 顯示操作說明或提示 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+
+      <div id="signed-in-content" class="hidden"><!-- 建立或續接 #signed-in-content 介面控制項，供樣式與 JavaScript 定位 -->
+        <section class="card home-identity-card"><!-- 建立功能內容區 -->
+          <div class="identity"><!-- 建立版面容器 -->
+            <img id="home-avatar" class="avatar" alt="使用者頭像" /><!-- 建立或續接 #home-avatar 介面控制項，供樣式與 JavaScript 定位 -->
+            <div><!-- 建立版面容器 -->
+              <strong id="home-name">—</strong><!-- 建立或續接 #home-name 介面控制項，供樣式與 JavaScript 定位 -->
+              <span id="home-email">—</span><!-- 建立或續接 #home-email 介面控制項，供樣式與 JavaScript 定位 -->
+            </div><!-- 結束 div 容器或文字區塊 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+          <button id="home-logout-button" class="secondary-button" type="button"><!-- 建立或續接 #home-logout-button 介面控制項，供樣式與 JavaScript 定位 -->
+            登出 Google 帳號
+          </button><!-- 結束 button 容器或文字區塊 -->
+        </section><!-- 結束 section 容器或文字區塊 -->
+
+        <section class="card"><!-- 建立功能內容區 -->
+          <h2>簽到／簽退</h2><!-- 顯示功能區標題 -->
+          <div id="attendance-state" class="state-box">正在讀取簽到狀態……</div><!-- 建立或續接 #attendance-state 介面控制項，供樣式與 JavaScript 定位 -->
+
+          <div id="check-in-controls" class="hidden"><!-- 建立或續接 #check-in-controls 介面控制項，供樣式與 JavaScript 定位 -->
+            <p class="hint">請選擇本次使用身分：</p><!-- 顯示操作說明或提示 -->
+            <div class="role-options"><!-- 建立版面容器 -->
+              <label class="role-option"><!-- 建立輸入欄位標籤 -->
+                <input type="radio" name="gym-role" value="member" checked /><!-- 建立輸入控制項 -->
+                共同使用者
+              </label><!-- 結束 label 容器或文字區塊 -->
+              <label class="role-option"><!-- 建立輸入欄位標籤 -->
+                <input type="radio" name="gym-role" value="primary" /><!-- 建立輸入控制項 -->
+                主要借用者
+              </label><!-- 結束 label 容器或文字區塊 -->
+            </div><!-- 結束 div 容器或文字區塊 -->
+            <button id="check-in-button" class="primary-button" type="button" disabled><!-- 建立或續接 #check-in-button 介面控制項，供樣式與 JavaScript 定位 -->
+              驗證並簽到
+            </button><!-- 結束 button 容器或文字區塊 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+
+          <div id="check-out-controls" class="hidden"><!-- 建立或續接 #check-out-controls 介面控制項，供樣式與 JavaScript 定位 -->
+            <div id="primary-checkout-controls" class="hidden"><!-- 建立或續接 #primary-checkout-controls 介面控制項，供樣式與 JavaScript 定位 -->
+              <p class="hint"> 如果現場有人可以接替，可選擇責任交接；否則請完成三項設備檢查。 </p><!-- 顯示操作說明或提示 -->
+              <label for="transfer-user">責任交接（選填）</label><!-- 建立輸入欄位標籤 -->
+              <select id="transfer-user"><!-- 建立或續接 #transfer-user 介面控制項，供樣式與 JavaScript 定位 -->
+                <option value="">不交接，由我完成設備檢查</option><!-- 提供選單可選值 -->
+              </select><!-- 結束 select 容器或文字區塊 -->
+
+              <div id="equipment-checks" class="checks"><!-- 建立或續接 #equipment-checks 介面控制項，供樣式與 JavaScript 定位 -->
+                <label class="check-option"><!-- 建立輸入欄位標籤 -->
+                  <input id="trash-check" type="checkbox" /><!-- 建立或續接 #trash-check 介面控制項，供樣式與 JavaScript 定位 -->
+                  垃圾已清理
+                </label><!-- 結束 label 容器或文字區塊 -->
+                <label class="check-option"><!-- 建立輸入欄位標籤 -->
+                  <input id="ac-lights-check" type="checkbox" /><!-- 建立或續接 #ac-lights-check 介面控制項，供樣式與 JavaScript 定位 -->
+                  冷氣與電燈已關閉
+                </label><!-- 結束 label 容器或文字區塊 -->
+                <label class="check-option"><!-- 建立輸入欄位標籤 -->
+                  <input id="dehumidifier-check" type="checkbox" /><!-- 建立或續接 #dehumidifier-check 介面控制項，供樣式與 JavaScript 定位 -->
+                  除濕機已開啟
+                </label><!-- 結束 label 容器或文字區塊 -->
+              </div><!-- 結束 div 容器或文字區塊 -->
+            </div><!-- 結束 div 容器或文字區塊 -->
+
+            <button id="check-out-button" class="danger-button" type="button">簽退</button><!-- 建立或續接 #check-out-button 介面控制項，供樣式與 JavaScript 定位 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+
+          <button id="refresh-button" class="secondary-button" type="button"><!-- 建立或續接 #refresh-button 介面控制項，供樣式與 JavaScript 定位 -->
+            重新整理簽到狀態
+          </button><!-- 結束 button 容器或文字區塊 -->
+        </section><!-- 結束 section 容器或文字區塊 -->
+      </div><!-- 結束 div 容器或文字區塊 -->
+      <a class="card training-shortcut" aria-disabled="true" title="此模組尚未合併"
+        ><div><strong>◷ 訓練助手</strong><span>組間計時・重量、次數與組數紀錄・只存本機</span></div
+        ><b aria-hidden="true">›</b></a
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+    </main><!-- 結束 main 容器或文字區塊 -->
+  </body><!-- 結束 body 容器或文字區塊 -->
+</html><!-- 結束 html 容器或文字區塊 -->
