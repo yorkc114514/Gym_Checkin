@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"
+  ><head
+    ><meta charset="UTF-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" /><!-- 續接前一標籤的屬性，設定操作、樣式或無障礙描述 -->
+    <title>環境感測數據｜運動科學實驗室簽到系統</title><!-- 設定瀏覽器分頁標題 -->
+    <link rel="stylesheet" href="./assets/styles.css" /><link
+      rel="stylesheet"
+      href="./assets/features/environment/styles.css" /><!-- 續接前一標籤的屬性，設定操作、樣式或無障礙描述 -->
+    <script type="module" src="./assets/pages/environment.js"></script
+  ></head><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+  <body data-page="environment" data-title="環境感測數據"><!-- 開始可見頁面並提供頁面識別資訊 -->
+    <main class="page-container environment-page"><!-- 開始頁面主要內容 -->
+      <div class="page-heading environment-heading"
+        ><div><h1>環境感測數據</h1><p>掌握室內溫度、濕度與照度，每分鐘自動更新。</p></div><!-- 建立版面容器 -->
+        <button id="environment-refresh" class="secondary-button" type="button" disabled
+          >重新整理</button
+        ></div
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <div id="message" class="message" role="status" aria-live="polite">正在讀取環境數據……</div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+      <section id="environment-empty" class="card hidden"
+        ><h2>等待第一筆環境數據</h2><p>裝置連線並送出感測結果後，這裡就會顯示最新數值。</p></section
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <section id="environment-content" class="hidden" aria-label="環境感測結果"><!-- 建立或續接 #environment-content 介面控制項，供樣式與 JavaScript 定位 -->
+        <div class="environment-toolbar"
+          ><div class="environment-location"
+            ><span class="environment-location-mark" aria-hidden="true">◎</span><!-- 包覆一段行內文字或狀態 -->
+            <div
+              ><span class="environment-eyebrow">目前查看</span
+              ><strong id="environment-device-name">—</strong></div
+            ></div
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <label id="environment-device-control" class="hidden"
+            >選擇裝置<select id="environment-device" aria-label="選擇環境感測裝置"></select
+          ></label><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <span id="environment-status" class="environment-status" role="status"
+            >等待數據</span
+          ></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <div class="environment-cards"
+          ><article class="card environment-metric environment-temperature"><!-- 建立 article HTML 元素 -->
+            <div class="environment-metric-heading"
+              ><h2>溫度</h2
+              ><svg viewBox="0 0 24 24" aria-hidden="true"><!-- 建立向量圖示 -->
+                <path d="M9 14V5a3 3 0 0 1 6 0v9a5 5 0 1 1-6 0Z M12 7v10" /><!-- 描述圖示路徑 -->
+                <circle cx="12" cy="18" r="1" /></svg
+            ></div><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <div class="environment-value"
+              ><strong id="environment-temperature">—</strong><span>°C</span></div
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <p id="environment-temperature-note" class="environment-metric-note"
+              >室內空氣溫度</p
+            ></article
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <article class="card environment-metric environment-humidity"><!-- 建立 article HTML 元素 -->
+            <div class="environment-metric-heading"
+              ><h2>相對濕度</h2
+              ><svg viewBox="0 0 24 24" aria-hidden="true"><!-- 建立向量圖示 -->
+                <path
+                  d="M12 2C9 7 5 11 5 15a7 7 0 0 0 14 0c0-4-4-8-7-13Z M9 15a3 3 0 0 0 3 3"
+                /></svg
+            ></div><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <div class="environment-value"
+              ><strong id="environment-humidity">—</strong><span>%RH</span></div
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <p id="environment-humidity-note" class="environment-metric-note"
+              >室內相對濕度</p
+            ></article
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <article class="card environment-metric environment-light"><!-- 建立 article HTML 元素 -->
+            <div class="environment-metric-heading"
+              ><h2>亮度／照度</h2
+              ><svg viewBox="0 0 24 24" aria-hidden="true"><!-- 建立向量圖示 -->
+                <circle cx="12" cy="12" r="4" /><!-- 建立 circle HTML 元素 -->
+                <path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2" /></svg
+            ></div><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <div class="environment-value"
+              ><strong id="environment-light">—</strong><span>lx</span></div
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <p id="environment-light-note" class="environment-metric-note"
+              >感測器位置的照度</p
+            ></article
+          ></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <section class="card environment-details" aria-labelledby="environment-details-title"><!-- 建立功能內容區 -->
+          <div class="environment-details-top"
+            ><h2 id="environment-details-title">更新資訊</h2><span>每 60 秒接收一次</span></div
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <dl
+            ><div><dt>最近收到數據</dt><dd id="environment-received">—</dd></div
+            ><div><dt>數據距今</dt><dd id="environment-age">—</dd></div
+            ><div><dt>裝置 Wi-Fi 訊號</dt><dd id="environment-rssi">—</dd></div></dl
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <p id="environment-freshness-note" class="environment-footnote"
+            >顯示最近一次收到的感測結果。</p
+          ></section
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      </section></main
+    ></body
+  ></html
+><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
