@@ -1,0 +1,232 @@
+/* Extends the existing dark site theme. */
+.environment-page { /* 選取 .environment-page，套用下方樣式 */
+  max-width: 1100px; /* 限制最大寬度：1100px; */
+} /* 結束 .environment-page 的樣式規則 */
+.environment-heading { /* 選取 .environment-heading，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 20px; /* 設定排列元素間距：20px; */
+} /* 結束 .environment-heading 的樣式規則 */
+.environment-heading h1 { /* 選取 .environment-heading h1，套用下方樣式 */
+  letter-spacing: 0.02em; /* 設定 letter-spacing 樣式屬性：0.02em; */
+} /* 結束 .environment-heading h1 的樣式規則 */
+.environment-heading > div { /* 選取 .environment-heading > div，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+} /* 結束 .environment-heading > div 的樣式規則 */
+.environment-heading button { /* 選取 .environment-heading button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  flex-shrink: 0; /* 設定 flex-shrink 樣式屬性：0; */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .environment-heading button 的樣式規則 */
+.environment-toolbar { /* 選取 .environment-toolbar，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+  gap: 20px; /* 設定排列元素間距：20px; */
+  margin: 28px 0 20px; /* 設定元素外距：28px 0 20px; */
+} /* 結束 .environment-toolbar 的樣式規則 */
+.environment-location { /* 選取 .environment-location，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  flex: 1; /* 設定 flex 樣式屬性：1; */
+  min-width: 180px; /* 限制最小寬度：180px; */
+} /* 結束 .environment-location 的樣式規則 */
+.environment-location-mark { /* 選取 .environment-location-mark，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  background: #103341; /* 設定背景底色、漸層或圖片：#103341; */
+  border: 1px solid #195466; /* 設定邊框：1px solid #195466; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  padding: 10px 14px; /* 設定元素內距：10px 14px; */
+  font-size: 1.4rem; /* 設定文字大小：1.4rem; */
+} /* 結束 .environment-location-mark 的樣式規則 */
+.environment-eyebrow { /* 選取 .environment-eyebrow，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  font-size: 0.875rem; /* 設定文字大小：0.875rem; */
+  margin-bottom: 3px; /* 設定 margin-bottom 樣式屬性：3px; */
+} /* 結束 .environment-eyebrow 的樣式規則 */
+#environment-device-name { /* 選取 #environment-device-name，套用下方樣式 */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 #environment-device-name 的樣式規則 */
+.environment-status { /* 選取 .environment-status，套用下方樣式 */
+  display: inline-flex; /* 設定排版模式或隱藏元素：inline-flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 999px; /* 設定圓角：999px; */
+  padding: 8px 14px; /* 設定元素內距：8px 14px; */
+  font-size: 0.875rem; /* 設定文字大小：0.875rem; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  background: #172033; /* 設定背景底色、漸層或圖片：#172033; */
+} /* 結束 .environment-status 的樣式規則 */
+.environment-status::before { /* 選取 .environment-status::before，套用下方樣式 */
+  content: ''; /* 設定偽元素內容：''; */
+  width: 7px; /* 設定寬度：7px; */
+  height: 7px; /* 設定高度：7px; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  background: currentColor; /* 設定背景底色、漸層或圖片：currentColor; */
+} /* 結束 .environment-status::before 的樣式規則 */
+.environment-status[data-state='fresh'] { /* 選取 .environment-status[data-state='fresh']，套用下方樣式 */
+  color: #6ee7b7; /* 設定文字顏色：#6ee7b7; */
+  background: #082e29; /* 設定背景底色、漸層或圖片：#082e29; */
+  border-color: #16634f; /* 設定 border-color 樣式屬性：#16634f; */
+} /* 結束 .environment-status[data-state='fresh'] 的樣式規則 */
+.environment-status[data-state='stale'], /* 選取 .environment-status[data-state='stale'],，套用下方樣式 */
+.environment-status[data-state='partial'] { /* 選取 .environment-status[data-state='partial']，套用下方樣式 */
+  color: #fcd34d; /* 設定文字顏色：#fcd34d; */
+  background: #33280d; /* 設定背景底色、漸層或圖片：#33280d; */
+  border-color: #786023; /* 設定 border-color 樣式屬性：#786023; */
+} /* 結束 .environment-status[data-state='stale'], .environment-status[data-state='partial'] 的樣式規則 */
+.environment-status[data-state='error'] { /* 選取 .environment-status[data-state='error']，套用下方樣式 */
+  color: #fda4af; /* 設定文字顏色：#fda4af; */
+  background: #3c1722; /* 設定背景底色、漸層或圖片：#3c1722; */
+  border-color: #8e3c51; /* 設定 border-color 樣式屬性：#8e3c51; */
+} /* 結束 .environment-status[data-state='error'] 的樣式規則 */
+.environment-cards { /* 選取 .environment-cards，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(3, minmax(0, 1fr)); */
+  gap: 18px; /* 設定排列元素間距：18px; */
+} /* 結束 .environment-cards 的樣式規則 */
+.environment-metric { /* 選取 .environment-metric，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 26px; /* 設定元素內距：26px; */
+  min-width: 0; /* 限制最小寬度：0; */
+  border-top: 3px solid var(--metric-color); /* 設定 border-top 樣式屬性：3px solid var(--metric-color); */
+} /* 結束 .environment-metric 的樣式規則 */
+.environment-temperature { /* 選取 .environment-temperature，套用下方樣式 */
+  --metric-color: #fda4af; /* 定義可重用的 CSS 變數：#fda4af; */
+} /* 結束 .environment-temperature 的樣式規則 */
+.environment-humidity { /* 選取 .environment-humidity，套用下方樣式 */
+  --metric-color: #67e8f9; /* 定義可重用的 CSS 變數：#67e8f9; */
+} /* 結束 .environment-humidity 的樣式規則 */
+.environment-light { /* 選取 .environment-light，套用下方樣式 */
+  --metric-color: #fde68a; /* 定義可重用的 CSS 變數：#fde68a; */
+} /* 結束 .environment-light 的樣式規則 */
+.environment-metric-heading { /* 選取 .environment-metric-heading，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+} /* 結束 .environment-metric-heading 的樣式規則 */
+.environment-metric h2 { /* 選取 .environment-metric h2，套用下方樣式 */
+  font-size: 1rem; /* 設定文字大小：1rem; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .environment-metric h2 的樣式規則 */
+.environment-metric svg { /* 選取 .environment-metric svg，套用下方樣式 */
+  width: 28px; /* 設定寬度：28px; */
+  height: 28px; /* 設定高度：28px; */
+  fill: none; /* 設定 SVG 填色：none; */
+  stroke: var(--metric-color); /* 設定 SVG 線條顏色：var(--metric-color); */
+  stroke-width: 1.6; /* 設定 stroke-width 樣式屬性：1.6; */
+  stroke-linecap: round; /* 設定 stroke-linecap 樣式屬性：round; */
+  stroke-linejoin: round; /* 設定 stroke-linejoin 樣式屬性：round; */
+} /* 結束 .environment-metric svg 的樣式規則 */
+.environment-value { /* 選取 .environment-value，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: baseline; /* 設定交叉軸對齊：baseline; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+  margin: 27px 0 20px; /* 設定元素外距：27px 0 20px; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+} /* 結束 .environment-value 的樣式規則 */
+.environment-value strong { /* 選取 .environment-value strong，套用下方樣式 */
+  font-size: clamp(2rem, 4vw, 3.4rem); /* 設定文字大小：clamp(2rem, 4vw, 3.4rem); */
+  font-weight: 650; /* 設定字重：650; */
+  letter-spacing: -0.04em; /* 設定 letter-spacing 樣式屬性：-0.04em; */
+  line-height: 1.1; /* 設定行高：1.1; */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+} /* 結束 .environment-value strong 的樣式規則 */
+.environment-value span { /* 選取 .environment-value span，套用下方樣式 */
+  font-size: 1rem; /* 設定文字大小：1rem; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+} /* 結束 .environment-value span 的樣式規則 */
+.environment-metric-note { /* 選取 .environment-metric-note，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.875rem; /* 設定文字大小：0.875rem; */
+  line-height: 1.5; /* 設定行高：1.5; */
+} /* 結束 .environment-metric-note 的樣式規則 */
+.environment-details { /* 選取 .environment-details，套用下方樣式 */
+  margin-top: 22px; /* 設定 margin-top 樣式屬性：22px; */
+} /* 結束 .environment-details 的樣式規則 */
+.environment-details-top { /* 選取 .environment-details-top，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  align-items: baseline; /* 設定交叉軸對齊：baseline; */
+  gap: 10px; /* 設定排列元素間距：10px; */
+} /* 結束 .environment-details-top 的樣式規則 */
+.environment-details-top h2 { /* 選取 .environment-details-top h2，套用下方樣式 */
+  font-size: 1.1rem; /* 設定文字大小：1.1rem; */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .environment-details-top h2 的樣式規則 */
+.environment-details-top span { /* 選取 .environment-details-top span，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.875rem; /* 設定文字大小：0.875rem; */
+} /* 結束 .environment-details-top span 的樣式規則 */
+.environment-details dl { /* 選取 .environment-details dl，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 1.5fr 1fr 1fr; /* 設定網格欄寬與欄數：1.5fr 1fr 1fr; */
+  gap: 24px; /* 設定排列元素間距：24px; */
+  margin: 25px 0; /* 設定元素外距：25px 0; */
+} /* 結束 .environment-details dl 的樣式規則 */
+.environment-details dt { /* 選取 .environment-details dt，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.875rem; /* 設定文字大小：0.875rem; */
+  margin-bottom: 7px; /* 設定 margin-bottom 樣式屬性：7px; */
+} /* 結束 .environment-details dt 的樣式規則 */
+.environment-details dd { /* 選取 .environment-details dd，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  font-size: 1rem; /* 設定文字大小：1rem; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+} /* 結束 .environment-details dd 的樣式規則 */
+.environment-footnote { /* 選取 .environment-footnote，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  border-top: 1px solid #263248; /* 設定 border-top 樣式屬性：1px solid #263248; */
+  padding-top: 16px; /* 設定 padding-top 樣式屬性：16px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.875rem; /* 設定文字大小：0.875rem; */
+  line-height: 1.7; /* 設定行高：1.7; */
+} /* 結束 .environment-footnote 的樣式規則 */
+#environment-device-control { /* 選取 #environment-device-control，套用下方樣式 */
+  font-size: 0.875rem; /* 設定文字大小：0.875rem; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+} /* 結束 #environment-device-control 的樣式規則 */
+#environment-device { /* 選取 #environment-device，套用下方樣式 */
+  margin-left: 8px; /* 設定 margin-left 樣式屬性：8px; */
+  max-width: 240px; /* 限制最大寬度：240px; */
+  padding: 8px 30px 8px 10px; /* 設定元素內距：8px 30px 8px 10px; */
+  color: #f8fafc; /* 設定文字顏色：#f8fafc; */
+  background: #172033; /* 設定背景底色、漸層或圖片：#172033; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 8px; /* 設定圓角：8px; */
+} /* 結束 #environment-device 的樣式規則 */
+@media (max-width: 720px) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  .environment-heading { /* 選取 .environment-heading，套用下方樣式 */
+    align-items: flex-start; /* 設定交叉軸對齊：flex-start; */
+    flex-direction: column; /* 設定 Flex 排列方向：column; */
+    gap: 12px; /* 設定排列元素間距：12px; */
+  } /* 結束 .environment-heading 的樣式規則 */
+  .environment-cards { /* 選取 .environment-cards，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+    gap: 14px; /* 設定排列元素間距：14px; */
+  } /* 結束 .environment-cards 的樣式規則 */
+  .environment-metric { /* 選取 .environment-metric，套用下方樣式 */
+    padding: 22px; /* 設定元素內距：22px; */
+  } /* 結束 .environment-metric 的樣式規則 */
+  .environment-value { /* 選取 .environment-value，套用下方樣式 */
+    margin: 18px 0 14px; /* 設定元素外距：18px 0 14px; */
+  } /* 結束 .environment-value 的樣式規則 */
+  .environment-value strong { /* 選取 .environment-value strong，套用下方樣式 */
+    font-size: 3rem; /* 設定文字大小：3rem; */
+  } /* 結束 .environment-value strong 的樣式規則 */
+  .environment-details dl { /* 選取 .environment-details dl，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+    gap: 20px; /* 設定排列元素間距：20px; */
+  } /* 結束 .environment-details dl 的樣式規則 */
+  .environment-toolbar { /* 選取 .environment-toolbar，套用下方樣式 */
+    gap: 14px; /* 設定排列元素間距：14px; */
+  } /* 結束 .environment-toolbar 的樣式規則 */
+} /* 結束 溫度、濕度與照度 的樣式規則 */
