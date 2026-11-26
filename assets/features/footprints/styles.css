@@ -1,0 +1,358 @@
+/* v17 personal stamps: account-scoped local journal and full-screen success views. */
+body.stamp-page-open { /* 選取 body.stamp-page-open，套用下方樣式 */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+} /* 結束 body.stamp-page-open 的樣式規則 */
+.stamp-dialog { /* 選取 .stamp-dialog，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  max-width: none; /* 限制最大寬度：none; */
+  height: 100dvh; /* 設定高度：100dvh; */
+  max-height: none; /* 設定 max-height 樣式屬性：none; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: max(24px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom)); /* 設定元素內距：max(24px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom)); */
+  border: 0; /* 設定邊框：0; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: radial-gradient(ellipse at top, #133648, #030712 70%); /* 設定背景底色、漸層或圖片：radial-gradient(ellipse at top, #133648, #030712 70%); */
+  overflow-y: auto; /* 設定 overflow-y 樣式屬性：auto; */
+  overscroll-behavior: contain; /* 設定 overscroll-behavior 樣式屬性：contain; */
+} /* 結束 .stamp-dialog 的樣式規則 */
+.stamp-dialog.stamp-out { /* 選取 .stamp-dialog.stamp-out，套用下方樣式 */
+  background: radial-gradient(ellipse at top, #422f26, #080a12 70%); /* 設定背景底色、漸層或圖片：radial-gradient(ellipse at top, #422f26, #080a12 70%); */
+} /* 結束 .stamp-dialog.stamp-out 的樣式規則 */
+.stamp-dialog::backdrop { /* 選取 .stamp-dialog::backdrop，套用下方樣式 */
+  background: #030712; /* 設定背景底色、漸層或圖片：#030712; */
+} /* 結束 .stamp-dialog::backdrop 的樣式規則 */
+.stamp-dialog > h1, /* 選取 .stamp-dialog > h1,，套用下方樣式 */
+.stamp-dialog > p, /* 選取 .stamp-dialog > p,，套用下方樣式 */
+.stamp-dialog > button { /* 選取 .stamp-dialog > button，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  max-width: 660px; /* 限制最大寬度：660px; */
+  margin: 20px auto; /* 設定元素外距：20px auto; */
+} /* 結束 .stamp-dialog > h1, .stamp-dialog > p, .stamp-dialog > button 的樣式規則 */
+.stamp-card { /* 選取 .stamp-card，套用下方樣式 */
+  width: min(100%, 660px); /* 設定寬度：min(100%, 660px); */
+  margin: 0 auto; /* 設定元素外距：0 auto; */
+  padding: 18px 0; /* 設定元素內距：18px 0; */
+  text-align: center; /* 設定文字對齊：center; */
+} /* 結束 .stamp-card 的樣式規則 */
+.stamp-eyebrow { /* 選取 .stamp-eyebrow，套用下方樣式 */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-size: 0.76rem; /* 設定文字大小：0.76rem; */
+  font-weight: 800; /* 設定字重：800; */
+  letter-spacing: 0.09em; /* 設定 letter-spacing 樣式屬性：0.09em; */
+  margin-top: 0; /* 設定 margin-top 樣式屬性：0; */
+} /* 結束 .stamp-eyebrow 的樣式規則 */
+.stamp-card h1 { /* 選取 .stamp-card h1，套用下方樣式 */
+  color: #ecfeff; /* 設定文字顏色：#ecfeff; */
+  font-size: clamp(1.5rem, 5vw, 2rem); /* 設定文字大小：clamp(1.5rem, 5vw, 2rem); */
+  line-height: 1.45; /* 設定行高：1.45; */
+  margin: 16px 0 10px; /* 設定元素外距：16px 0 10px; */
+} /* 結束 .stamp-card h1 的樣式規則 */
+.stamp-owner { /* 選取 .stamp-owner，套用下方樣式 */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  font-size: 0.92rem; /* 設定文字大小：0.92rem; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .stamp-owner 的樣式規則 */
+.stamp-seal { /* 選取 .stamp-seal，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  width: 192px; /* 設定寬度：192px; */
+  height: 192px; /* 設定高度：192px; */
+  margin: 28px auto; /* 設定元素外距：28px auto; */
+  flex-direction: column; /* 設定 Flex 排列方向：column; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: center; /* 設定主軸對齊：center; */
+  gap: 7px; /* 設定排列元素間距：7px; */
+  border: 5px double #5eead4; /* 設定邊框：5px double #5eead4; */
+  outline: 1px solid #5eead466; /* 設定 outline 樣式屬性：1px solid #5eead466; */
+  outline-offset: 7px; /* 設定 outline-offset 樣式屬性：7px; */
+  border-radius: 50%; /* 設定圓角：50%; */
+  color: #99f6e4; /* 設定文字顏色：#99f6e4; */
+  background: #062f344d; /* 設定背景底色、漸層或圖片：#062f344d; */
+  transform: rotate(-8deg); /* 設定移動、旋轉或縮放：rotate(-8deg); */
+} /* 結束 .stamp-seal 的樣式規則 */
+.stamp-symbol { /* 選取 .stamp-symbol，套用下方樣式 */
+  font-size: 2.5rem; /* 設定文字大小：2.5rem; */
+  line-height: 1; /* 設定行高：1; */
+} /* 結束 .stamp-symbol 的樣式規則 */
+.stamp-seal strong { /* 選取 .stamp-seal strong，套用下方樣式 */
+  font-size: 1.5rem; /* 設定文字大小：1.5rem; */
+  letter-spacing: 0.13em; /* 設定 letter-spacing 樣式屬性：0.13em; */
+} /* 結束 .stamp-seal strong 的樣式規則 */
+.stamp-seal small { /* 選取 .stamp-seal small，套用下方樣式 */
+  font-size: 0.85rem; /* 設定文字大小：0.85rem; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+} /* 結束 .stamp-seal small 的樣式規則 */
+.stamp-out .stamp-seal { /* 選取 .stamp-out .stamp-seal，套用下方樣式 */
+  border-color: #fdba74; /* 設定 border-color 樣式屬性：#fdba74; */
+  outline-color: #fdba7466; /* 設定 outline-color 樣式屬性：#fdba7466; */
+  color: #fed7aa; /* 設定文字顏色：#fed7aa; */
+  background: #7c2d1222; /* 設定背景底色、漸層或圖片：#7c2d1222; */
+  transform: rotate(7deg); /* 設定移動、旋轉或縮放：rotate(7deg); */
+} /* 結束 .stamp-out .stamp-seal 的樣式規則 */
+.stamp-out .stamp-eyebrow { /* 選取 .stamp-out .stamp-eyebrow，套用下方樣式 */
+  color: #fdba74; /* 設定文字顏色：#fdba74; */
+} /* 結束 .stamp-out .stamp-eyebrow 的樣式規則 */
+.stamp-land { /* 選取 .stamp-land，套用下方樣式 */
+  animation: stamp-land 0.5s cubic-bezier(0.15, 0.8, 0.2, 1) both; /* 套用動畫：stamp-land 0.5s cubic-bezier(0.15, 0.8, 0.2, 1) both; */
+} /* 結束 .stamp-land 的樣式規則 */
+@keyframes stamp-land { /* 定義 CSS 動畫在不同進度的樣式 */
+  from { /* 選取 from，套用下方樣式 */
+    opacity: 0; /* 設定透明度：0; */
+    scale: 1.65; /* 設定 scale 樣式屬性：1.65; */
+  } /* 結束 from 的樣式規則 */
+  to { /* 選取 to，套用下方樣式 */
+    opacity: 1; /* 設定透明度：1; */
+    scale: 1; /* 設定 scale 樣式屬性：1; */
+  } /* 結束 to 的樣式規則 */
+} /* 結束 個人集章與簽退成果卡 的樣式規則 */
+.stamp-stats { /* 選取 .stamp-stats，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(3, minmax(0, 1fr)); */
+  gap: 8px; /* 設定排列元素間距：8px; */
+  padding: 18px 10px; /* 設定元素內距：18px 10px; */
+  margin: 32px 0 18px; /* 設定元素外距：32px 0 18px; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 16px; /* 設定圓角：16px; */
+  background: #11182799; /* 設定背景底色、漸層或圖片：#11182799; */
+} /* 結束 .stamp-stats 的樣式規則 */
+.stamp-stats dt { /* 選取 .stamp-stats dt，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+} /* 結束 .stamp-stats dt 的樣式規則 */
+.stamp-stats dd { /* 選取 .stamp-stats dd，套用下方樣式 */
+  color: #e0f2fe; /* 設定文字顏色：#e0f2fe; */
+  font-size: clamp(1.15rem, 4vw, 1.65rem); /* 設定文字大小：clamp(1.15rem, 4vw, 1.65rem); */
+  font-weight: 800; /* 設定字重：800; */
+  margin: 7px 0 0; /* 設定元素外距：7px 0 0; */
+} /* 結束 .stamp-stats dd 的樣式規則 */
+.stamp-caption { /* 選取 .stamp-caption，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.88rem; /* 設定文字大小：0.88rem; */
+  line-height: 1.7; /* 設定行高：1.7; */
+} /* 結束 .stamp-caption 的樣式規則 */
+.stamp-session-detail { /* 選取 .stamp-session-detail，套用下方樣式 */
+  padding: 16px; /* 設定元素內距：16px; */
+  border-radius: 12px; /* 設定圓角：12px; */
+  background: #29252466; /* 設定背景底色、漸層或圖片：#29252466; */
+  color: #fed7aa; /* 設定文字顏色：#fed7aa; */
+} /* 結束 .stamp-session-detail 的樣式規則 */
+.stamp-session-detail p { /* 選取 .stamp-session-detail p，套用下方樣式 */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+  color: #b5b4b1; /* 設定文字顏色：#b5b4b1; */
+  line-height: 1.6; /* 設定行高：1.6; */
+  margin: 7px 0 0; /* 設定元素外距：7px 0 0; */
+} /* 結束 .stamp-session-detail p 的樣式規則 */
+.stamp-actions { /* 選取 .stamp-actions，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  width: min(100%, 660px); /* 設定寬度：min(100%, 660px); */
+  margin: 8px auto 0; /* 設定元素外距：8px auto 0; */
+} /* 結束 .stamp-actions 的樣式規則 */
+.stamp-actions > * { /* 選取 .stamp-actions > *，套用下方樣式 */
+  flex: 1; /* 設定 flex 樣式屬性：1; */
+  min-width: 0; /* 限制最小寬度：0; */
+} /* 結束 .stamp-actions > * 的樣式規則 */
+.stamp-review-link { /* 選取 .stamp-review-link，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  text-align: center; /* 設定文字對齊：center; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  margin: 20px auto; /* 設定元素外距：20px auto; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+} /* 結束 .stamp-review-link 的樣式規則 */
+.footprints-page { /* 選取 .footprints-page，套用下方樣式 */
+  max-width: 760px; /* 限制最大寬度：760px; */
+} /* 結束 .footprints-page 的樣式規則 */
+.footprints-tabs { /* 選取 .footprints-tabs，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 1fr 1fr; /* 設定網格欄寬與欄數：1fr 1fr; */
+  gap: 6px; /* 設定排列元素間距：6px; */
+  padding: 5px; /* 設定元素內距：5px; */
+  margin-bottom: 18px; /* 設定 margin-bottom 樣式屬性：18px; */
+  background: #101827; /* 設定背景底色、漸層或圖片：#101827; */
+  border: 1px solid #334155; /* 設定邊框：1px solid #334155; */
+  border-radius: 14px; /* 設定圓角：14px; */
+} /* 結束 .footprints-tabs 的樣式規則 */
+.footprints-tabs a { /* 選取 .footprints-tabs a，套用下方樣式 */
+  padding: 13px 6px; /* 設定元素內距：13px 6px; */
+  text-decoration: none; /* 設定 text-decoration 樣式屬性：none; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  text-align: center; /* 設定文字對齊：center; */
+  font-size: 0.92rem; /* 設定文字大小：0.92rem; */
+  font-weight: 750; /* 設定字重：750; */
+  border-radius: 10px; /* 設定圓角：10px; */
+} /* 結束 .footprints-tabs a 的樣式規則 */
+.footprints-tabs a[aria-current='page'] { /* 選取 .footprints-tabs a[aria-current='page']，套用下方樣式 */
+  background: #164e63; /* 設定背景底色、漸層或圖片：#164e63; */
+  color: #cffafe; /* 設定文字顏色：#cffafe; */
+} /* 結束 .footprints-tabs a[aria-current='page'] 的樣式規則 */
+.footprints-tabs #tab-out[aria-current='page'] { /* 選取 .footprints-tabs #tab-out[aria-current='page']，套用下方樣式 */
+  background: #78350f; /* 設定背景底色、漸層或圖片：#78350f; */
+  color: #ffedd5; /* 設定文字顏色：#ffedd5; */
+} /* 結束 .footprints-tabs #tab-out[aria-current='page'] 的樣式規則 */
+.footprints-month { /* 選取 .footprints-month，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 44px minmax(0, 220px) 44px; /* 設定網格欄寬與欄數：44px minmax(0, 220px) 44px; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: center; /* 設定主軸對齊：center; */
+} /* 結束 .footprints-month 的樣式規則 */
+.footprints-month input { /* 選取 .footprints-month input，套用下方樣式 */
+  width: 100%; /* 設定寬度：100%; */
+  min-width: 0; /* 限制最小寬度：0; */
+  padding: 10px; /* 設定元素內距：10px; */
+  min-height: 46px; /* 限制最小高度：46px; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 10px; /* 設定圓角：10px; */
+  font-size: 16px; /* 設定文字大小：16px; */
+} /* 結束 .footprints-month input 的樣式規則 */
+.footprints-month button { /* 選取 .footprints-month button，套用下方樣式 */
+  font-size: 1.5rem; /* 設定文字大小：1.5rem; */
+  padding: 8px; /* 設定元素內距：8px; */
+} /* 結束 .footprints-month button 的樣式規則 */
+.footprints-summary { /* 選取 .footprints-summary，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: 1fr 1fr; /* 設定網格欄寬與欄數：1fr 1fr; */
+  gap: 16px; /* 設定排列元素間距：16px; */
+  margin: 20px 0; /* 設定元素外距：20px 0; */
+  text-align: center; /* 設定文字對齊：center; */
+} /* 結束 .footprints-summary 的樣式規則 */
+.footprints-summary strong { /* 選取 .footprints-summary strong，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  font-size: 2rem; /* 設定文字大小：2rem; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+} /* 結束 .footprints-summary strong 的樣式規則 */
+.footprints-summary span { /* 選取 .footprints-summary span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  margin-top: 4px; /* 設定 margin-top 樣式屬性：4px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.86rem; /* 設定文字大小：0.86rem; */
+} /* 結束 .footprints-summary span 的樣式規則 */
+.stamp-weekdays, /* 選取 .stamp-weekdays,，套用下方樣式 */
+.stamp-calendar { /* 選取 .stamp-calendar，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(7, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(7, minmax(0, 1fr)); */
+  gap: 7px; /* 設定排列元素間距：7px; */
+} /* 結束 .stamp-weekdays, .stamp-calendar 的樣式規則 */
+.stamp-weekdays { /* 選取 .stamp-weekdays，套用下方樣式 */
+  text-align: center; /* 設定文字對齊：center; */
+  color: #64748b; /* 設定文字顏色：#64748b; */
+  font-size: 0.8rem; /* 設定文字大小：0.8rem; */
+  margin: 16px 0 10px; /* 設定元素外距：16px 0 10px; */
+} /* 結束 .stamp-weekdays 的樣式規則 */
+.stamp-day { /* 選取 .stamp-day，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  flex-direction: column; /* 設定 Flex 排列方向：column; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 3px; /* 設定排列元素間距：3px; */
+  aspect-ratio: 0.9; /* 設定 aspect-ratio 樣式屬性：0.9; */
+  padding: 8px 2px; /* 設定元素內距：8px 2px; */
+  min-height: 0; /* 限制最小高度：0; */
+  background: #0b1423; /* 設定背景底色、漸層或圖片：#0b1423; */
+  border: 1px solid #1e293b; /* 設定邊框：1px solid #1e293b; */
+  border-radius: 10px; /* 設定圓角：10px; */
+  color: #64748b; /* 設定文字顏色：#64748b; */
+} /* 結束 .stamp-day 的樣式規則 */
+.stamp-day span { /* 選取 .stamp-day span，套用下方樣式 */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+} /* 結束 .stamp-day span 的樣式規則 */
+.stamp-day strong { /* 選取 .stamp-day strong，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  place-items: center; /* 設定 place-items 樣式屬性：center; */
+  width: 26px; /* 設定寬度：26px; */
+  height: 26px; /* 設定高度：26px; */
+  font-size: 1rem; /* 設定文字大小：1rem; */
+  border-radius: 50%; /* 設定圓角：50%; */
+} /* 結束 .stamp-day strong 的樣式規則 */
+.stamp-day.stamped { /* 選取 .stamp-day.stamped，套用下方樣式 */
+  background: #083c414d; /* 設定背景底色、漸層或圖片：#083c414d; */
+  color: #b9f8f1; /* 設定文字顏色：#b9f8f1; */
+  border-color: #115e59; /* 設定 border-color 樣式屬性：#115e59; */
+  cursor: pointer; /* 設定游標形狀：pointer; */
+} /* 結束 .stamp-day.stamped 的樣式規則 */
+.stamp-day.stamped strong { /* 選取 .stamp-day.stamped strong，套用下方樣式 */
+  border: 2px solid #5eead4; /* 設定邊框：2px solid #5eead4; */
+  color: #5eead4; /* 設定文字顏色：#5eead4; */
+  transform: rotate(-12deg); /* 設定移動、旋轉或縮放：rotate(-12deg); */
+} /* 結束 .stamp-day.stamped strong 的樣式規則 */
+.stamp-day.is-today { /* 選取 .stamp-day.is-today，套用下方樣式 */
+  outline: 2px solid #0891b2; /* 設定 outline 樣式屬性：2px solid #0891b2; */
+  outline-offset: 1px; /* 設定 outline-offset 樣式屬性：1px; */
+} /* 結束 .stamp-day.is-today 的樣式規則 */
+.checkout-cards { /* 選取 .checkout-cards，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(2, minmax(0, 1fr)); */
+  gap: 14px; /* 設定排列元素間距：14px; */
+  margin-bottom: 16px; /* 設定 margin-bottom 樣式屬性：16px; */
+} /* 結束 .checkout-cards 的樣式規則 */
+.checkout-mini-card { /* 選取 .checkout-mini-card，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  border-color: #66503e; /* 設定 border-color 樣式屬性：#66503e; */
+  background: linear-gradient(145deg, #2b2522, #111827); /* 設定背景底色、漸層或圖片：linear-gradient(145deg, #2b2522, #111827); */
+} /* 結束 .checkout-mini-card 的樣式規則 */
+.checkout-mini-card h3 { /* 選取 .checkout-mini-card h3，套用下方樣式 */
+  font-size: 0.95rem; /* 設定文字大小：0.95rem; */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .checkout-mini-card h3 的樣式規則 */
+.checkout-label { /* 選取 .checkout-label，套用下方樣式 */
+  color: #fdba74; /* 設定文字顏色：#fdba74; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .checkout-label 的樣式規則 */
+.checkout-mini-title { /* 選取 .checkout-mini-title，套用下方樣式 */
+  font-weight: 750; /* 設定字重：750; */
+  color: #ffedd5; /* 設定文字顏色：#ffedd5; */
+  line-height: 1.6; /* 設定行高：1.6; */
+} /* 結束 .checkout-mini-title 的樣式規則 */
+.checkout-mini-card button { /* 選取 .checkout-mini-card button，套用下方樣式 */
+  margin-top: 10px; /* 設定 margin-top 樣式屬性：10px; */
+} /* 結束 .checkout-mini-card button 的樣式規則 */
+.footprints-backup summary { /* 選取 .footprints-backup summary，套用下方樣式 */
+  cursor: pointer; /* 設定游標形狀：pointer; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-weight: 750; /* 設定字重：750; */
+} /* 結束 .footprints-backup summary 的樣式規則 */
+.footprints-backup p { /* 選取 .footprints-backup p，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.86rem; /* 設定文字大小：0.86rem; */
+  line-height: 1.75; /* 設定行高：1.75; */
+} /* 結束 .footprints-backup p 的樣式規則 */
+.visually-hidden { /* 選取 .visually-hidden，套用下方樣式 */
+  position: absolute; /* 設定定位方式：absolute; */
+  width: 1px; /* 設定寬度：1px; */
+  height: 1px; /* 設定高度：1px; */
+  overflow: hidden; /* 設定內容超出容器時的處理：hidden; */
+  clip: rect(0, 0, 0, 0); /* 設定 clip 樣式屬性：rect(0, 0, 0, 0); */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .visually-hidden 的樣式規則 */
+@media (max-width: 520px) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  .checkout-cards { /* 選取 .checkout-cards，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+  } /* 結束 .checkout-cards 的樣式規則 */
+  .stamp-calendar, /* 選取 .stamp-calendar,，套用下方樣式 */
+  .stamp-weekdays { /* 選取 .stamp-weekdays，套用下方樣式 */
+    gap: 5px; /* 設定排列元素間距：5px; */
+  } /* 結束 .stamp-calendar,   .stamp-weekdays 的樣式規則 */
+  .stamp-day { /* 選取 .stamp-day，套用下方樣式 */
+    aspect-ratio: auto; /* 設定 aspect-ratio 樣式屬性：auto; */
+    height: 66px; /* 設定高度：66px; */
+  } /* 結束 .stamp-day 的樣式規則 */
+  .stamp-actions { /* 選取 .stamp-actions，套用下方樣式 */
+    flex-direction: column; /* 設定 Flex 排列方向：column; */
+  } /* 結束 .stamp-actions 的樣式規則 */
+  .stamp-stats { /* 選取 .stamp-stats，套用下方樣式 */
+    padding: 16px 6px; /* 設定元素內距：16px 6px; */
+    gap: 4px; /* 設定排列元素間距：4px; */
+  } /* 結束 .stamp-stats 的樣式規則 */
+  .stamp-stats dt { /* 選取 .stamp-stats dt，套用下方樣式 */
+    font-size: 0.72rem; /* 設定文字大小：0.72rem; */
+  } /* 結束 .stamp-stats dt 的樣式規則 */
+} /* 結束 個人集章與簽退成果卡 的樣式規則 */
+@media (prefers-reduced-motion: reduce) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  .stamp-land { /* 選取 .stamp-land，套用下方樣式 */
+    animation: none; /* 套用動畫：none; */
+  } /* 結束 .stamp-land 的樣式規則 */
+} /* 結束 個人集章與簽退成果卡 的樣式規則 */
