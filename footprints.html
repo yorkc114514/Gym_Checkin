@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><!-- 開始 HTML 文件並指定語系 -->
+  <head><!-- 開始文件標題、樣式與模組設定 -->
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- 設定裝置寬度與初始縮放，讓手機使用響應式版面 -->
+    <title>我的健身足跡｜運動科學實驗室簽到系統</title><!-- 設定瀏覽器分頁標題 -->
+    <link rel="stylesheet" href="./assets/styles.css" /><!-- 載入 ./assets/styles.css 樣式或外部資源 -->
+    <script type="module" src="./assets/pages/footprints.js"></script><!-- 載入 ./assets/pages/footprints.js 頁面程式；module 會使用 ES 模組相依關係 -->
+  </head><!-- 結束 head 容器或文字區塊 -->
+  <body data-page="stampbook" data-title="我的健身足跡"><!-- 開始可見頁面並提供頁面識別資訊 -->
+    <main class="page-container footprints-page"><!-- 開始頁面主要內容 -->
+      <div class="page-heading"
+        ><span class="training-eyebrow">MY FITNESS JOURNAL</span><h1>我的健身足跡</h1
+        ><p id="footprints-owner">每一次到場，都值得留下紀錄。</p></div
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <div id="message" class="message" role="status">正在讀取本機足跡……</div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+      <div id="footprints-content" class="hidden"><!-- 建立或續接 #footprints-content 介面控制項，供樣式與 JavaScript 定位 -->
+        <nav class="footprints-tabs" aria-label="健身足跡分類"
+          ><a href="./footprints.html?view=in" id="tab-in">個人健身集章卡</a
+          ><a href="./footprints.html?view=out" id="tab-out">簽退成果小卡</a></nav
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <section class="card footprints-month-card"><!-- 建立功能內容區 -->
+          <div class="footprints-month"
+            ><button id="month-prev" type="button" class="secondary-button" aria-label="上一個月"
+              >‹</button
+            ><label for="footprints-month" class="visually-hidden">回顧月份</label
+            ><input id="footprints-month" type="month" required /><button
+              id="month-next"
+              type="button"
+              class="secondary-button"
+              aria-label="下一個月"
+              >›</button
+            ></div
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <div class="footprints-summary"
+            ><div
+              ><strong id="month-count">0</strong
+              ><span id="month-count-label">本月到訪天數</span></div
+            ><div
+              ><strong id="total-count">0</strong
+              ><span id="total-count-label">累積到訪天數</span></div
+            ></div
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <p id="footprints-rule" class="hint">每天只蓋一次，點選有印章的日期即可回顧。</p><!-- 建立或續接 #footprints-rule 介面控制項，供樣式與 JavaScript 定位 -->
+        </section><!-- 結束 section 容器或文字區塊 -->
+        <section id="stamp-calendar-section" class="card"
+          ><h2>本月集章卡</h2
+          ><div class="stamp-weekdays" aria-hidden="true"
+            ><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span
+            ><span>六</span><span>日</span></div
+          ><div id="stamp-calendar" class="stamp-calendar" aria-label="到訪集章月曆"></div
+          ><p id="stamp-empty" class="hint hidden"
+            >本月還沒有到訪章。下次簽到成功，就會自動蓋上第一章。</p
+          ></section
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <section id="checkout-cards-section" class="hidden"
+          ><h2>每天一張，留下完成的足跡</h2><div id="checkout-cards" class="checkout-cards"></div
+          ><button id="checkout-more" type="button" class="secondary-button hidden"
+            >顯示更多成果卡</button
+          ></section
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <details class="card footprints-backup"
+          ><summary>本機紀錄與備份</summary
+          ><p
+            >只保存在這個瀏覽器，依 Google
+            帳號分開。從本版啟用後，在此瀏覽器成功操作的簽到／本人簽退開始累積，不會自動載入舊紀錄或其他手機的紀錄。</p
+          ><p
+            >每天依台灣日期分別計一個到訪章、一張簽退成果卡；重複操作保留當天首次紀錄。此處供個人回顧，正式出入紀錄請查看「借用狀態
+            → 簽到紀錄」。</p
+          ><p
+            >清除網站資料或換手機可能失去紀錄。健身足跡與訓練助手分開備份；匯入足跡時需登入原本的
+            Google 帳號，相同日期與類型會保留手機現有紀錄。</p
+          ><div class="training-actions"
+            ><button id="footprints-export" type="button" class="primary-button"
+              >下載足跡備份</button
+            ><button id="footprints-import" type="button" class="secondary-button"
+              >匯入足跡備份</button
+            ></div
+          ><input id="footprints-file" type="file" accept=".json,application/json" hidden /><p
+            class="hint"
+            >最多 20 MB、20,000 個印章。備份只包含本帳號的足跡，不含登入憑證。</p
+          ></details
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      </div><!-- 結束 div 容器或文字區塊 -->
+    </main><!-- 結束 main 容器或文字區塊 -->
+  </body><!-- 結束 body 容器或文字區塊 -->
+</html><!-- 結束 html 容器或文字區塊 -->
