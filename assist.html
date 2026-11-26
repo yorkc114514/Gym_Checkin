@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><!-- 開始 HTML 文件並指定語系 -->
+  <head><!-- 開始文件標題、樣式與模組設定 -->
+    <meta charset="UTF-8" /><!-- 指定文件字元編碼，正確顯示中文 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- 設定裝置寬度與初始縮放，讓手機使用響應式版面 -->
+    <title>協助簽退｜運動科學實驗室簽到系統</title><!-- 設定瀏覽器分頁標題 -->
+    <link rel="stylesheet" href="./assets/styles.css" /><!-- 載入 ./assets/styles.css 樣式或外部資源 -->
+    <script type="module" src="./assets/pages/assist.js"></script><!-- 載入 ./assets/pages/assist.js 頁面程式；module 會使用 ES 模組相依關係 -->
+  </head><!-- 結束 head 容器或文字區塊 -->
+  <body data-page="assist" data-title="協助簽退"><!-- 開始可見頁面並提供頁面識別資訊 -->
+    <main class="page-container"><!-- 開始頁面主要內容 -->
+      <div class="page-heading"><!-- 建立版面容器 -->
+        <h1>協助他人簽退</h1><!-- 顯示頁面主標題 -->
+        <p>只能協助共同使用者；主要借用者必須本人完成設備檢查與簽退。</p><!-- 顯示操作說明或提示 -->
+      </div><!-- 結束 div 容器或文字區塊 -->
+
+      <div id="message" class="message">正在讀取可協助簽退的人員……</div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+
+      <section class="card"><!-- 建立功能內容區 -->
+        <ul id="assist-list" class="people-list"></ul><!-- 建立或續接 #assist-list 介面控制項，供樣式與 JavaScript 定位 -->
+        <p id="empty-assist" class="empty-text hidden">目前沒有可協助簽退的人員。</p><!-- 建立或續接 #empty-assist 介面控制項，供樣式與 JavaScript 定位 -->
+        <div class="button-stack"><!-- 建立版面容器 -->
+          <button id="refresh-button" class="secondary-button" type="button">重新整理</button><!-- 建立或續接 #refresh-button 介面控制項，供樣式與 JavaScript 定位 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+    </main><!-- 結束 main 容器或文字區塊 -->
+  </body><!-- 結束 body 容器或文字區塊 -->
+</html><!-- 結束 html 容器或文字區塊 -->
