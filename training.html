@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><!-- 開始 HTML 文件並指定語系 -->
+  <head><!-- 開始文件標題、樣式與模組設定 -->
+    <meta charset="UTF-8" /><!-- 指定文件字元編碼，正確顯示中文 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- 設定裝置寬度與初始縮放，讓手機使用響應式版面 -->
+    <title>訓練助手｜運動科學實驗室簽到系統</title><!-- 設定瀏覽器分頁標題 -->
+    <link rel="stylesheet" href="./assets/styles.css" /><!-- 載入 ./assets/styles.css 樣式或外部資源 -->
+    <script type="module" src="./assets/pages/training.js"></script><!-- 載入 ./assets/pages/training.js 頁面程式；module 會使用 ES 模組相依關係 -->
+  </head><!-- 結束 head 容器或文字區塊 -->
+  <body data-page="training" data-title="訓練助手"><!-- 開始可見頁面並提供頁面識別資訊 -->
+    <main class="page-container training-page"><!-- 開始頁面主要內容 -->
+      <div class="page-heading"
+        ><span class="training-eyebrow">MY TRAINING · 只存本機</span><h1>訓練助手</h1
+        ><p>記住每一組，休息一下，再繼續。</p></div
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <div class="training-actions"
+        ><a class="secondary-button button-link" data-stage-pending="./progress.html" aria-disabled="true" title="此模組尚未合併">查看訓練進步圖表</a
+        ><a class="secondary-button button-link" data-stage-pending="./bodyweight.html" aria-disabled="true" title="此模組尚未合併">記錄體重</a></div
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <div id="message" class="message hidden" role="status" aria-live="polite"></div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+      <section class="card rest-card" aria-labelledby="rest-title"><!-- 建立功能內容區 -->
+        <div class="training-heading"
+          ><h2 id="rest-title">組間休息</h2
+          ><span id="rest-status" class="training-tag" role="status">準備開始</span></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <div id="rest-clock" class="rest-clock" role="timer" aria-label="剩餘休息時間">01:30</div><!-- 建立或續接 #rest-clock 介面控制項，供樣式與 JavaScript 定位 -->
+        <div class="rest-presets" aria-label="休息秒數"><!-- 建立版面容器 -->
+          <button type="button" data-rest-seconds="60" class="secondary-button">60 秒</button><!-- 提供可點擊操作並設定按鈕語意 -->
+          <button type="button" data-rest-seconds="90" class="secondary-button">90 秒</button><!-- 提供可點擊操作並設定按鈕語意 -->
+          <button type="button" data-rest-seconds="120" class="secondary-button">120 秒</button><!-- 提供可點擊操作並設定按鈕語意 -->
+          <button type="button" data-rest-seconds="180" class="secondary-button">180 秒</button><!-- 提供可點擊操作並設定按鈕語意 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+        <div class="training-row rest-custom"
+          ><label for="rest-seconds">自訂秒數</label
+          ><input
+            id="rest-seconds"
+            type="number"
+            min="5"
+            max="3600"
+            step="1"
+            value="90"
+            inputmode="numeric"
+          /><button id="rest-apply" type="button" class="secondary-button">套用</button></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <div class="training-actions"
+          ><button id="rest-start" type="button" class="primary-button">開始休息</button
+          ><button id="rest-add" type="button" class="secondary-button">＋15 秒</button
+          ><button id="rest-reset" type="button" class="secondary-button">重設</button></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <label class="training-check"
+          ><input id="rest-sound" type="checkbox" />到時播放提示音</label
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <p id="rest-storage-error" class="hint" role="status"></p><!-- 建立或續接 #rest-storage-error 介面控制項，供樣式與 JavaScript 定位 -->
+        <p class="hint"
+          >切換站內頁面或重新整理仍保留倒數。鎖屏、背景或關閉頁面時，手機可能暫停提示；返回時會校正剩餘時間。</p
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+      <section class="card" aria-labelledby="record-title"><!-- 建立功能內容區 -->
+        <div class="training-heading"
+          ><h2 id="record-title">記下這次訓練</h2
+          ><span class="training-tag">手機上的小抄</span></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <form id="training-form"><!-- 建立或續接 #training-form 介面控制項，供樣式與 JavaScript 定位 -->
+          <fieldset id="training-fields" disabled><!-- 建立或續接 #training-fields 介面控制項，供樣式與 JavaScript 定位 -->
+            <div class="training-form-grid"><!-- 建立版面容器 -->
+              <label>訓練日期<input id="training-date" type="date" required /></label><!-- 建立或續接 #training-date 介面控制項，供樣式與 JavaScript 定位 -->
+              <label
+                >動作<input
+                  id="training-exercise"
+                  list="exercise-options"
+                  maxlength="60"
+                  placeholder="例如：啞鈴臥推"
+                  autocomplete="off"
+                  required /><datalist id="exercise-options"></datalist
+              ></label><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            </div><!-- 結束 div 容器或文字區塊 -->
+            <div id="last-training" class="last-training">輸入動作名稱，即可查看之前的紀錄。</div><!-- 建立或續接 #last-training 介面控制項，供樣式與 JavaScript 定位 -->
+            <div class="training-numbers"><!-- 建立版面容器 -->
+              <label
+                >重量（kg）<input
+                  id="training-weight"
+                  type="number"
+                  min="0"
+                  max="2000"
+                  step="0.01"
+                  value="0"
+                  inputmode="decimal"
+                  required
+              /></label><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+              <label
+                >每組次數<input
+                  id="training-reps"
+                  type="number"
+                  min="1"
+                  max="999"
+                  step="1"
+                  value="10"
+                  inputmode="numeric"
+                  required
+              /></label><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+              <label
+                >組數<input
+                  id="training-sets"
+                  type="number"
+                  min="1"
+                  max="100"
+                  step="1"
+                  value="1"
+                  inputmode="numeric"
+                  required
+              /></label><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            </div><!-- 結束 div 容器或文字區塊 -->
+            <p class="hint"
+              >徒手可填 0 kg；多組重量或次數不同時，分筆記錄。啞鈴重量可統一記單手重量。</p
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <label
+              >備註（選填）<input
+                id="training-note"
+                maxlength="200"
+                placeholder="例如：最後兩下有點吃力"
+            /></label><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <label class="training-check"
+              ><input id="save-and-rest" type="checkbox" />儲存後開始休息倒數</label
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <div class="training-actions"
+              ><button id="training-save" type="submit" class="primary-button">儲存紀錄</button
+              ><button id="training-cancel" type="button" class="secondary-button hidden"
+                >取消編輯</button
+              ></div
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          </fieldset><!-- 結束 fieldset 容器或文字區塊 -->
+        </form><!-- 結束 form 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+      <section class="card" aria-labelledby="history-title"><!-- 建立功能內容區 -->
+        <div class="training-heading"
+          ><h2 id="history-title">我的訓練紀錄</h2
+          ><span id="training-total" class="training-tag">讀取中</span></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <div class="training-form-grid training-filters"
+          ><label>日期<input id="history-date" type="date" /></label
+          ><label
+            >動作搜尋<input
+              id="history-exercise"
+              type="search"
+              maxlength="60"
+              placeholder="輸入動作名稱" /></label
+        ></div><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <div class="training-row"
+          ><button id="history-today" type="button" class="secondary-button">今天</button
+          ><button id="history-all" type="button" class="secondary-button">全部紀錄</button></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <p id="history-summary" class="hint" role="status"></p><!-- 建立或續接 #history-summary 介面控制項，供樣式與 JavaScript 定位 -->
+        <div id="training-history" class="training-history"></div><!-- 建立或續接 #training-history 介面控制項，供樣式與 JavaScript 定位 -->
+        <button id="history-more" type="button" class="secondary-button hidden">顯示更多</button><!-- 建立或續接 #history-more 介面控制項，供樣式與 JavaScript 定位 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+      <details class="card training-backup"
+        ><summary>本機資料與備份</summary><!-- 建立 summary HTML 元素 -->
+        <p
+          >訓練紀錄與計時設定只存在目前裝置、目前瀏覽器，不會上傳到 Supabase，也不會隨 Google
+          帳號同步。同一瀏覽器切換帳號仍會看到相同紀錄。</p
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <p
+          >清除網站資料、使用無痕模式或更換手機可能失去紀錄。請定期下載備份；在新手機開啟同一網站後匯入即可。備份包含訓練紀錄，不含帳號資料。</p
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <div class="training-actions"
+          ><button id="training-export" type="button" class="primary-button" disabled
+            >下載紀錄備份</button
+          ><button id="training-import" type="button" class="secondary-button" disabled
+            >匯入紀錄備份</button
+          ></div
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <input id="training-import-file" type="file" accept=".json,application/json" hidden /><!-- 建立或續接 #training-import-file 介面控制項，供樣式與 JavaScript 定位 -->
+        <p class="hint"
+          >匯入會合併新紀錄；相同編號保留手機現有資料，不覆蓋。支援本系統 JSON 備份，最多 20
+          MB、10,000 筆。</p
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        <button id="training-persist" type="button" class="secondary-button"
+          >請求瀏覽器保留資料</button
+        ><p id="persist-status" class="hint" role="status"
+          >瀏覽器是否同意保留因裝置而異，仍建議定期備份。</p
+        ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      </details><!-- 結束 details 容器或文字區塊 -->
+    </main><!-- 結束 main 容器或文字區塊 -->
+  </body><!-- 結束 body 容器或文字區塊 -->
+</html><!-- 結束 html 容器或文字區塊 -->

@@ -1,0 +1,285 @@
+/* Local-only training companion */
+.training-page { /* 選取 .training-page，套用下方樣式 */
+  max-width: 720px; /* 限制最大寬度：720px; */
+} /* 結束 .training-page 的樣式規則 */
+.training-eyebrow { /* 選取 .training-eyebrow，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  letter-spacing: 0.12em; /* 設定 letter-spacing 樣式屬性：0.12em; */
+  font-size: 0.72rem; /* 設定文字大小：0.72rem; */
+  font-weight: 750; /* 設定字重：750; */
+  margin-bottom: 10px; /* 設定 margin-bottom 樣式屬性：10px; */
+} /* 結束 .training-eyebrow 的樣式規則 */
+.training-heading { /* 選取 .training-heading，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+} /* 結束 .training-heading 的樣式規則 */
+.training-heading h2, /* 選取 .training-heading h2,，套用下方樣式 */
+.training-heading h3 { /* 選取 .training-heading h3，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .training-heading h2, .training-heading h3 的樣式規則 */
+.training-heading h3 { /* 選取 .training-heading h3，套用下方樣式 */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+  font-size: 1rem; /* 設定文字大小：1rem; */
+} /* 結束 .training-heading h3 的樣式規則 */
+.training-tag { /* 選取 .training-tag，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  flex-shrink: 0; /* 設定 flex-shrink 樣式屬性：0; */
+} /* 結束 .training-tag 的樣式規則 */
+.rest-card { /* 選取 .rest-card，套用下方樣式 */
+  background: linear-gradient(145deg, #102b3c, #111827 70%); /* 設定背景底色、漸層或圖片：linear-gradient(145deg, #102b3c, #111827 70%); */
+  border-color: #155e75; /* 設定 border-color 樣式屬性：#155e75; */
+} /* 結束 .rest-card 的樣式規則 */
+.rest-clock { /* 選取 .rest-clock，套用下方樣式 */
+  font-size: clamp(3.5rem, 16vw, 5.5rem); /* 設定文字大小：clamp(3.5rem, 16vw, 5.5rem); */
+  line-height: 1.35; /* 設定行高：1.35; */
+  text-align: center; /* 設定文字對齊：center; */
+  font-weight: 800; /* 設定字重：800; */
+  letter-spacing: 0.04em; /* 設定 letter-spacing 樣式屬性：0.04em; */
+  color: #ecfeff; /* 設定文字顏色：#ecfeff; */
+  font-variant-numeric: tabular-nums; /* 設定 font-variant-numeric 樣式屬性：tabular-nums; */
+  margin: 16px 0; /* 設定元素外距：16px 0; */
+} /* 結束 .rest-clock 的樣式規則 */
+.rest-clock.rest-done { /* 選取 .rest-clock.rest-done，套用下方樣式 */
+  color: #6ee7b7; /* 設定文字顏色：#6ee7b7; */
+} /* 結束 .rest-clock.rest-done 的樣式規則 */
+.rest-presets { /* 選取 .rest-presets，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(4, minmax(0, 1fr)); */
+  gap: 8px; /* 設定排列元素間距：8px; */
+} /* 結束 .rest-presets 的樣式規則 */
+.rest-presets button { /* 選取 .rest-presets button，套用下方樣式 */
+  padding: 10px 4px; /* 設定元素內距：10px 4px; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+} /* 結束 .rest-presets button 的樣式規則 */
+.rest-presets button[aria-pressed='true'] { /* 選取 .rest-presets button[aria-pressed='true']，套用下方樣式 */
+  background: #155e75; /* 設定背景底色、漸層或圖片：#155e75; */
+  border: 1px solid #22d3ee; /* 設定邊框：1px solid #22d3ee; */
+  color: #ecfeff; /* 設定文字顏色：#ecfeff; */
+} /* 結束 .rest-presets button[aria-pressed='true'] 的樣式規則 */
+.training-row { /* 選取 .training-row，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+  flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+} /* 結束 .training-row 的樣式規則 */
+.training-row button { /* 選取 .training-row button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  flex: 1; /* 設定 flex 樣式屬性：1; */
+} /* 結束 .training-row button 的樣式規則 */
+.rest-custom { /* 選取 .rest-custom，套用下方樣式 */
+  margin: 12px 0; /* 設定元素外距：12px 0; */
+  flex-wrap: nowrap; /* 設定 flex-wrap 樣式屬性：nowrap; */
+} /* 結束 .rest-custom 的樣式規則 */
+.rest-custom label { /* 選取 .rest-custom label，套用下方樣式 */
+  margin: 0; /* 設定元素外距：0; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.88rem; /* 設定文字大小：0.88rem; */
+} /* 結束 .rest-custom label 的樣式規則 */
+.rest-custom input { /* 選取 .rest-custom input，套用下方樣式 */
+  width: 100px; /* 設定寬度：100px; */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .rest-custom input 的樣式規則 */
+.rest-custom button { /* 選取 .rest-custom button，套用下方樣式 */
+  flex: 0 0 auto; /* 設定 flex 樣式屬性：0 0 auto; */
+  margin: 0; /* 設定元素外距：0; */
+} /* 結束 .rest-custom button 的樣式規則 */
+.training-actions { /* 選取 .training-actions，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  gap: 8px; /* 設定排列元素間距：8px; */
+} /* 結束 .training-actions 的樣式規則 */
+.training-actions button { /* 選取 .training-actions button，套用下方樣式 */
+  flex: 1; /* 設定 flex 樣式屬性：1; */
+  min-width: 0; /* 限制最小寬度：0; */
+} /* 結束 .training-actions button 的樣式規則 */
+.training-page .training-check { /* 選取 .training-page .training-check，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 9px; /* 設定排列元素間距：9px; */
+  margin: 16px 0 10px; /* 設定元素外距：16px 0 10px; */
+  color: #cbd5e1; /* 設定文字顏色：#cbd5e1; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+} /* 結束 .training-page .training-check 的樣式規則 */
+.training-check input { /* 選取 .training-check input，套用下方樣式 */
+  width: 19px; /* 設定寬度：19px; */
+  height: 19px; /* 設定高度：19px; */
+  margin: 0; /* 設定元素外距：0; */
+  flex-shrink: 0; /* 設定 flex-shrink 樣式屬性：0; */
+} /* 結束 .training-check input 的樣式規則 */
+.training-page .hint { /* 選取 .training-page .hint，套用下方樣式 */
+  line-height: 1.65; /* 設定行高：1.65; */
+  font-size: 0.82rem; /* 設定文字大小：0.82rem; */
+} /* 結束 .training-page .hint 的樣式規則 */
+.training-page fieldset { /* 選取 .training-page fieldset，套用下方樣式 */
+  border: 0; /* 設定邊框：0; */
+  padding: 0; /* 設定元素內距：0; */
+  margin: 16px 0 0; /* 設定元素外距：16px 0 0; */
+  min-width: 0; /* 限制最小寬度：0; */
+} /* 結束 .training-page fieldset 的樣式規則 */
+.training-form-grid { /* 選取 .training-form-grid，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); /* 設定網格欄寬與欄數：minmax(0, 0.85fr) minmax(0, 1.15fr); */
+  gap: 12px; /* 設定排列元素間距：12px; */
+} /* 結束 .training-form-grid 的樣式規則 */
+.training-page label { /* 選取 .training-page label，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  font-size: 0.9rem; /* 設定文字大小：0.9rem; */
+} /* 結束 .training-page label 的樣式規則 */
+.training-page input:not([type='checkbox']) { /* 選取 .training-page input:not([type='checkbox'])，套用下方樣式 */
+  min-width: 0; /* 限制最小寬度：0; */
+  width: 100%; /* 設定寬度：100%; */
+  font-size: 16px; /* 設定文字大小：16px; */
+  padding: 12px; /* 設定元素內距：12px; */
+  margin: 7px 0 5px; /* 設定元素外距：7px 0 5px; */
+  color: #e5e7eb; /* 設定文字顏色：#e5e7eb; */
+  background: #0f172a; /* 設定背景底色、漸層或圖片：#0f172a; */
+  border: 1px solid #475569; /* 設定邊框：1px solid #475569; */
+  border-radius: 10px; /* 設定圓角：10px; */
+} /* 結束 .training-page input:not([type='checkbox']) 的樣式規則 */
+.training-page .rest-custom input { /* 選取 .training-page .rest-custom input，套用下方樣式 */
+  width: 92px; /* 設定寬度：92px; */
+} /* 結束 .training-page .rest-custom input 的樣式規則 */
+.training-numbers { /* 選取 .training-numbers，套用下方樣式 */
+  display: grid; /* 設定排版模式或隱藏元素：grid; */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 設定網格欄寬與欄數：repeat(3, minmax(0, 1fr)); */
+  gap: 10px; /* 設定排列元素間距：10px; */
+} /* 結束 .training-numbers 的樣式規則 */
+.last-training { /* 選取 .last-training，套用下方樣式 */
+  margin: 4px 0 16px; /* 設定元素外距：4px 0 16px; */
+  padding: 12px; /* 設定元素內距：12px; */
+  background: #0b1728; /* 設定背景底色、漸層或圖片：#0b1728; */
+  border-left: 3px solid #0891b2; /* 設定 border-left 樣式屬性：3px solid #0891b2; */
+  color: #a5dbe6; /* 設定文字顏色：#a5dbe6; */
+  font-size: 0.84rem; /* 設定文字大小：0.84rem; */
+  line-height: 1.65; /* 設定行高：1.65; */
+} /* 結束 .last-training 的樣式規則 */
+.last-training button { /* 選取 .last-training button，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  width: auto; /* 設定寬度：auto; */
+  margin-top: 8px; /* 設定 margin-top 樣式屬性：8px; */
+  font-size: 0.8rem; /* 設定文字大小：0.8rem; */
+  min-height: 38px; /* 限制最小高度：38px; */
+  padding: 6px 12px; /* 設定元素內距：6px 12px; */
+} /* 結束 .last-training button 的樣式規則 */
+.training-filters { /* 選取 .training-filters，套用下方樣式 */
+  margin-top: 16px; /* 設定 margin-top 樣式屬性：16px; */
+} /* 結束 .training-filters 的樣式規則 */
+.training-record { /* 選取 .training-record，套用下方樣式 */
+  padding: 16px 0; /* 設定元素內距：16px 0; */
+  border-top: 1px solid #334155; /* 設定 border-top 樣式屬性：1px solid #334155; */
+} /* 結束 .training-record 的樣式規則 */
+.training-record time { /* 選取 .training-record time，套用下方樣式 */
+  font-size: 0.78rem; /* 設定文字大小：0.78rem; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  white-space: nowrap; /* 控制換行與空白顯示：nowrap; */
+} /* 結束 .training-record time 的樣式規則 */
+.training-record-numbers { /* 選取 .training-record-numbers，套用下方樣式 */
+  font-size: 1.08rem; /* 設定文字大小：1.08rem; */
+  font-weight: 750; /* 設定字重：750; */
+  color: #e0f2fe; /* 設定文字顏色：#e0f2fe; */
+  margin: 10px 0; /* 設定元素外距：10px 0; */
+} /* 結束 .training-record-numbers 的樣式規則 */
+.training-record .hint { /* 選取 .training-record .hint，套用下方樣式 */
+  white-space: pre-wrap; /* 控制換行與空白顯示：pre-wrap; */
+  overflow-wrap: anywhere; /* 設定 overflow-wrap 樣式屬性：anywhere; */
+} /* 結束 .training-record .hint 的樣式規則 */
+.training-record button { /* 選取 .training-record button，套用下方樣式 */
+  font-size: 0.84rem; /* 設定文字大小：0.84rem; */
+} /* 結束 .training-record button 的樣式規則 */
+.training-empty { /* 選取 .training-empty，套用下方樣式 */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  line-height: 1.7; /* 設定行高：1.7; */
+  padding: 14px 0; /* 設定元素內距：14px 0; */
+} /* 結束 .training-empty 的樣式規則 */
+.training-backup summary { /* 選取 .training-backup summary，套用下方樣式 */
+  cursor: pointer; /* 設定游標形狀：pointer; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+  font-weight: 700; /* 設定字重：700; */
+  min-height: 30px; /* 限制最小高度：30px; */
+} /* 結束 .training-backup summary 的樣式規則 */
+.training-backup p { /* 選取 .training-backup p，套用下方樣式 */
+  font-size: 0.86rem; /* 設定文字大小：0.86rem; */
+  line-height: 1.7; /* 設定行高：1.7; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+} /* 結束 .training-backup p 的樣式規則 */
+.rest-mini { /* 選取 .rest-mini，套用下方樣式 */
+  position: fixed; /* 設定定位方式：fixed; */
+  z-index: 29; /* 設定堆疊層級：29; */
+  bottom: max(12px, env(safe-area-inset-bottom)); /* 設定 bottom 樣式屬性：max(12px, env(safe-area-inset-bottom)); */
+  right: 12px; /* 設定 right 樣式屬性：12px; */
+  left: 12px; /* 設定 left 樣式屬性：12px; */
+  margin: 0 auto; /* 設定元素外距：0 auto; */
+  max-width: 440px; /* 限制最大寬度：440px; */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  background: #113448; /* 設定背景底色、漸層或圖片：#113448; */
+  border: 1px solid #22d3ee; /* 設定邊框：1px solid #22d3ee; */
+  border-radius: 14px; /* 設定圓角：14px; */
+  padding: 10px 14px; /* 設定元素內距：10px 14px; */
+  box-shadow: 0 8px 30px #0009; /* 設定 box-shadow 樣式屬性：0 8px 30px #0009; */
+} /* 結束 .rest-mini 的樣式規則 */
+.rest-mini[hidden] { /* 選取 .rest-mini[hidden]，套用下方樣式 */
+  display: none; /* 設定排版模式或隱藏元素：none; */
+} /* 結束 .rest-mini[hidden] 的樣式規則 */
+.rest-mini a { /* 選取 .rest-mini a，套用下方樣式 */
+  color: #ecfeff; /* 設定文字顏色：#ecfeff; */
+  text-decoration: none; /* 設定 text-decoration 樣式屬性：none; */
+  font-weight: 700; /* 設定字重：700; */
+} /* 結束 .rest-mini a 的樣式規則 */
+.rest-mini button { /* 選取 .rest-mini button，套用下方樣式 */
+  width: auto; /* 設定寬度：auto; */
+  min-height: 40px; /* 限制最小高度：40px; */
+  margin: 0; /* 設定元素外距：0; */
+  padding: 8px 16px; /* 設定元素內距：8px 16px; */
+} /* 結束 .rest-mini button 的樣式規則 */
+body.has-rest-mini { /* 選取 body.has-rest-mini，套用下方樣式 */
+  padding-bottom: 105px; /* 設定 padding-bottom 樣式屬性：105px; */
+} /* 結束 body.has-rest-mini 的樣式規則 */
+.training-shortcut { /* 選取 .training-shortcut，套用下方樣式 */
+  display: flex; /* 設定排版模式或隱藏元素：flex; */
+  justify-content: space-between; /* 設定主軸對齊：space-between; */
+  align-items: center; /* 設定交叉軸對齊：center; */
+  gap: 12px; /* 設定排列元素間距：12px; */
+  text-decoration: none; /* 設定 text-decoration 樣式屬性：none; */
+  color: #67e8f9; /* 設定文字顏色：#67e8f9; */
+} /* 結束 .training-shortcut 的樣式規則 */
+.training-shortcut strong { /* 選取 .training-shortcut strong，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+} /* 結束 .training-shortcut strong 的樣式規則 */
+.training-shortcut span { /* 選取 .training-shortcut span，套用下方樣式 */
+  display: block; /* 設定排版模式或隱藏元素：block; */
+  margin-top: 5px; /* 設定 margin-top 樣式屬性：5px; */
+  color: #94a3b8; /* 設定文字顏色：#94a3b8; */
+  font-size: 0.84rem; /* 設定文字大小：0.84rem; */
+} /* 結束 .training-shortcut span 的樣式規則 */
+@media (max-width: 380px) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  .training-form-grid { /* 選取 .training-form-grid，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+    gap: 0; /* 設定排列元素間距：0; */
+  } /* 結束 .training-form-grid 的樣式規則 */
+  .training-actions { /* 選取 .training-actions，套用下方樣式 */
+    flex-wrap: wrap; /* 設定 flex-wrap 樣式屬性：wrap; */
+  } /* 結束 .training-actions 的樣式規則 */
+  .training-actions button { /* 選取 .training-actions button，套用下方樣式 */
+    flex-basis: 30%; /* 設定 flex-basis 樣式屬性：30%; */
+    padding: 10px 6px; /* 設定元素內距：10px 6px; */
+  } /* 結束 .training-actions button 的樣式規則 */
+  .training-tag { /* 選取 .training-tag，套用下方樣式 */
+    font-size: 0.7rem; /* 設定文字大小：0.7rem; */
+  } /* 結束 .training-tag 的樣式規則 */
+} /* 結束 本機訓練紀錄 的樣式規則 */
+@media (max-width: 520px) { /* 指定響應式條件，調整手機或特定螢幕尺寸下的版面 */
+  .training-form-grid { /* 選取 .training-form-grid，套用下方樣式 */
+    grid-template-columns: 1fr; /* 設定網格欄寬與欄數：1fr; */
+    gap: 8px; /* 設定排列元素間距：8px; */
+  } /* 結束 .training-form-grid 的樣式規則 */
+  .training-form-grid input[type='date'] { /* 選取 .training-form-grid input[type='date']，套用下方樣式 */
+    min-height: 46px; /* 限制最小高度：46px; */
+  } /* 結束 .training-form-grid input[type='date'] 的樣式規則 */
+} /* 結束 本機訓練紀錄 的樣式規則 */
