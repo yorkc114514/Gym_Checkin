@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><!-- 開始 HTML 文件並指定語系 -->
+  <head><!-- 開始文件標題、樣式與模組設定 -->
+    <meta charset="UTF-8" /><!-- 指定文件字元編碼，正確顯示中文 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- 設定裝置寬度與初始縮放，讓手機使用響應式版面 -->
+    <title>美食轉盤｜運動科學實驗室簽到系統</title><!-- 設定瀏覽器分頁標題 -->
+    <link rel="stylesheet" href="./assets/styles.css" /><!-- 載入 ./assets/styles.css 樣式或外部資源 -->
+    <script type="module" src="./assets/pages/foodwheel.js"></script><!-- 載入 ./assets/pages/foodwheel.js 頁面程式；module 會使用 ES 模組相依關係 -->
+  </head><!-- 結束 head 容器或文字區塊 -->
+  <body data-page="foodwheel" data-title="美食轉盤"><!-- 開始可見頁面並提供頁面識別資訊 -->
+    <main class="page-container food-wheel-page"><!-- 開始頁面主要內容 -->
+      <div class="page-heading"><!-- 建立版面容器 -->
+        <h1>美食轉盤</h1><!-- 顯示頁面主標題 -->
+        <p>今天吃什麼？選擇飲食分類，或建立自己的店家轉盤。</p><!-- 顯示操作說明或提示 -->
+      </div><!-- 結束 div 容器或文字區塊 -->
+
+      <div id="message" class="message hidden"></div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+
+      <section id="food-selection-card" class="card"><!-- 建立或續接 #food-selection-card 介面控制項，供樣式與 JavaScript 定位 -->
+        <fieldset class="food-category-fieldset"><!-- 建立 fieldset HTML 元素 -->
+          <legend>選擇飲食分類</legend><!-- 建立 legend HTML 元素 -->
+          <p class="hint">可複選，系統會合併各分類並排除重複店家。</p><!-- 顯示操作說明或提示 -->
+
+          <div class="food-category-grid"><!-- 建立版面容器 -->
+            <label class="food-category-option expensive"><!-- 建立輸入欄位標籤 -->
+              <input class="food-category-checkbox" type="checkbox" value="今天吃貴一點" /><!-- 建立輸入控制項 -->
+              <span aria-hidden="true">🍽️</span><!-- 包覆一段行內文字或狀態 -->
+              <strong>今天吃貴一點</strong><!-- 建立 strong HTML 元素 -->
+            </label><!-- 結束 label 容器或文字區塊 -->
+            <label class="food-category-option casual"><!-- 建立輸入欄位標籤 -->
+              <input class="food-category-checkbox" type="checkbox" value="隨便吃一吃" /><!-- 建立輸入控制項 -->
+              <span aria-hidden="true">🍔</span><!-- 包覆一段行內文字或狀態 -->
+              <strong>隨便吃一吃</strong><!-- 建立 strong HTML 元素 -->
+            </label><!-- 結束 label 容器或文字區塊 -->
+            <label class="food-category-option clean"><!-- 建立輸入欄位標籤 -->
+              <input class="food-category-checkbox" type="checkbox" value="吃乾淨一點" /><!-- 建立輸入控制項 -->
+              <span aria-hidden="true">🥗</span><!-- 包覆一段行內文字或狀態 -->
+              <strong>吃乾淨一點</strong><!-- 建立 strong HTML 元素 -->
+            </label><!-- 結束 label 容器或文字區塊 -->
+            <label class="food-category-option budget"><!-- 建立輸入欄位標籤 -->
+              <input class="food-category-checkbox" type="checkbox" value="月底救星" /><!-- 建立輸入控制項 -->
+              <span aria-hidden="true">🪙</span><!-- 包覆一段行內文字或狀態 -->
+              <strong>月底救星</strong><!-- 建立 strong HTML 元素 -->
+            </label><!-- 結束 label 容器或文字區塊 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+        </fieldset><!-- 結束 fieldset 容器或文字區塊 -->
+
+        <p id="food-category-summary" class="food-category-summary">尚未選擇分類</p><!-- 建立或續接 #food-category-summary 介面控制項，供樣式與 JavaScript 定位 -->
+
+        <div class="food-selection-actions"><!-- 建立版面容器 -->
+          <button id="food-preset-button" class="food-accent-button" type="button"><!-- 建立或續接 #food-preset-button 介面控制項，供樣式與 JavaScript 定位 -->
+            產生預設轉盤
+          </button><!-- 結束 button 容器或文字區塊 -->
+          <button
+            id="food-custom-toggle-button"
+            class="secondary-button"
+            type="button"
+            aria-controls="food-custom-panel"
+            aria-expanded="false"
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            自訂轉盤
+          </button><!-- 結束 button 容器或文字區塊 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+
+        <div id="food-custom-panel" class="food-custom-panel hidden"><!-- 建立或續接 #food-custom-panel 介面控制項，供樣式與 JavaScript 定位 -->
+          <div class="food-custom-header"><!-- 建立版面容器 -->
+            <label for="food-custom-input">自訂店家</label><!-- 建立輸入欄位標籤 -->
+            <button
+              id="food-custom-close-button"
+              class="food-icon-button"
+              type="button"
+              aria-label="關閉自訂店家"
+              >×</button
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+          <p class="hint">每家店使用換行、逗號或分號分隔，至少需要兩家不同的店家。</p><!-- 顯示操作說明或提示 -->
+          <textarea
+            id="food-custom-input"
+            maxlength="2000"
+            placeholder="例如：7-11，全家，萊爾富，合作社"
+          ></textarea><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <div class="food-custom-actions"><!-- 建立版面容器 -->
+            <button id="food-custom-clear-button" class="secondary-button" type="button"
+              >清空</button
+            ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+            <button id="food-custom-apply-button" class="primary-button" type="button"><!-- 建立或續接 #food-custom-apply-button 介面控制項，供樣式與 JavaScript 定位 -->
+              套用自訂店家
+            </button><!-- 結束 button 容器或文字區塊 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+
+      <section id="food-wheel-stage" class="card food-wheel-stage hidden"><!-- 建立或續接 #food-wheel-stage 介面控制項，供樣式與 JavaScript 定位 -->
+        <div class="food-wheel-toolbar"><!-- 建立版面容器 -->
+          <div><!-- 建立版面容器 -->
+            <strong id="food-wheel-mode-label">預設轉盤</strong><!-- 建立或續接 #food-wheel-mode-label 介面控制項，供樣式與 JavaScript 定位 -->
+            <span id="food-wheel-count-label">共 0 間店家</span><!-- 建立或續接 #food-wheel-count-label 介面控制項，供樣式與 JavaScript 定位 -->
+          </div><!-- 結束 div 容器或文字區塊 -->
+          <button id="food-wheel-reset-button" class="secondary-button" type="button"><!-- 建立或續接 #food-wheel-reset-button 介面控制項，供樣式與 JavaScript 定位 -->
+            重新選擇
+          </button><!-- 結束 button 容器或文字區塊 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+
+        <div class="food-wheel-wrap"><!-- 建立版面容器 -->
+          <div class="food-wheel-pointer" aria-hidden="true"></div><!-- 建立版面容器 -->
+          <canvas
+            id="food-wheel-canvas"
+            class="food-wheel-canvas"
+            width="420"
+            height="420"
+            aria-label="美食轉盤"
+          ></canvas><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <button id="food-wheel-center-button" class="food-wheel-center-button" type="button"><!-- 建立或續接 #food-wheel-center-button 介面控制項，供樣式與 JavaScript 定位 -->
+            <span aria-hidden="true">▶</span><!-- 包覆一段行內文字或狀態 -->
+            <span>開轉</span><!-- 包覆一段行內文字或狀態 -->
+          </button><!-- 結束 button 容器或文字區塊 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+
+        <div id="food-wheel-result" class="food-wheel-result" aria-live="polite"><!-- 建立或續接 #food-wheel-result 介面控制項，供樣式與 JavaScript 定位 -->
+          <span class="food-result-icon" aria-hidden="true">🍽️</span><!-- 包覆一段行內文字或狀態 -->
+          <span>按下轉盤中央開始抽選</span><!-- 包覆一段行內文字或狀態 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+    </main><!-- 結束 main 容器或文字區塊 -->
+
+    <div id="food-celebration-layer" class="food-celebration-layer" aria-hidden="true"></div><!-- 建立或續接 #food-celebration-layer 介面控制項，供樣式與 JavaScript 定位 -->
+  </body><!-- 結束 body 容器或文字區塊 -->
+</html><!-- 結束 html 容器或文字區塊 -->
