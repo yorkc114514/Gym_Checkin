@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"
+  ><head
+    ><meta charset="UTF-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    /><title>訓練進步圖表｜運動科學實驗室簽到系統</title
+    ><link rel="stylesheet" href="./assets/styles.css" /><script
+      type="module"
+      src="./assets/pages/progress.js"
+    ></script> </head
+  ><body data-page="progress" data-title="訓練進步圖表"
+    ><main class="page-container fitness-page"
+      ><div class="page-heading"
+        ><span class="training-eyebrow">YOUR PROGRESS · 每一次都算數</span><h1>訓練進步圖表</h1
+        ><p>把每一天的累積，連成看得見的進步。</p></div
+      ><div id="message" class="message hidden" role="status" aria-live="polite"></div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+      <section class="card"
+        ><div class="fitness-controls"
+          ><label>選擇動作<select id="progress-exercise" disabled></select></label
+          ><button id="progress-refresh" type="button" class="secondary-button"
+            >重新讀取</button
+          ></div
+        ><p id="progress-count" class="hint">讀取中……</p
+        ><a href="./training.html">前往訓練助手記錄</a></section
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <section class="card"
+        ><span class="training-eyebrow">01 · MAX WEIGHT</span><h2>每日最大重量</h2
+        ><p class="hint">最近 10 個訓練日，每天取這個動作記錄的最高重量。</p
+        ><div id="max-chart"></div
+      ></section><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <section class="card"
+        ><span class="training-eyebrow">02 · TRAINING VOLUME</span><h2>每日總訓練量</h2
+        ><p class="hint">同一天每筆「重量 × 次數 × 組數」加總，單位為 kg。</p
+        ><div id="volume-chart"></div
+      ></section><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <p class="hint"
+        >只讀取本機訓練紀錄；未滿 10
+        天就顯示已有日期。動作名稱忽略英文大小寫及頭尾空白，其餘須一致。徒手的 0 kg
+        不估算體重；若啞鈴填單手重量，圖表也按單手數值計算，不自動乘二。</p
+      ></main
+    ></body
+  ></html
+><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
