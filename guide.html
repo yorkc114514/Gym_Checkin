@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><!-- 開始 HTML 文件並指定語系 -->
+  <head><!-- 開始文件標題、樣式與模組設定 -->
+    <meta charset="UTF-8" /><!-- 指定文件字元編碼，正確顯示中文 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- 設定裝置寬度與初始縮放，讓手機使用響應式版面 -->
+    <title>系統使用說明｜運動科學實驗室簽到系統</title><!-- 設定瀏覽器分頁標題 -->
+    <link rel="stylesheet" href="./assets/styles.css" /><!-- 載入 ./assets/styles.css 樣式或外部資源 -->
+    <script type="module" src="./assets/pages/guide.js"></script><!-- 載入 ./assets/pages/guide.js 頁面程式；module 會使用 ES 模組相依關係 -->
+  </head><!-- 結束 head 容器或文字區塊 -->
+  <body data-page="guide" data-title="系統使用說明"><!-- 開始可見頁面並提供頁面識別資訊 -->
+    <main class="page-container guide-page"><!-- 開始頁面主要內容 -->
+      <div class="page-heading"><!-- 建立版面容器 -->
+        <h1>系統使用說明</h1><!-- 顯示頁面主標題 -->
+        <p>了解本系統的用途、簽到流程與各項功能。</p><!-- 顯示操作說明或提示 -->
+      </div><!-- 結束 div 容器或文字區塊 -->
+
+      <div id="message" class="message hidden"></div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+
+      <section class="card guide-section"><!-- 建立功能內容區 -->
+        <h2>系統用途</h2><!-- 顯示功能區標題 -->
+        <p><!-- 顯示操作說明或提示 -->
+          本系統用於運動科學實驗室的人員簽到、簽退與借用狀態查詢， 並整合 Google Calendar
+          預約、問題回報與 Gmail 通知。
+        </p><!-- 結束 p 容器或文字區塊 -->
+        <p><!-- 顯示操作說明或提示 -->
+          每位使用者都必須使用 Google 帳號登入。系統由 GitHub Pages 提供網頁， 並由 Supabase
+          處理身分驗證、資料庫與後端功能。
+        </p><!-- 結束 p 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+
+      <section class="card guide-section"><!-- 建立功能內容區 -->
+        <h2>基本簽到流程</h2><!-- 顯示功能區標題 -->
+        <ol class="guide-steps"><!-- 建立 ol HTML 元素 -->
+          <li>掃描網址後，在首頁按「使用 Google 帳號登入」。</li><!-- 建立 li HTML 元素 -->
+          <li>首次登入時輸入真實姓名；姓名與 Google 帳號綁定後不會重複詢問。</li><!-- 建立 li HTML 元素 -->
+          <li>選擇「共同使用者」或「主要借用者」，再按「簽到」。</li><!-- 建立 li HTML 元素 -->
+          <li>使用完畢回到首頁簽退。</li><!-- 建立 li HTML 元素 -->
+          <li> 主要借用者離開時，必須選擇責任交接，或完成垃圾、 冷氣與電燈、除濕機三項檢查。 </li><!-- 建立 li HTML 元素 -->
+          <li>確認簽退成功後，即可登出 Google 帳號。</li><!-- 建立 li HTML 元素 -->
+        </ol><!-- 結束 ol 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+
+      <section class="card guide-section"><!-- 建立功能內容區 -->
+        <h2>借用狀態</h2><!-- 顯示功能區標題 -->
+        <p>點選左上角功能列的「借用狀態」，可展開四個子功能：</p><!-- 顯示操作說明或提示 -->
+        <ul class="guide-feature-list"><!-- 建立 ul HTML 元素 -->
+          <li
+            ><strong>總覽圖表：</strong
+            >在同一時間軸比對實際使用時間與預約時段，點選長條可看詳細資訊。</li
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <li><strong>目前在場：</strong>查看尚未簽退的人員與使用身分。</li><!-- 建立 li HTML 元素 -->
+          <li><strong>預約月曆：</strong>依日期查詢 Google Calendar 預約。</li><!-- 建立 li HTML 元素 -->
+          <li><strong>簽到紀錄：</strong>依日期查看簽到、簽退、協助簽退與責任交接紀錄。</li><!-- 建立 li HTML 元素 -->
+        </ul><!-- 結束 ul 容器或文字區塊 -->
+
+        <div class="guide-color-list" aria-label="總覽圖表顏色說明"><!-- 建立版面容器 -->
+          <span><i class="status-completed"></i>青色：已簽退</span><!-- 包覆一段行內文字或狀態 -->
+          <span><i class="status-ongoing"></i>綠色：使用中</span><!-- 包覆一段行內文字或狀態 -->
+          <span><i class="status-overtime"></i>紅色：超過 2 小時</span><!-- 包覆一段行內文字或狀態 -->
+          <span><i class="status-forgotten"></i>黃色：忘記簽退或跨日</span><!-- 包覆一段行內文字或狀態 -->
+          <span><i class="status-reservation"></i>紫色：Google Calendar 預約</span><!-- 包覆一段行內文字或狀態 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+
+      <section class="card guide-section"><!-- 建立功能內容區 -->
+        <h2>其他功能</h2><!-- 顯示功能區標題 -->
+        <ul class="guide-feature-list"><!-- 建立 ul HTML 元素 -->
+          <li><strong>協助簽退：</strong>可協助已離開的共同使用者簽退；主要借用者必須親自處理。</li><!-- 建立 li HTML 元素 -->
+          <li><strong>問題回報：</strong>儲存設備或環境問題，並寄送 Gmail 通知。</li><!-- 建立 li HTML 元素 -->
+          <li
+            ><strong>我的健身足跡：</strong
+            >簽到成功顯示到訪蓋章頁面，本人簽退成功顯示成果蓋章頁面。台灣日期每天各只計一次；可在同一分類下回顧集章卡與成果小卡，紀錄只存目前瀏覽器並依帳號分開。</li
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <li
+            ><strong>訓練進步圖表：</strong>選擇動作查看最近 10
+            個訓練日的每日最大重量及總訓練量（重量 × 次數 × 組數加總）。同日期合併，不補零。</li
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <li
+            ><strong>體重紀錄：</strong>每天記一筆體重，可修改、刪除、備份。上方圖表預設含今天的最近
+            7 天，可自選日期範圍；下方列表依日期由新到舊。</li
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <li
+            ><strong>月度成果集卡：</strong
+            >每月在此裝置首次成功簽到，依本機上月訓練、體重及到訪章產生一張成果卡。功能列可回顧及下載含讚讚貓圖片的
+            PNG；同月不重發，資料不足會明確標示。</li
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <li
+            ><strong>訓練助手：</strong
+            >組間計時與動作、重量、次數、組數紀錄，只存於目前手機瀏覽器。無須登入即可使用；可下載／匯入備份，換手機不會自動同步。</li
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+          <li><strong>美食轉盤：</strong>使用預設分類或自訂店家決定用餐選項。</li><!-- 建立 li HTML 元素 -->
+          <li
+            ><strong>問題回報處理：</strong
+            >所有已登入使用者可查看與依日期查詢；僅管理員可更新處理狀態。</li
+          ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+        </ul><!-- 結束 ul 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+
+      <section class="card guide-section"><!-- 建立功能內容區 -->
+        <h2>資料與使用規範</h2><!-- 顯示功能區標題 -->
+        <p> 請勿代替他人建立不實簽到紀錄。使用「協助簽退」前， 請先確認對方已經離開。 </p><!-- 顯示操作說明或提示 -->
+        <div class="legal-links"><!-- 建立版面容器 -->
+          <a href="./privacy.html">隱私權政策</a><!-- 建立 a HTML 元素 -->
+          <a href="./terms.html">服務條款</a><!-- 建立 a HTML 元素 -->
+        </div><!-- 結束 div 容器或文字區塊 -->
+      </section><!-- 結束 section 容器或文字區塊 -->
+    </main><!-- 結束 main 容器或文字區塊 -->
+  </body><!-- 結束 body 容器或文字區塊 -->
+</html><!-- 結束 html 容器或文字區塊 -->
