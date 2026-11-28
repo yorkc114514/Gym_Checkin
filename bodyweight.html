@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"
+  ><head
+    ><meta charset="UTF-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    /><title>體重紀錄｜運動科學實驗室簽到系統</title
+    ><link rel="stylesheet" href="./assets/styles.css" /><script
+      type="module"
+      src="./assets/pages/bodyweight.js"
+    ></script> </head
+  ><body data-page="bodyweight" data-title="體重紀錄"
+    ><main class="page-container fitness-page"
+      ><div class="page-heading"
+        ><span class="training-eyebrow">BODY JOURNAL · 只存本機</span><h1>體重紀錄</h1
+        ><p>記下變化，不替數字打分數。</p></div
+      ><div id="message" class="message hidden" role="status" aria-live="polite"></div><!-- 建立或續接 #message 介面控制項，供樣式與 JavaScript 定位 -->
+      <section class="card"
+        ><h2>體重變化</h2
+        ><div class="fitness-controls"
+          ><label>開始日期<input id="weight-start" type="date" required /></label
+          ><label>結束日期<input id="weight-end" type="date" required /></label></div
+        ><button id="weight-seven" type="button" class="secondary-button">最近 7 天</button
+        ><p id="weight-range-count" class="hint"></p><div id="weight-chart"></div
+      ></section><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <section class="card"
+        ><h2>記下今天的體重</h2
+        ><form id="weight-form"
+          ><fieldset id="weight-fields" disabled
+            ><div class="fitness-controls"
+              ><label>日期<input id="weight-date" type="date" required /></label
+              ><label
+                >體重（kg）<input
+                  id="weight-kg"
+                  type="number"
+                  min="0.01"
+                  max="1000"
+                  step="0.01"
+                  inputmode="decimal"
+                  placeholder="例如：70.5"
+                  required /></label></div
+            ><div class="training-actions"
+              ><button id="weight-save" class="primary-button" type="submit">儲存體重</button
+              ><button id="weight-cancel" type="button" class="secondary-button hidden"
+                >取消修改</button
+              ></div
+            ></fieldset
+          ></form
+        ><p class="hint">每天一筆；同日再記錄會先詢問是否取代。可補記過去日期。</p></section
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <section class="card"
+        ><div class="training-heading"
+          ><h2>全部體重紀錄</h2><span id="weight-count" class="training-tag">讀取中</span></div
+        ><p class="hint">依日期由新到舊，列表不受上方圖表範圍影響。</p
+        ><button id="weight-refresh" data-weight-action type="button" class="secondary-button"
+          >重新讀取</button
+        ><div id="weight-list"></div
+        ><button id="weight-more" data-weight-action type="button" class="secondary-button hidden"
+          >顯示更多</button
+        ></section
+      ><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
+      <details class="card"
+        ><summary>本機資料與備份</summary
+        ><p
+          >和訓練紀錄一樣，體重只存在此裝置與瀏覽器，不隨帳號同步；同瀏覽器切換帳號仍可見。清除網站資料前請先備份。</p
+        ><div class="training-actions"
+          ><button id="weight-export" data-weight-action type="button" class="primary-button"
+            >下載體重備份</button
+          ><button id="weight-import" data-weight-action type="button" class="secondary-button"
+            >匯入體重備份</button
+          ></div
+        ><input id="weight-file" type="file" accept=".json,application/json" hidden /><p
+          class="hint"
+          >同日期保留手機現有資料；最多 20 MB、10,000 筆。訓練與集章使用各自頁面的備份。</p
+        ></details
+      ></main
+    ></body
+  ></html
+><!-- 提供前一 HTML 元素的文字內容或續接其標籤屬性 -->
